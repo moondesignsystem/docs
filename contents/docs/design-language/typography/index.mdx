@@ -1,0 +1,106 @@
+---
+title: Typography
+description: Docs for using typography in your products.
+---
+
+## Approach
+
+Typography system is structured using design tokens, available as variables in both Figma and CSS libraries. These tokens are integrated throughout the entire design system and form a foundational layer. Typography system can be categorized into:
+- **Tokens:** Individual tokens representing various text properties.
+- **Styles:** Tokens combined into named and reusable styles, applied directly to UI elements.
+
+## Tokens
+
+### Primitive tokens
+
+These are raw, foundational and context-agnostic values, such as font sizes, families, weights or line heights.
+
+Use these tokens when building new semantic or scale-based tokens. In some cases they can be used directly to create text styles.
+
+Example of primitive tokens:
+
+```css
+--text-16: 16px;
+--space-24: 24px;
+--font-weight-regular: 400;
+--font-family-primary: "DM Sans", sans-serif;
+```
+
+### Semantic tokens
+
+These tokens apply meaning and intent to combinations of primitive tokens. They also represent specific typographic roles, such as body, heading and labels.
+
+This abstraction allows you to update underlying primitive values (e.g. font-size) without changing the component logic.
+
+Example of semantic tokens:
+
+```css
+--body-400-font-size: var(--text-16);
+--body-400-line-height: var(--space-24);
+--body-400-font-weight: var(--font-weight-regular);
+--body-400-font-family: var(--font-family-primary);
+```
+
+### Scale tokens
+
+Scale tokens base on relative size instead of purpose. Many components in Moon Design System have different sizes (`sm`, `md`, `lg`, `xl` etc). Scale tokens are created to be reused across those components and layouts, providing consistent sizing.
+
+Scale-based tokens are especially useful in component systems where multiple components (inputs, buttons, tags etc) share similar sizes are consistent sizing is required.
+
+Example of scale tokens:
+
+```css
+--lg-font-size: var(--body-400-font-size);
+--lg-line-height: var(--body-400-line-height);
+--lg-font-weight: var(--body-400-font-weight);
+--lg-font-family: var(--body-400-font-family);
+```
+
+## Styles
+
+Typography styles are built by combining individual tokens into composite tokens. These styles are applied directly to UI elements, ensuring consistent appearance.
+
+Anatomy of a text style:
+
+| **Property**          | **Token**                 | **Value**
+|---------------------  |---------------------------|----------------
+| Font-size             | `--body-400-font-size`    | 16px
+| Line-height           | `--body-400-line-height`  | 24px
+| Font-family           | `--body-400-font-weight`  | Regular
+| Font-weight           | `--body-400-font-family`  | DM Sans, sans-serif
+
+### Semantic styles
+
+Moon Design System provides a defined set of `body` and `heading` styles for general text content. Each style is structured into a five-step scale (100–500), progressing in size.
+
+List of semantic text styles:
+
+```bash
+  Body/100
+  Body/200
+  Body/300
+  Body/400
+  Body/500
+  Heading/100
+  Heading/200
+  Heading/300
+  Heading/400
+  Heading/500
+```
+
+These styles are mapped directly to content-level usage such as paragraphs, section titles, headings and rich text blocks.
+
+### Scale-based styles
+
+For components that follow t-shirt sizing, Moon includes scale-based styles. These are not tied to semantic meaning, but instead offer consistent sizing tokens usable across various components.
+
+```bash
+  Label/Sm
+  Label/Md
+  Label/Lg
+  Label/Xl
+```
+
+## Explore further
+
+- Figma styles, https://help.figma.com/hc/en-us/articles/360039957034-Create-and-apply-text-styles

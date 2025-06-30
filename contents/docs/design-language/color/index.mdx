@@ -1,0 +1,38 @@
+---
+title: Color
+description: Docs for expressing colors in your product.
+---
+
+## Approach
+
+Moon Design System applies colors using design tokens, available as variables in both Figma and CSS libraries. These tokens are integrated throughout the entire design system and categorized into:
+- **Primitive colors:** Full set of color scales and supporting hues (e.g., `--slate-1`, `--iris-9`). These are raw values without specific contextual meaning.
+- **Semantic colors:** Aliases that map primitive tokens to specific UI roles (e.g., `--background-primary`, `--icon-brand`). They provide functional meaning to the color and enable consistent themeing across the UI.
+- **Component colors:** Tokens specific to UI components (e.g., `--button-background`, `--input-border`). Instead of using semantic colors, component colors provide more granular control over individual components.
+
+## Scales
+
+Primitive colors are organized into structured scales. These are color palettes built around a single hue with multiple steps. These scales form the foundation for themeing and semantic mapping. Scales enable:
+
+- **Consistent visual feel:** Steps within the scales maintain coherence across saturation and brightness levels.
+- **Defined usage:** Every step in a scale is designed for a specific semantic role.
+- **Structured theming:** Scales support adaptable palettes across different design contexts (e.g., light/dark mode or brand themes).
+
+Moon Design System includes selected [**Radix Colors**](https://www.radix-ui.com/colors) in the Core library. Radix provides a 12-step scale per hue.
+
+**Using scales correctly ensures accessible contrasts by default.** Each step in the 1-12 range is designerd for a specific, consistent purpoise:
+
+| **Steps**            | **Use case**
+|--------------------  |----------------------------------------------
+| **1-2**              | Surface backgrounds
+| **3-5**              | Component backgrounds and states
+| **6-8**              | Borders and separators
+| **9-10**             | Solid backgrounds
+| **11-12**            | Text and high-contrast foregrounds
+
+## Explore further
+
+ To maintain consistency, color palettes should be created systematically with similar saturation and brightness levels. We recommend these tools for building well-balanced palettes:
+- Radix Colors, https://www.radix-ui.com/colors
+- Colorbox, https://colorbox.io/
+- Genome Color Tool, https://www.genomecolor.space/

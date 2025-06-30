@@ -1,0 +1,95 @@
+---
+title: Elevation
+description: Docs for applying depth and hierarchy to your surfaces.
+---
+
+## Purpose
+
+Elevation adds depth to applications by increasing the relative distance between two surfaces on the z-index. Use elevation to emphasize hierarchy, highlight key elements and create a sense of layering within the interface.
+
+Choose the appropriate elevation and technique based on the purpose and importance of the surface. Every surface and component in your design has a level of elevation.
+
+Ideally elevated surface needs to be contrasting from the surrounding environment. Elevation can be expressed through shadows, color variations and backdrops.
+
+### Shadow
+
+Depth can be expressed with shadows. Size and softness of the shadow determine the distance between the surfaces. For example small and sharp shadow shows that the elevated surface is close to the surface behind it. Large and soft shadow makes the surface appear further away.
+
+Moon has a set of shadows that can be used to add depth to the interface.
+
+### Backdrop
+
+Applying backdrop behind the elevated surface increases the contrast of it and helps bring focus to that surface. Backdrops use a color token, which by default is at 56% opacity.
+
+```css
+--semantic-background-backdrop: rgba(28, 32, 36, 0.56);
+```
+
+### Tonal difference
+
+Tonal difference is used to define the visual depth of surfaces. This helps to clearly distinguish components and separate them from other content within the interface. It signals that different sections of the interface might behave independently.
+
+Use different background tokens, such as `background-primary`, `background-secondary` and `background-tertiary`, to achieve tonal difference.
+
+## Approach
+
+Moon Design System supports elevation through design tokens and styles available both in Figma and CSS libraries. These are structured into:
+- **Tokens:** Individual tokens representing shadow properties, opacities and focus rings.
+- **Styles:** Tokens combined into named and reusable styles, applied directly to UI elements.
+
+## Tokens
+
+### Primitive tokens
+
+These are raw, foundational and context-agnostic values, such as offset, blur, spread and color.
+
+Use these tokens when building new semantic tokens. In some cases primitive tokens can be used directly to create elevation styles.
+
+Example of primitive tokens:
+
+```css
+--slate-shadow-100: rgba(28,32,36,0.04);
+--opacity-60: 60%;
+--space-1: 1px;
+```
+
+### Semantic tokens
+
+These tokens apply meaning and intent to combinations of primitive tokens. They also represent specific roles, such as shadows, opacities and focus rings.
+
+This abstraction allows you to update underlying primitive values (e.g. offset size) without changing the component logic.
+
+Example of semantic tokens:
+
+```css
+--shadow-100-layer-1-x: var(--space-0);
+--shadow-100-layer-1-y: var(--space-1);
+--shadow-100-layer-1-blur: var(--space-2);
+--shadow-100-layer-1-spread: var(--space-0);
+--shadow-100-layer-1-color: var(--slate-shadow-200);
+```
+
+## Styles
+
+Elevation styles are built by combining individual tokens into composite tokens. These styles are applied directly to UI elements, ensuring consistent appearance.
+
+Anatomy of a shadow style:
+
+| **Property**          | **Token**                      | **Value**
+|---------------------  |--------------------------------|----------------
+| **Layer 1**
+| X                     | `--shadow-300-layer-1-x`       | 0px
+| Y                     | `--shadow-300-layer-1-y`       | 12px
+| Blur                  | `--shadow-300-layer-1-blur`    | 16px
+| Spread                | `--shadow-300-layer-1-spread`  | -4px
+| Color                 | `--shadow-300-layer-1-color`   | rgba(28, 32,36,0.08)
+| **Layer 2**
+| X                     | `--shadow-300-layer-2-x`       | 0px
+| Y                     | `--shadow-300-layer-2-y`       | 4px
+| Blur                  | `--shadow-300-layer-2-blur`    | 8px
+| Spread                | `--shadow-300-layer-2-spread`  | -2px
+| Color                 | `--shadow-300-layer-2-color`   | rgba(28,32,36,0.04)
+
+## Explore further
+
+- Figma styles, https://help.figma.com/hc/en-us/articles/360039957034-Create-and-apply-text-styles

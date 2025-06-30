@@ -1,0 +1,95 @@
+---
+title: Icon button
+description: "Also known as: Action button, Toolbar button"
+---
+
+<svg width="480" height="240" viewBox="0 0 480 240" style={{ width: "100%", height: "auto" }} xmlns="http://www.w3.org/2000/svg">
+<rect width="480" height="240" style={{ fill: "var(--semantic-background-tertiary)" }}/>
+<path d="M220 108C220 103.582 223.582 100 228 100H252C256.418 100 260 103.582 260 108V132C260 136.418 256.418 140 252 140H228C223.582 140 220 136.418 220 132V108Z" style={{ fill: "var(--semantic-background-brand)" }}/>
+<path fillRule="evenodd" clipRule="evenodd" d="M233.454 112.796C235.939 111.272 238.167 111.879 239.513 112.89C239.735 113.057 239.887 113.17 240 113.247C240.113 113.17 240.265 113.057 240.487 112.89C241.833 111.879 244.061 111.272 246.546 112.796C248.263 113.849 249.23 116.05 248.891 118.579C248.55 121.12 246.905 123.994 243.422 126.572C243.393 126.593 243.364 126.615 243.336 126.636C242.126 127.532 241.325 128.125 240 128.125C238.675 128.125 237.874 127.532 236.664 126.636C236.636 126.615 236.607 126.593 236.578 126.572C233.095 123.994 231.45 121.12 231.109 118.579C230.77 116.05 231.737 113.849 233.454 112.796ZM239.869 113.328C239.867 113.329 239.867 113.329 239.871 113.327C239.87 113.327 239.87 113.328 239.869 113.328ZM240.129 113.327C240.133 113.329 240.133 113.329 240.131 113.328C240.13 113.328 240.13 113.327 240.129 113.327ZM238.763 113.89C237.766 113.141 236.093 112.643 234.108 113.861C232.893 114.607 232.061 116.273 232.348 118.413C232.634 120.541 234.04 123.138 237.321 125.567C238.64 126.543 239.121 126.875 240 126.875C240.879 126.875 241.36 126.543 242.679 125.567C245.96 123.138 247.366 120.541 247.652 118.413C247.939 116.273 247.107 114.607 245.892 113.861C243.907 112.643 242.234 113.141 241.237 113.89L241.22 113.903C240.995 114.072 240.801 114.217 240.646 114.319C240.566 114.371 240.477 114.425 240.384 114.467C240.296 114.507 240.162 114.556 240 114.556C239.838 114.556 239.704 114.507 239.616 114.467C239.523 114.425 239.434 114.371 239.354 114.319C239.199 114.217 239.005 114.072 238.78 113.903L238.763 113.89Z" style={{ fill: "var(--semantic-icon-force-light)" }}/>
+</svg>
+
+
+## Resources
+
+<Files
+  items={[
+    {
+      type: "file",
+      name: "CSS",
+      subtype: "css",
+      href: "https://ui.moon.io/?path=/docs/actions-icon-button--docs"
+    },
+    {
+      type: "file",
+      name: "React",
+      subtype: "react",
+      href: "https://react.moon.io/?path=/docs/actions-iconbutton--docs"
+    },
+    {
+      type: "file",
+      name: "Flutter",
+      subtype: "flutter",
+      href: "https://flutter.moon.io/primitives/button"
+    },
+    {
+      type: "file",
+      name: "Figma",
+      subtype: "figma",
+      href: "https://www.figma.com/design/S3q1SkVngbwHuwpxHKCsgtJj/Moon-components?node-id=69257-3604&t=ncpStplMX1Yy41i8-11"
+    },
+  ]}
+/>
+
+## Properties
+
+| **Property**                        | **Values**                                   | **Default**
+|-----------------------------------  |----------------------------------------------| -----------------------------------------------
+| Size `Variant`                      | `Xs \| Sm \| Md \| Lg \| Xl`                 | `Md`
+| State `Variant`                     | `Default \| Hover \| Focus \| Disabled`      | `Default`
+| Icon  `InstanceSwap`                | `Any icon`                                   | `heart`
+
+## Best practises
+
+- Use icon buttons for actions that are commonly represented with an icon (edit, delete, share).
+- Make sure that the icon clearly communicates the intended action.
+- Maintain consistent sizing across the UI.
+- Use only one primary icon button per section if possible.
+- Don’t use too many icon buttons together, it will overwhelm users.
+
+## When to use
+
+{<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M5 13l4 4L19 7" style={{ stroke: "var(--semantic-icon-positive)" }} strokeWidth="2" /></svg>} Use icon button when the action is commonly recognized by its icon alone (search, close, settings, menu). <br/><br/>
+{<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M6 6L18 18M6 18L18 6" style={{ stroke: "var(--semantic-icon-negative)" }} strokeWidth="2" /></svg>} The button is used frequently and users can quickly recognize its function. <br/>
+{<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M6 6L18 18M6 18L18 6" style={{ stroke: "var(--semantic-icon-negative)" }} strokeWidth="2" /></svg>} The action is not universally understood, use regular button instead. <br/>
+{<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M6 6L18 18M6 18L18 6" style={{ stroke: "var(--semantic-icon-negative)" }} strokeWidth="2" /></svg>} The button is critical and users need clarity.
+
+## Size
+
+Dimensions of the icon button are tied to the global `scale` tokens. This ensures that the components with similar size settings remain consistent across the interface. `scale` tokens also provides more granular control over dimensional settings.
+
+```css:scale.css showLineNumbers
+--scale-width-<size>
+--scale-height-<size>
+--scale-padding-<size>
+--scale-radius-<size>
+--scale-icon-size-<size>
+```
+
+## Variants
+
+Some common variants are already created and ready to use (see the table), but you have the possibility to add new variants or customize every visual aspect through tokens and token modes.
+
+| **Variant**                        | **When to use**
+|----------------------------------- |----------------------------------------------
+| `Fill`                             | Used as a primary icon button style to display highest priority actions. Background color is usually brand color. Visually, it has high contrast compared to its surroundings.
+| `Soft`                             | Used as a complimentary style for fill icon buttons. Has the similar color as fill icon button, but is less contrasting.
+| `Outline`                          | Outline icon buttons blend more with the surroundings, but are separated from the background with a border. Used for secondary actions that don't require immediate response from the user.
+| `Ghost`                            | Used for the lowest priority actions or complimentary actions for primary icon buttons.
+
+```css:button.css showLineNumbers
+--icon-button-<variant>-background
+--icon-button-<variant>-border
+--icon-button-<variant>-icon
+--icon-button-<variant>-stroke
+```

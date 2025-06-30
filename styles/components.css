@@ -1,0 +1,8 @@
+.moon-components button {
+    background-color: var(--background-secondary) !important;
+    color: var(--text-primary) !important;
+}
+.moon-components input {
+    background-color: var(--background-primary) !important;
+    border: 1px solid var(--border-primary) !important;
+}

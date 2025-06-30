@@ -1,0 +1,104 @@
+---
+title: Designer
+description: Quickstart your project using our Figma libraries.
+---
+
+<Files
+  items={[
+    {
+      type: "folder",
+      name: "Moon Design System",
+      isOpen: true,
+      children: [
+        {
+          type: "file", subtype: "figma", name: "MDS Base", href: "https://www.figma.com/files/945659260642889536/project/350002420"
+        },
+        {
+          type: "file", subtype: "figma", name: "MDS Patterns", href: "https://www.figma.com/files/945659260642889536/project/384759681"
+        },
+        {
+          type: "file", subtype: "figma", name: "MDS Assets", href: "https://www.figma.com/files/945659260642889536/project/293996122"
+        },
+      ],
+    },
+  ]}
+/>
+
+## Install Base
+
+### Core
+
+'MDS Core' is a Figma library that contains only variables and styles. These variables act as design tokens for code automation. The library includes `primitive` and `semantic` tokens. To start using the library, follow these steps:
+
+<Stepper>
+  <StepperItem title="Fork the `MDS Core` into your workspace">
+    Begin by duplicating Core library and moving it into your workspace.
+  </StepperItem>
+
+  <StepperItem title="Access the Variables table in the new file">
+    You will have access to the color, typography, styiling and dimensional expressions. Adjust these variables to match your requirements.
+  </StepperItem>
+
+  <StepperItem title="Publish the file as a library for your workspace">
+      To start using Core library in your projects, you will need to publish the file as a library into your workspace.
+
+    <Note title="Note">
+    You will need to be on Figma Professional plan to enable team libraries and get access to complete design system setup.
+    <br/>
+    </Note>
+
+  </StepperItem>
+</Stepper>
+
+### Components
+
+'MDS Components' is a Figma library that stores `component` tokens and reusable UI components. Follow these steps to start using the library:
+
+<Stepper>
+  <StepperItem title="Create a fork of the `MDS Components` library into your workspace">
+    Begin by duplicating Components library and moving it into your workspace.
+  </StepperItem>
+
+  <StepperItem title="Add you Core library to Components file">
+      Make sure that your Core library is enabled for your Components library.
+  </StepperItem>
+
+  <StepperItem title="Connect styles with your Core library">
+      Perform Swap libraries function to connect styles with your library.
+  </StepperItem>
+
+  <StepperItem title="Remap all variables with your Core library">
+    - Variables from Core, which have been applied directly to the layers.
+    - Variables created inside Figma's Variable table.
+
+    <Note title="Note">
+    We use plugins called 'Variables Toolkit: Find, Swap and Bind Variables' and 'Variables Management' to automate this process.
+    <br/>
+    </Note>
+
+  </StepperItem>
+</Stepper>
+
+## Install Patterns
+
+Moon Design System provides patterns and templates libraries which are built using 'MDS Components'. You may decide not to use them and use only Components library. To install Patterns library, follow these steps:
+
+<Stepper>
+  <StepperItem title="Create a fork of the `MDS Patterns` libraries into your workspace">
+    Begin by duplicating the required Patterns libraries and moving them into your workspace.
+  </StepperItem>
+
+  <StepperItem title="Add you Core and Components libraries">
+      Make sure that your Core and Component libraries are enabled for your Patterns library.
+  </StepperItem>
+
+  <StepperItem title="Swap all component instances in Patterns library with your components">
+      Perform Swap libraries function to swap all components instances with components in your libraries.
+  </StepperItem>
+
+</Stepper>
+
+## Install assets
+
+Whether you are using Icons, Symbols or any other asset type, you need to enable them for your workspace.
+If you are using your own assets, then you will need to create those files and publish them as libraries into your workspace.
