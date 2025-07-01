@@ -85,6 +85,36 @@ export default function SubLink({
     );
   }
 
+  if (type === "expanded") {
+    return (
+      <div className="flex flex-col gap-1 w-full">
+        <div className="w-full pr-5">
+          <div className="flex items-center justify-between w-full cursor-default">
+            <span className="w-[95%] overflow-hidden text-ellipsis text-start">
+              {titleOrLink}
+            </span>
+          </div>
+        </div>
+        <div
+          className={cn(
+            "flex flex-col items-start text-base dark:text-stone-300/85 text-stone-800 ml-0.5 mt-2.5 gap-3",
+            level > 0 && "pl-4 border-l ml-1.5",
+          )}
+        >
+          {items.map((item) => {
+            const modifiedItem = {
+              ...item,
+              href: `${href}${item.href}`,
+              level: level + 1,
+              isSheet,
+            };
+            return <SubLink key={modifiedItem.href} {...modifiedItem} />;
+          })}
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="flex flex-col gap-1 w-full">
       <Collapsible open={isOpen} onOpenChange={setIsOpen}>

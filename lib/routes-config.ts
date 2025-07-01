@@ -42,6 +42,7 @@ export const ROUTES: EachRoute[] = [
         title: "Actions",
         href: "/actions",
         noLink: true,
+        type: "expanded",
         items: [
           { title: "Button", href: "/button" },
           { title: "Icon button", href: "/icon-button" },
@@ -51,6 +52,7 @@ export const ROUTES: EachRoute[] = [
         title: "Forms & selection controls",
         href: "/forms-and-selection-controls",
         noLink: true,
+        type: "expanded",
         items: [
           { title: "Input", href: "/input" },
           { title: "Select", href: "/select" },
@@ -67,6 +69,7 @@ export const ROUTES: EachRoute[] = [
         title: "Content display",
         href: "/content-display",
         noLink: true,
+        type: "expanded",
         items: [
           { title: "Accordion", href: "/accordion" },
           { title: "Avatar", href: "/avatar" },
@@ -79,6 +82,7 @@ export const ROUTES: EachRoute[] = [
         title: "Indicators & status",
         href: "/indicators-and-status",
         noLink: true,
+        type: "expanded",
         items: [
           { title: "Badge", href: "/badge" },
           { title: "Loader", href: "/loader" },
@@ -92,6 +96,7 @@ export const ROUTES: EachRoute[] = [
         title: "Containers & layout",
         href: "/containers-and-layout",
         noLink: true,
+        type: "expanded",
         items: [
           { title: "Bottom sheet", href: "/bottom-sheet" },
           { title: "Drawer", href: "/drawer" },
@@ -103,6 +108,7 @@ export const ROUTES: EachRoute[] = [
         title: "Messaging & feedback",
         href: "/messaging-and-feedback",
         noLink: true,
+        type: "expanded",
         items: [
           { title: "Alert", href: "/alert" },
           { title: "Snackbar", href: "/snackbar" },

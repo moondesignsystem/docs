@@ -22,6 +22,7 @@ import Outlet from "@/components/markdown/outlet";
 import Files from "@/components/markdown/files";
 import ColorControls from "@/components/markdown/colorcontrols";
 import Quickstart from "@/components/markdown/quickstart";
+import FooterWrapper from "@/components/ui/footer-wrapper";
 import {
   Table,
   TableBody,
@@ -47,6 +48,7 @@ const components = {
   Files,
   ColorControls,
   Quickstart,
+  FooterWrapper,
   table: Table,
   thead: TableHeader,
   th: TableHead,

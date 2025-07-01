@@ -4,35 +4,42 @@ import React, { useState, useEffect } from "react";
 const BG_KEY = "colorcontrols-backgroundBrand";
 const TXT_KEY = "colorcontrols-textOnBrand";
 
+const colorCombinations = [
+  {
+    name: "Combination 1 (default)",
+    backgroundBrand: "#5b5bd6",
+    textOnBrand: "#f2f2f2",
+  },
+  {
+    name: "Combination 2",
+    backgroundBrand: "#49B356",
+    textOnBrand: "#FFFFFF",
+  },
+  {
+    name: "Combination 3",
+    backgroundBrand: "#F2590D",
+    textOnBrand: "#FDFDFC",
+  },
+];
+
 export default function ColorControls() {
-  const [backgroundBrand, setBackgroundBrand] = useState("#5B3DF6");
-  const [textOnBrand, setTextOnBrand] = useState("#FFFFFF");
+  const [backgroundBrand, setBackgroundBrand] = useState(
+    colorCombinations[0].backgroundBrand,
+  );
+  const [textOnBrand, setTextOnBrand] = useState(
+    colorCombinations[0].textOnBrand,
+  );
 
   useEffect(() => {
-    // Only run in browser
     if (typeof window !== "undefined" && document?.documentElement) {
-      // Try to load from localStorage first
       const storedBg = localStorage.getItem(BG_KEY);
       const storedTxt = localStorage.getItem(TXT_KEY);
 
       if (storedBg && /^#[0-9A-Fa-f]{6}$/.test(storedBg)) {
         setBackgroundBrand(storedBg);
-      } else {
-        const bg =
-          getComputedStyle(document.documentElement).getPropertyValue(
-            "--background-brand"
-          ) || "#5B3DF6";
-        setBackgroundBrand(bg.trim() || "#5B3DF6");
       }
-
       if (storedTxt && /^#[0-9A-Fa-f]{6}$/.test(storedTxt)) {
         setTextOnBrand(storedTxt);
-      } else {
-        const txt =
-          getComputedStyle(document.documentElement).getPropertyValue(
-            "--text-on-brand"
-          ) || "#FFFFFF";
-        setTextOnBrand(txt.trim() || "#FFFFFF");
       }
     }
   }, []);
@@ -41,59 +48,57 @@ export default function ColorControls() {
     if (typeof window !== "undefined" && document?.documentElement) {
       document.documentElement.style.setProperty(
         "--background-brand",
-        backgroundBrand
+        backgroundBrand,
       );
-      document.documentElement.style.setProperty("--text-on-brand", textOnBrand);
-      // Save to localStorage
+      document.documentElement.style.setProperty(
+        "--text-on-brand",
+        textOnBrand,
+      );
       localStorage.setItem(BG_KEY, backgroundBrand);
       localStorage.setItem(TXT_KEY, textOnBrand);
     }
   }, [backgroundBrand, textOnBrand]);
+
+  const handleSelect = (bg) => {
+    const combo = colorCombinations.find(
+      (c) => c.backgroundBrand.toLowerCase() === bg.toLowerCase(),
+    );
+    if (combo) {
+      setBackgroundBrand(combo.backgroundBrand);
+      setTextOnBrand(combo.textOnBrand);
+    }
+  };
 
   return (
     <div
       style={{
         margin: "24px 0",
         display: "flex",
-        gap: "2rem",
+        gap: "1rem",
         alignItems: "center",
       }}
     >
-      <label>
-        <span style={{ marginRight: 8 }}>Brand:</span>
-        <input
-          type="color"
-          value={backgroundBrand.trim()}
-          onChange={(e) => setBackgroundBrand(e.target.value)}
+      {colorCombinations.map(({ backgroundBrand: bgColor, name }) => (
+        <button
+          key={bgColor}
+          onClick={() => handleSelect(bgColor)}
+          title={name}
+          aria-pressed={backgroundBrand === bgColor}
+          style={{
+            width: 40,
+            height: 40,
+            borderRadius: 6,
+            border:
+              backgroundBrand.toLowerCase() === bgColor.toLowerCase()
+                ? "4px solid #000" // thick black border for active
+                : "2px solid #ccc",
+            backgroundColor: bgColor,
+            cursor: "pointer",
+            padding: 0,
+            outline: "none",
+          }}
         />
-      </label>
-      <label>
-        <span style={{ marginRight: 8 }}>Text:</span>
-        <input
-          type="color"
-          value={textOnBrand.trim()}
-          onChange={(e) => setTextOnBrand(e.target.value)}
-        />
-      </label>
-      <button
-        type="button"
-        style={{
-          padding: "0.5rem 1rem",
-          border: "1px solid #ccc",
-          borderRadius: "4px",
-          background: "#f5f5f5",
-          cursor: "pointer",
-        }}
-        onClick={() => {
-          setBackgroundBrand("#5B3DF6");
-          setTextOnBrand("#FFFFFF");
-          // Also clear from localStorage
-          localStorage.removeItem(BG_KEY);
-          localStorage.removeItem(TXT_KEY);
-        }}
-      >
-        Reset
-      </button>
+      ))}
     </div>
   );
 }

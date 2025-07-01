@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/contexts/theme-provider";
 import { Navbar } from "@/components/navbar";
 import { DM_Sans, DM_Mono } from "next/font/google";
-import { Footer } from "@/components/footer";
+import { FooterWrapper } from "@/components/ui/footer-wrapper";
 import "@/styles/globals.css";
 import "@/styles/base.css";
 
@@ -66,7 +66,8 @@ export default function RootLayout({
           <main className="sm:container mx-auto w-[90vw] h-auto scroll-smooth">
             {children}
           </main>
-          <Footer />
+
+          <FooterWrapper />
         </ThemeProvider>
       </body>
     </html>

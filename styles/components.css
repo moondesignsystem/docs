@@ -1,4 +1,5 @@
-.moon-components button {
+.moon-components button,
+.preview-button {
     background-color: var(--background-secondary) !important;
     color: var(--text-primary) !important;
 }
