@@ -1,4 +1,3 @@
-"use client";
 import { buttonVariants } from "@/components/ui/button";
 import ColorControls from "@/components/markdown/colorcontrols";
 import ComponentShowcase from "@/components/preview/ComponentShowcase";

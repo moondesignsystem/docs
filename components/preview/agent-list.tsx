@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Card, CardContent } from "@/components/ui/card"
-import { Check } from "lucide-react"
+import { useState } from "react";
+import { Card, CardContent } from "@/components/preview/ui/card";
+import { Check } from "lucide-react";
 
 export function AgentList() {
-  const [selectedAgents, setSelectedAgents] = useState<number[]>([0]) // First agent selected by default
+  const [selectedAgents, setSelectedAgents] = useState<number[]>([0]); // First agent selected by default
 
   const agents = [
     {
@@ -23,11 +23,15 @@ export function AgentList() {
       name: "Elena Rodriguez",
       avatar: "/placeholder.svg?height=48&width=48",
     },
-  ]
+  ];
 
   const toggleAgent = (agentId: number) => {
-    setSelectedAgents((prev) => (prev.includes(agentId) ? prev.filter((id) => id !== agentId) : [...prev, agentId]))
-  }
+    setSelectedAgents((prev) =>
+      prev.includes(agentId)
+        ? prev.filter((id) => id !== agentId)
+        : [...prev, agentId],
+    );
+  };
 
   return (
     <Card className="bg-[#ffffff] border-[#e0e1e6] w-[414px]">
@@ -44,7 +48,9 @@ export function AgentList() {
                   alt={agent.name}
                   className="w-12 h-12 rounded-full object-cover"
                 />
-                <span className="text-sm text-[#1c2024] font-medium">{agent.name}</span>
+                <span className="text-sm text-[#1c2024] font-medium">
+                  {agent.name}
+                </span>
               </div>
               <div
                 className={`w-6 h-6 rounded border-2 flex items-center justify-center transition-all duration-200 ${
@@ -53,13 +59,17 @@ export function AgentList() {
                     : "bg-transparent border-[#cdced6]"
                 }`}
               >
-                {selectedAgents.includes(agent.id) && <Check className="h-3 w-3 text-white" strokeWidth={2.5} />}
+                {selectedAgents.includes(agent.id) && (
+                  <Check className="h-3 w-3 text-white" strokeWidth={2.5} />
+                )}
               </div>
             </div>
-            {index < agents.length - 1 && <div className="h-px bg-[#e0e1e6] mx-4" />}
+            {index < agents.length - 1 && (
+              <div className="h-px bg-[#e0e1e6] mx-4" />
+            )}
           </div>
         ))}
       </CardContent>
     </Card>
-  )
+  );
 }

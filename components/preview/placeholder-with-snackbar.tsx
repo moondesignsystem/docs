@@ -1,20 +1,20 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { Card, CardContent } from "@/components/ui/card"
+import { useState, useEffect } from "react";
+import { Card, CardContent } from "@/components/preview/ui/card";
 
 export function PlaceholderWithSnackbar() {
-  const [showSnackbar, setShowSnackbar] = useState(true)
+  const [showSnackbar, setShowSnackbar] = useState(true);
 
   // Reappear snackbar after 1.5 seconds when dismissed
   useEffect(() => {
     if (!showSnackbar) {
       const timer = setTimeout(() => {
-        setShowSnackbar(true)
-      }, 1500)
-      return () => clearTimeout(timer)
+        setShowSnackbar(true);
+      }, 1500);
+      return () => clearTimeout(timer);
     }
-  }, [showSnackbar])
+  }, [showSnackbar]);
 
   return (
     <Card className="bg-[#ffffff] border-[#e0e1e6] w-[414px] relative overflow-hidden">
@@ -39,7 +39,9 @@ export function PlaceholderWithSnackbar() {
           <div className="bg-[#edf2fe] border border-[#5b5bd6] rounded-xl p-4 flex items-center justify-between shadow-lg animate-in slide-in-from-bottom-2 duration-300">
             <div className="flex items-center gap-3">
               <img src="/info-filled.svg" alt="Info" className="w-5 h-5" />
-              <span className="text-sm font-medium text-[#5b5bd6]">Saved to watchlist</span>
+              <span className="text-sm font-medium text-[#5b5bd6]">
+                Saved to watchlist
+              </span>
             </div>
             <button
               onClick={() => setShowSnackbar(false)}
@@ -51,5 +53,5 @@ export function PlaceholderWithSnackbar() {
         </div>
       )}
     </Card>
-  )
+  );
 }

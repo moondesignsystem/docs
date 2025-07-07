@@ -11,7 +11,7 @@
 }
 
 .animate-shimmer {
-    animation: shimmer 2s ease-in-out infinite;
+    animation: shimmer 4s ease-in-out infinite;
 }
 
 /* Main layout styles */
@@ -24,22 +24,23 @@
 .showcase-columns {
     display: flex;
     justify-content: center;
-    gap: 24px;
+    gap: 12px;
 }
 
 .showcase-column {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 12px;
 }
 
 /* Component card styles */
 .component-card {
-    background-color: #ffffff;
-    border: 1px solid #e0e1e6;
-    border-radius: 12px;
+    background-color: var(--background-primary);
+    border-radius: var(--radius-md);
     width: 414px;
     max-width: 414px;
+    overflow: hidden;
+    border: 1px solid var(--border-secondary);
 }
 
 .component-header {
@@ -47,10 +48,11 @@
 }
 
 .component-title {
-    color: #1c2024;
+    color: var(--text-primary);
     font-size: 18px;
     font-weight: 600;
     margin: 0;
+    text-align: left;
 }
 
 .component-content {
@@ -64,19 +66,13 @@
 /* Form input styles */
 .form-input {
     width: 100%;
-    border: 1px solid #cdced6;
-    border-radius: 12px;
+    border-radius: var(--radius-md);
     height: 56px;
     font-size: 14px;
-    background-color: #fcfcfd;
+    background-color: var(--background-secondary);
     padding: 24px 16px 8px 16px;
     outline: none;
     transition: all 0.2s;
-}
-
-.form-input:focus {
-    ring: 2px solid #5b5bd6;
-    border-color: transparent;
 }
 
 .form-input-with-icon {
@@ -86,7 +82,7 @@
 .form-label {
     position: absolute;
     left: 16px;
-    color: #60646c;
+    color: var(--text-secondary);
     pointer-events: none;
     transition: all 0.2s;
     font-size: 14px;
@@ -109,19 +105,10 @@
     font-weight: 500;
     border-radius: 12px;
     background-color: var(--background-brand);
-    color: white;
+    color: var(--text-on-brand);
     border: none;
     cursor: pointer;
     transition: all 0.15s;
-}
-
-.btn-primary:hover {
-    background-color: #5753c6;
-}
-
-.btn-primary:active {
-    background-color: #4f4bc2;
-    transform: scale(0.95);
 }
 
 .btn-primary:disabled {
@@ -129,29 +116,27 @@
     cursor: not-allowed;
 }
 
-.btn-primary:disabled:hover {
-    background-color: #5b5bd6;
-}
-
 .btn-secondary {
     padding: 4px 8px;
     height: 32px;
-    background-color: #f0f0f3;
-    color: #1c2024;
+    background-color: var(--background-secondary);
+    color: var(--text-primary);
     font-size: 14px;
     font-weight: 500;
     border-radius: 8px;
     border: none;
     cursor: pointer;
     transition: all 0.15s;
+    box-shadow: none;
 }
 
 .btn-secondary:hover {
-    background-color: #e0e1e6;
-}
-
-.btn-secondary:active {
-    transform: scale(0.95);
+    background: linear-gradient(
+        to bottom,
+        color-mix(in srgb, var(--background-inverse) 20%, transparent),
+        color-mix(in srgb, var(--background-inverse) 20%, transparent)
+    );
+    box-shadow: none;
 }
 
 /* Toggle switch styles */
@@ -161,7 +146,7 @@
     height: 24px;
     width: 44px;
     align-items: center;
-    border-radius: 9999px;
+    border-radius: var(--radius-md);
     transition: all 0.2s;
     cursor: pointer;
     border: none;
@@ -178,20 +163,21 @@
 }
 
 .toggle-switch-disabled {
-    background-color: #e0e1e6;
+    background-color: var(--background-secondary);
 }
 
 .toggle-handle {
     display: inline-block;
     height: 16px;
     width: 16px;
-    border-radius: 50%;
-    background-color: white;
+    border-radius: var(--radius-md);
+    background-color: var(--text-secondary);
     transition: transform 0.2s;
 }
 
 .toggle-handle-enabled {
     transform: translateX(24px);
+    background-color: var(--text-on-brand);
 }
 
 .toggle-handle-disabled {
@@ -202,7 +188,7 @@
 .checkbox {
     width: 24px;
     height: 24px;
-    border-radius: 4px;
+    border-radius: var(--radius-md);
     border: 2px solid;
     display: flex;
     align-items: center;
@@ -218,7 +204,8 @@
 
 .checkbox-unchecked {
     background-color: transparent;
-    border-color: #cdced6;
+    background-color: var(--background-secondary);
+    border: 0px;
 }
 
 /* Chip styles */
@@ -226,15 +213,15 @@
     padding: 8px 16px;
     font-size: 14px;
     font-weight: 500;
-    border-radius: 12px;
     border: none;
     cursor: pointer;
     transition: all 0.15s;
+    border-radius: var(--radius-md);
 }
 
 .chip-selected {
     background-color: var(--background-brand);
-    color: white;
+    color: var(--text-on-brand);
 }
 
 .chip-selected:hover {
@@ -242,12 +229,8 @@
 }
 
 .chip-unselected {
-    background-color: #f0f0f3;
-    color: #1c2024;
-}
-
-.chip-unselected:hover {
-    background-color: #e0e1e6;
+    background-color: var(--background-secondary);
+    color: var(--text-primary);
 }
 
 .chip:active {
@@ -256,9 +239,9 @@
 
 /* Snackbar styles */
 .snackbar {
-    background-color: #edf2fe;
-    border: 1px solid var(--background-brand);
-    border-radius: 12px;
+    background-color: var(--background-secondary);
+    border: 1px solid var(--border-secondary);
+    border-radius: var(--radius-md);
     padding: 16px;
     display: flex;
     align-items: center;
@@ -281,54 +264,49 @@
 .snackbar-text {
     font-size: 14px;
     font-weight: 500;
-    color: var(--background-brand);
+    color: var(--text-primary);
 }
 
 .snackbar-button {
     font-size: 14px;
     font-weight: 500;
-    color: var(--background-brand);
+    color: var(--text-primary);
     background: none;
     border: none;
     cursor: pointer;
     transition: color 0.15s;
 }
 
-.snackbar-button:hover {
-    color: var(--background-brand);
-}
-
 /* Placeholder styles */
 .placeholder-shimmer {
-    background: linear-gradient(90deg, #f0f0f3 0%, #e0e1e6 50%, #f0f0f3 100%);
+    background: linear-gradient(
+        90deg,
+        var(--background-secondary) 0%,
+        var(--background-primary) 50%,
+        var(--background-secondary) 100%
+    );
     background-size: 200% 100%;
     border-radius: 8px;
 }
 
 /* Utility classes */
 .text-primary {
-    color: #1c2024;
+    color: var(--text-primary);
+    text-align: left;
 }
 
 .text-secondary {
-    color: #60646c;
-}
-
-.text-success {
-    color: #30a46c;
+    color: var(--text-secondary);
+    text-align: left;
 }
 
 .text-brand {
     color: var(--text-brand);
 }
 
-.bg-success {
-    background-color: #30a46c;
-}
-
 .divider {
     height: 1px;
-    background-color: #e0e1e6;
+    background-color: var(--border-secondary);
 }
 
 .icon-sm {
@@ -373,5 +351,6 @@
     .component-card {
         width: 100%;
         max-width: 100%;
+        overflow: hidden;
     }
 }

@@ -1,18 +1,20 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
+import { useState } from "react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 export function SignUpForm() {
-  const [fullName, setFullName] = useState("Jennifer Green")
-  const [alias, setAlias] = useState("Jen")
-  const [bio, setBio] = useState("")
+  const [fullName, setFullName] = useState("Jennifer Green");
+  const [alias, setAlias] = useState("Jen");
+  const [bio, setBio] = useState("");
 
   return (
     <Card className="bg-[#ffffff] border-[#e0e1e6] w-[414px]">
       <CardHeader className="px-4 py-4 pb-0">
-        <CardTitle className="text-[#1c2024] text-lg font-semibold">Sign up</CardTitle>
+        <CardTitle className="text-[#1c2024] text-lg font-semibold">
+          Sign up
+        </CardTitle>
       </CardHeader>
       <CardContent className="px-4 py-4 pt-6 space-y-6">
         {/* Progress Bar */}
@@ -23,7 +25,9 @@ export function SignUpForm() {
         {/* Name Fields Row */}
         <div className="grid grid-cols-2 gap-4">
           <div className="space-y-2">
-            <label className="text-sm text-[#1c2024] font-medium">Full name</label>
+            <label className="text-sm text-[#1c2024] font-medium">
+              Full name
+            </label>
             <input
               type="text"
               value={fullName}
@@ -56,7 +60,7 @@ export function SignUpForm() {
         <div className="flex gap-4 pt-4">
           <Button
             variant="outline"
-            className="flex-1 h-12 text-sm font-medium rounded-xl border-[#cdced6] text-[#1c2024] hover:bg-[#f8f9fa] active:scale-95 bg-transparent"
+            className="flex-1 h-12 text-sm font-medium rounded-xl border-[#cdced6] hover:bg-[#f8f9fa] active:scale-95 bg-transparent"
           >
             Previous
           </Button>
@@ -66,5 +70,5 @@ export function SignUpForm() {
         </div>
       </CardContent>
     </Card>
-  )
+  );
 }

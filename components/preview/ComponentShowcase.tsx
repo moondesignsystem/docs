@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import "@/styles/component-showcase.css";
+import { Button, Input, Chip } from "@heathmont/moon-core-tw";
 
 // Create Password Component
 export function CreatePassword() {
@@ -65,7 +66,7 @@ export function CreatePassword() {
             }}
           >
             <img
-              src={showPassword ? "/eye-off.svg" : "/eye.svg"}
+              src={showPassword ? "/eye-off-02.svg" : "/eye.svg"}
               alt={showPassword ? "Hide password" : "Show password"}
               style={{ width: "20px", height: "20px" }}
             />
@@ -82,16 +83,18 @@ export function CreatePassword() {
                 style={{
                   width: "24px",
                   height: "24px",
-                  borderRadius: "50%",
+                  borderRadius: "var(--radius-md)",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  backgroundColor: req.met ? "#30a46c" : "#e0e1e6",
+                  backgroundColor: req.met
+                    ? "var(--background-brand)"
+                    : "var(--background-secondary)",
                 }}
               >
                 <span
                   style={{
-                    color: req.met ? "white" : "#9ca3af",
+                    color: req.met ? "var(--text-on-brand)" : "#9ca3af",
                     fontSize: "12px",
                   }}
                 >
@@ -101,7 +104,7 @@ export function CreatePassword() {
               <span
                 style={{
                   fontSize: "14px",
-                  color: req.met ? "#30a46c" : "#60646c",
+                  color: req.met ? "var(--text-brand)" : "#60646c",
                 }}
               >
                 {req.text}
@@ -144,16 +147,23 @@ export function CreatePassword() {
             }}
           >
             <img
-              src={showRepeatPassword ? "/eye-off.svg" : "/eye.svg"}
+              src={showRepeatPassword ? "/eye-off-02.svg" : "/eye.svg"}
               alt={showRepeatPassword ? "Hide password" : "Show password"}
               style={{ width: "20px", height: "20px" }}
             />
           </button>
         </div>
-
-        <button disabled={!isFormValid} className="btn-primary">
+        <Button
+          style={{
+            background: "var(--background-brand)",
+            color: "var(--text-on-brand)",
+            borderRadius: "var(--radius-md)",
+          }}
+          size="xl"
+          disabled={!isFormValid}
+        >
           Continue
-        </button>
+        </Button>
       </div>
     </div>
   );
@@ -227,17 +237,20 @@ export function AgentList() {
     {
       id: 0,
       name: "Sarah Chen",
-      avatar: "/placeholder.svg?height=48&width=48",
+      avatar:
+        "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YXZhdGFyfGVufDB8fDB8fHww",
     },
     {
       id: 1,
       name: "Marcus Johnson",
-      avatar: "/placeholder.svg?height=48&width=48",
+      avatar:
+        "https://plus.unsplash.com/premium_photo-1671656349218-5218444643d8?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       id: 2,
       name: "Elena Rodriguez",
-      avatar: "/placeholder.svg?height=48&width=48",
+      avatar:
+        "https://plus.unsplash.com/premium_photo-1658527049634-15142565537a?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXZhdGFyfGVufDB8fDB8fHww",
     },
   ];
 
@@ -265,7 +278,8 @@ export function AgentList() {
                 transition: "background-color 0.15s",
               }}
               onMouseEnter={(e) =>
-                (e.currentTarget.style.backgroundColor = "#f8f9fa")
+                (e.currentTarget.style.backgroundColor =
+                  "var(--background-secondary)")
               }
               onMouseLeave={(e) =>
                 (e.currentTarget.style.backgroundColor = "transparent")
@@ -280,7 +294,7 @@ export function AgentList() {
                   style={{
                     width: "48px",
                     height: "48px",
-                    borderRadius: "50%",
+                    borderRadius: "var(--radius-md)",
                     objectFit: "cover",
                   }}
                 />
@@ -357,10 +371,15 @@ export function PlaceholderWithSnackbar() {
         >
           <div className="snackbar">
             <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-              <img
-                src="/info-filled.svg"
-                alt="Info"
-                style={{ width: "20px", height: "20px" }}
+              <div
+                style={{
+                  width: "20px",
+                  height: "20px",
+                  WebkitMask: "url('/info-filled.svg') no-repeat center",
+                  mask: "url('/info-filled.svg') no-repeat center",
+                  backgroundColor: "var(--text-primary)",
+                }}
+                aria-label="Info"
               />
               <span className="snackbar-text">Saved to watchlist</span>
             </div>
@@ -405,7 +424,8 @@ export function PaymentMethod() {
                 transition: "background-color 0.15s",
               }}
               onMouseEnter={(e) =>
-                (e.currentTarget.style.backgroundColor = "#f8f9fa")
+                (e.currentTarget.style.backgroundColor =
+                  "var(--background-secondary)")
               }
               onMouseLeave={(e) =>
                 (e.currentTarget.style.backgroundColor = "transparent")
@@ -430,12 +450,14 @@ export function PaymentMethod() {
                 style={{
                   width: "24px",
                   height: "24px",
-                  borderRadius: "50%",
+                  borderRadius: "var(--radius-md)",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
                   backgroundColor:
-                    selectedMethod === method.id ? "#30a46c" : "transparent",
+                    selectedMethod === method.id
+                      ? "var(--background-brand)"
+                      : "transparent",
                 }}
               >
                 {selectedMethod === method.id && (
@@ -465,7 +487,8 @@ export function PaymentMethod() {
             transition: "background-color 0.15s",
           }}
           onMouseEnter={(e) =>
-            (e.currentTarget.style.backgroundColor = "#f8f9fa")
+            (e.currentTarget.style.backgroundColor =
+              "var(--background-secondary)")
           }
           onMouseLeave={(e) =>
             (e.currentTarget.style.backgroundColor = "transparent")
@@ -520,7 +543,8 @@ export function TransactionList() {
                 transition: "background-color 0.15s",
               }}
               onMouseEnter={(e) =>
-                (e.currentTarget.style.backgroundColor = "#f8f9fa")
+                (e.currentTarget.style.backgroundColor =
+                  "var(--background-secondary)")
               }
               onMouseLeave={(e) =>
                 (e.currentTarget.style.backgroundColor = "transparent")
@@ -533,19 +557,26 @@ export function TransactionList() {
                   style={{
                     width: "40px",
                     height: "40px",
-                    backgroundColor: "#f0f0f3",
-                    borderRadius: "50%",
+                    backgroundColor: "var(--background-secondary)",
+                    borderRadius: "var(--radius-md)",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
                   }}
                 >
-                  <img
-                    src={transaction.icon || "/placeholder.svg"}
-                    alt={
+                  <span
+                    role="img"
+                    aria-label={
                       transaction.type === "transfer" ? "Transfer" : "Deposit"
                     }
-                    style={{ width: "16px", height: "16px" }}
+                    style={{
+                      display: "inline-block",
+                      width: "16px",
+                      height: "16px",
+                      backgroundColor: "var(--text-primary)",
+                      mask: `url(${transaction.icon || "/placeholder.svg"}) no-repeat center / contain`,
+                      WebkitMask: `url(${transaction.icon || "/placeholder.svg"}) no-repeat center / contain`,
+                    }}
                   />
                 </div>
                 <div style={{ display: "flex", flexDirection: "column" }}>
@@ -569,14 +600,6 @@ export function TransactionList() {
                 >
                   {transaction.amount}
                 </span>
-                <div
-                  style={{
-                    width: "8px",
-                    height: "8px",
-                    backgroundColor: "#30a46c",
-                    borderRadius: "50%",
-                  }}
-                ></div>
               </div>
             </div>
             {index < transactions.length - 1 && (
@@ -678,11 +701,6 @@ export function CheckoutDetails() {
           }}
         >
           <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-            <img
-              src="/location.svg"
-              alt="Location"
-              style={{ width: "24px", height: "24px" }}
-            />
             <div style={{ display: "flex", flexDirection: "column" }}>
               <span className="text-secondary" style={{ fontSize: "12px" }}>
                 Deliver to
@@ -695,7 +713,18 @@ export function CheckoutDetails() {
               </span>
             </div>
           </div>
-          <button className="btn-secondary">Change</button>
+          <Button
+            variant="outline"
+            style={{
+              color: "var(--text-primary)",
+              background: "var(--background-secondary)",
+              boxShadow: "none",
+              borderRadius: "var(--radius-md)",
+            }}
+            size="sm"
+          >
+            Change
+          </Button>
         </div>
 
         <div
@@ -718,10 +747,30 @@ export function CheckoutDetails() {
               Apple Pay
             </span>
           </div>
-          <button className="btn-secondary">Change</button>
+          <Button
+            variant="outline"
+            style={{
+              color: "var(--text-primary)",
+              background: "var(--background-secondary)",
+              boxShadow: "none",
+              borderRadius: "var(--radius-md)",
+            }}
+            size="sm"
+          >
+            Change
+          </Button>
         </div>
 
-        <button className="btn-primary">Checkout</button>
+        <Button
+          style={{
+            background: "var(--background-brand)",
+            color: "var(--text-on-brand)",
+            borderRadius: "var(--radius-md)",
+          }}
+          size="xl"
+        >
+          Checkout
+        </Button>
       </div>
     </div>
   );
@@ -744,25 +793,6 @@ export function SignUpForm() {
       >
         <div
           style={{
-            width: "100%",
-            height: "8px",
-            backgroundColor: "#e0e1e6",
-            borderRadius: "4px",
-            overflow: "hidden",
-          }}
-        >
-          <div
-            style={{
-              width: "60%",
-              height: "100%",
-              backgroundColor: "#5b5bd6",
-              borderRadius: "4px",
-            }}
-          ></div>
-        </div>
-
-        <div
-          style={{
             display: "grid",
             gridTemplateColumns: "1fr 1fr",
             gap: "16px",
@@ -781,13 +811,12 @@ export function SignUpForm() {
               onChange={(e) => setFullName(e.target.value)}
               style={{
                 width: "100%",
-                border: "1px solid #cdced6",
-                borderRadius: "12px",
+                borderRadius: "var(--radius-md)",
                 height: "48px",
                 fontSize: "14px",
-                backgroundColor: "#fcfcfd",
                 padding: "0 16px",
                 outline: "none",
+                background: "var(--background-secondary)",
               }}
             />
           </div>
@@ -804,13 +833,12 @@ export function SignUpForm() {
               onChange={(e) => setAlias(e.target.value)}
               style={{
                 width: "100%",
-                border: "1px solid #cdced6",
-                borderRadius: "12px",
+                borderRadius: "var(--radius-md)",
                 height: "48px",
                 fontSize: "14px",
-                backgroundColor: "#fcfcfd",
                 padding: "0 16px",
                 outline: "none",
+                background: "var(--background-secondary)",
               }}
             />
           </div>
@@ -828,40 +856,42 @@ export function SignUpForm() {
             onChange={(e) => setBio(e.target.value)}
             style={{
               width: "100%",
-              border: "1px solid #cdced6",
-              borderRadius: "12px",
+              borderRadius: "var(--radius-md)",
               height: "80px",
               fontSize: "14px",
-              backgroundColor: "#fcfcfd",
               padding: "12px 16px",
               resize: "none",
               outline: "none",
+              background: "var(--background-secondary)",
             }}
           />
         </div>
 
         <div style={{ display: "flex", gap: "16px", paddingTop: "16px" }}>
-          <button
+          <Button
+            variant="outline"
+            size="xl"
             style={{
+              background: "var(--background-secondary)",
+              color: "var(--text-primary)",
               flex: 1,
-              height: "48px",
-              fontSize: "14px",
-              fontWeight: "500",
-              borderRadius: "12px",
-              border: "1px solid #cdced6",
-              color: "#1c2024",
-              backgroundColor: "transparent",
-              cursor: "pointer",
+              borderRadius: "var(--radius-md)",
+              boxShadow: "none",
             }}
           >
             Previous
-          </button>
-          <button
-            className="btn-primary"
-            style={{ flex: 1, height: "48px", fontSize: "14px" }}
+          </Button>
+          <Button
+            size="xl"
+            style={{
+              background: "var(--background-brand)",
+              color: "var(--text-on-brand)",
+              flex: 1,
+              borderRadius: "var(--radius-md)",
+            }}
           >
             Next
-          </button>
+          </Button>
         </div>
       </div>
     </div>
@@ -878,7 +908,7 @@ export function SortChips() {
   const chips = [
     { id: "best-value", label: "Best value" },
     { id: "popularity", label: "Popularity" },
-    { id: "price", label: "Price (low to high)" },
+    { id: "price", label: "Price" },
     { id: "rating", label: "Rating" },
     { id: "recently-added", label: "Recently added" },
   ];
@@ -897,7 +927,7 @@ export function SortChips() {
         <h2 className="component-title">Sort by</h2>
       </div>
       <div className="component-content-with-header">
-        <div style={{ display: "flex", flexWrap: "wrap", gap: "12px" }}>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "4px" }}>
           {chips.map((chip) => (
             <button
               key={chip.id}
