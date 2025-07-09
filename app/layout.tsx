@@ -21,7 +21,7 @@ const monoFont = DM_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Moon Design System - Template",
+  title: "Moon Design System",
   metadataBase: new URL("https://moon.io/"),
   description:
     "Moon is a complete design system built to help product teams across the world build better digital experiences. Whether you're a designer or a developer, this documentation includes all the necessary resources you'll need to start building your next great idea.",

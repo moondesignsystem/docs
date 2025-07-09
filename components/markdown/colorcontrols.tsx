@@ -12,6 +12,10 @@ export default function ColorControls() {
       document.documentElement.style.removeProperty("--background-primary");
       document.documentElement.style.removeProperty("--background-secondary");
       document.documentElement.style.removeProperty("--background-brand");
+      document.documentElement.style.removeProperty(
+        "--background-brand-subtle",
+      );
+      document.documentElement.style.removeProperty("--text-primary");
       document.documentElement.style.removeProperty("--text-brand");
       document.documentElement.style.removeProperty("--text-on-brand");
     } else if (selectedComboId === "green") {
@@ -26,6 +30,14 @@ export default function ColorControls() {
       document.documentElement.style.setProperty(
         "--background-brand",
         "var(--theme-2-background-brand)",
+      );
+      document.documentElement.style.setProperty(
+        "--background-brand-subtle",
+        "var(--theme-2-background-brand-subtle)",
+      );
+      document.documentElement.style.setProperty(
+        "--text-primary",
+        "var(--theme-2-text-primary)",
       );
       document.documentElement.style.setProperty(
         "--text-brand",
@@ -47,6 +59,14 @@ export default function ColorControls() {
       document.documentElement.style.setProperty(
         "--background-brand",
         "var(--theme-3-background-brand)",
+      );
+      document.documentElement.style.setProperty(
+        "--background-brand-subtle",
+        "var(--theme-3-background-brand-subtle)",
+      );
+      document.documentElement.style.setProperty(
+        "--text-primary",
+        "var(--theme-3-text-primary)",
       );
       document.documentElement.style.setProperty(
         "--text-brand",
