@@ -17,13 +17,10 @@ export default function Quickstart({ items }: { items: QuickstartItem[] }) {
           href={item.href}
           className={buttonVariants({
             variant: "secondary",
-            className: "sm:py-16 py-16 px-24 w-full flex flex-col",
+            className: "sm:py-32 px-24 w-full flex flex-col no-underline",
           })}
         >
-          <span className="md:text-lg font-bold">{item.title}</span>
-          <span className="flex items-center text-secondary md:text-lg pt-2 font-normal">
-            {item.description}
-          </span>
+          <span className="md:text-4xl font-bold">{item.title}</span>
         </Link>
       ))}
     </div>

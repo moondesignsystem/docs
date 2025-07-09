@@ -10,7 +10,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Moon Design System - Knowledgebase",
+  title: "Knowledgebase of Moon Design System",
 };
 
 export default async function KnowledgebaseIndexPage() {

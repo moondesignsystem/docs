@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import "@/styles/component-showcase.css";
-import { Button, Input, Chip } from "@heathmont/moon-core-tw";
+import { Button } from "@heathmont/moon-core-tw";
 
 // Create Password Component
 export function CreatePassword() {

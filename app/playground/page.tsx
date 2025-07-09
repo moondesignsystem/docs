@@ -3,6 +3,12 @@ import path from "path";
 import { compileMDX } from "next-mdx-remote/rsc";
 import MoonComponents from "../moon-components/moon-components";
 
+export const metadata = {
+  title: "Playground for Moon Design System",
+  description:
+    "Explore and interact with Moon Design System components in our playground.",
+};
+
 export default async function PlaygroundPage() {
   const filePath = path.join(process.cwd(), "contents/playground/index.mdx");
   let source = "";

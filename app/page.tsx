@@ -1,8 +1,13 @@
-"use client";
 import { buttonVariants } from "@/components/ui/button";
 import ColorControls from "@/components/markdown/colorcontrols";
 import ComponentShowcase from "@/components/preview/ComponentShowcase";
 import Link from "next/link";
+
+export const metadata = {
+  title: "Moon Design System - Build the best digital experiences",
+  description:
+    "Moon Design System is an open-source, complete design system built to help product teams across the world build better digital experiences.",
+};
 
 export default function Home() {
   return (
