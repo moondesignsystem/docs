@@ -1,8 +1,13 @@
 "use client";
 
-import { useState } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from "@/components/preview/ui/card";
 import { Button } from "@/components/ui/button";
+import { useState } from "react";
 
 export function SignUpForm() {
   const [fullName, setFullName] = useState("Jennifer Green");

@@ -4,7 +4,7 @@ export type EachRoute = {
   title: string;
   href: string;
   noLink?: true; // noLink will create a route segment (section) but cannot be navigated
-  type?: "static" | "collapsible";
+  type?: "static" | "collapsible" | "expanded";
   items?: EachRoute[];
   tag?: string;
 };

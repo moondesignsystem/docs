@@ -1,28 +1,27 @@
+import { promises as fs } from "fs";
+import matter from "gray-matter";
 import { compileMDX } from "next-mdx-remote/rsc";
 import path from "path";
-import { promises as fs } from "fs";
-import remarkGfm from "remark-gfm";
-import rehypePrism from "rehype-prism-plus";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
-import rehypeSlug from "rehype-slug";
 import rehypeCodeTitles from "rehype-code-titles";
-import { page_routes, ROUTES } from "./routes-config";
+import rehypePrism from "rehype-prism-plus";
+import rehypeSlug from "rehype-slug";
+import remarkGfm from "remark-gfm";
 import { visit } from "unist-util-visit";
-import matter from "gray-matter";
+import { page_routes, ROUTES } from "./routes-config";
 import { getIconName, hasSupportedExtension } from "./utils";
 
 // custom components imports
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import Pre from "@/components/markdown/pre";
-import Note from "@/components/markdown/note";
-import { Stepper, StepperItem } from "@/components/markdown/stepper";
+import ColorControls from "@/components/markdown/colorcontrols";
+import Files from "@/components/markdown/files";
 import Image from "@/components/markdown/image";
 import Link from "@/components/markdown/link";
+import Note from "@/components/markdown/note";
 import Outlet from "@/components/markdown/outlet";
-import Files from "@/components/markdown/files";
-import ColorControls from "@/components/markdown/colorcontrols";
+import Pre from "@/components/markdown/pre";
 import Quickstart from "@/components/markdown/quickstart";
-import FooterWrapper from "@/components/ui/footer-wrapper";
+import { Stepper, StepperItem } from "@/components/markdown/stepper";
+import { FooterWrapper } from "@/components/ui/footer-wrapper";
 import {
   Table,
   TableBody,
@@ -31,6 +30,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 // add custom components
 const components = {
@@ -158,14 +158,14 @@ export async function getAllChilds(pathString: string) {
         "/contents/docs/",
         prevHref,
         it.href,
-        "index.mdx",
+        "index.mdx"
       );
       const raw = await fs.readFile(totalPath, "utf-8");
       return {
         ...justGetFrontmatterFromMD<BaseMdxFrontmatter>(raw),
         href: `/docs${prevHref}${it.href}`,
       };
-    }),
+    })
   );
 }
 
@@ -221,14 +221,14 @@ export async function getAllBlogsFrontmatter() {
       if (!file.endsWith(".mdx")) return undefined;
       const filepath = path.join(
         process.cwd(),
-        `/contents/knowledgebase/${file}`,
+        `/contents/knowledgebase/${file}`
       );
       const rawMdx = await fs.readFile(filepath, "utf-8");
       return {
         ...justGetFrontmatterFromMD<BlogMdxFrontmatter>(rawMdx),
         slug: file.split(".")[0],
       };
-    }),
+    })
   );
   return uncheckedRes.filter((it) => !!it) as (BlogMdxFrontmatter & {
     slug: string;
@@ -239,7 +239,7 @@ export async function getCompiledBlogForSlug(slug: string) {
   const blogFile = path.join(
     process.cwd(),
     "/contents/knowledgebase/",
-    `${slug}.mdx`,
+    `${slug}.mdx`
   );
   try {
     const rawMdx = await fs.readFile(blogFile, "utf-8");
@@ -253,7 +253,7 @@ export async function getBlogFrontmatter(slug: string) {
   const blogFile = path.join(
     process.cwd(),
     "/contents/knowledgebase/",
-    `${slug}.mdx`,
+    `${slug}.mdx`
   );
   try {
     const rawMdx = await fs.readFile(blogFile, "utf-8");
@@ -283,7 +283,7 @@ function rehypeCodeTitlesWithLogo() {
       ) {
         const titleTextNode = node.children.find(
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          (child: any) => child.type === "text",
+          (child: any) => child.type === "text"
         );
         if (!titleTextNode) return;
 

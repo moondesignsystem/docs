@@ -1,10 +1,18 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from "@/components/preview/ui/card";
+import { useState } from "react";
 
 export function SortChips() {
-  const [selectedChips, setSelectedChips] = useState<string[]>(["best-value", "popularity"])
+  const [selectedChips, setSelectedChips] = useState<string[]>([
+    "best-value",
+    "popularity",
+  ]);
 
   const chips = [
     { id: "best-value", label: "Best value" },
@@ -12,16 +20,22 @@ export function SortChips() {
     { id: "price", label: "Price (low to high)" },
     { id: "rating", label: "Rating" },
     { id: "recently-added", label: "Recently added" },
-  ]
+  ];
 
   const toggleChip = (chipId: string) => {
-    setSelectedChips((prev) => (prev.includes(chipId) ? prev.filter((id) => id !== chipId) : [...prev, chipId]))
-  }
+    setSelectedChips((prev) =>
+      prev.includes(chipId)
+        ? prev.filter((id) => id !== chipId)
+        : [...prev, chipId]
+    );
+  };
 
   return (
     <Card className="bg-[#ffffff] border-[#e0e1e6] w-[414px]">
       <CardHeader className="px-4 py-4 pb-0">
-        <CardTitle className="text-[#1c2024] text-lg font-semibold">Sort by</CardTitle>
+        <CardTitle className="text-[#1c2024] text-lg font-semibold">
+          Sort by
+        </CardTitle>
       </CardHeader>
       <CardContent className="px-4 py-4 pt-6">
         <div className="flex flex-wrap gap-3">
@@ -41,5 +55,5 @@ export function SortChips() {
         </div>
       </CardContent>
     </Card>
-  )
+  );
 }

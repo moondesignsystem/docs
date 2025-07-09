@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import { Card, CardContent } from "@/components/ui/card"
-import { ArrowUpRight, Plus } from "lucide-react"
+import { Card, CardContent } from "@/components/preview/ui/card";
+import { ArrowUpRight, Plus } from "lucide-react";
 
 export function TransactionList() {
   const transactions = [
@@ -21,7 +21,7 @@ export function TransactionList() {
       amount: "€50.00",
       icon: <Plus className="h-4 w-4 text-[#60646c]" />,
     },
-  ]
+  ];
 
   return (
     <Card className="bg-[#ffffff] border-[#e0e1e6] w-[414px]">
@@ -34,19 +34,27 @@ export function TransactionList() {
                   {transaction.icon}
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-sm text-[#1c2024] font-medium">{transaction.title}</span>
-                  <span className="text-xs text-[#60646c]">{transaction.time}</span>
+                  <span className="text-sm text-[#1c2024] font-medium">
+                    {transaction.title}
+                  </span>
+                  <span className="text-xs text-[#60646c]">
+                    {transaction.time}
+                  </span>
                 </div>
               </div>
               <div className="flex items-center gap-2">
-                <span className="text-sm text-[#1c2024] font-medium">{transaction.amount}</span>
+                <span className="text-sm text-[#1c2024] font-medium">
+                  {transaction.amount}
+                </span>
                 <div className="w-2 h-2 bg-[#30a46c] rounded-full"></div>
               </div>
             </div>
-            {index < transactions.length - 1 && <div className="h-px bg-[#e0e1e6] mx-4" />}
+            {index < transactions.length - 1 && (
+              <div className="h-px bg-[#e0e1e6] mx-4" />
+            )}
           </div>
         ))}
       </CardContent>
     </Card>
-  )
+  );
 }
