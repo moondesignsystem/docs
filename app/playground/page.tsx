@@ -1,6 +1,6 @@
 import fs from "fs";
-import path from "path";
 import { compileMDX } from "next-mdx-remote/rsc";
+import path from "path";
 import MoonComponents from "../moon-components/moon-components";
 
 export const metadata = {

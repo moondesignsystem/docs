@@ -1,12 +1,17 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from "@/components/preview/ui/card";
+import { useState } from "react";
 
 export function NotificationPreferences() {
-  const [systemNotifications, setSystemNotifications] = useState(true)
-  const [newMessages, setNewMessages] = useState(false)
-  const [newPosts, setNewPosts] = useState(false)
+  const [systemNotifications, setSystemNotifications] = useState(true);
+  const [newMessages, setNewMessages] = useState(false);
+  const [newPosts, setNewPosts] = useState(false);
 
   const toggles = [
     {
@@ -24,12 +29,14 @@ export function NotificationPreferences() {
       enabled: newPosts,
       onChange: setNewPosts,
     },
-  ]
+  ];
 
   return (
     <Card className="bg-[#ffffff] border-[#e0e1e6] w-[414px]">
       <CardHeader className="px-4 py-4 pb-0">
-        <CardTitle className="text-[#1c2024] text-lg font-semibold">Notification preferences</CardTitle>
+        <CardTitle className="text-[#1c2024] text-lg font-semibold">
+          Notification preferences
+        </CardTitle>
       </CardHeader>
       <CardContent className="px-4 py-4 pt-6 space-y-6">
         {toggles.map((toggle, index) => (
@@ -51,5 +58,5 @@ export function NotificationPreferences() {
         ))}
       </CardContent>
     </Card>
-  )
+  );
 }

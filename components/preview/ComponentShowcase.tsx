@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import "@/styles/component-showcase.css";
 import { Button } from "@heathmont/moon-core-tw";
+import { useEffect, useState } from "react";
 
 // Create Password Component
 export function CreatePassword() {
@@ -44,7 +44,9 @@ export function CreatePassword() {
           />
           <label
             htmlFor="password"
-            className={`form-label ${passwordFocused || password ? "form-label-focused" : ""}`}
+            className={`form-label ${
+              passwordFocused || password ? "form-label-focused" : ""
+            }`}
           >
             Password
           </label>
@@ -125,7 +127,11 @@ export function CreatePassword() {
           />
           <label
             htmlFor="repeat-password"
-            className={`form-label ${repeatPasswordFocused || repeatPassword ? "form-label-focused" : ""}`}
+            className={`form-label ${
+              repeatPasswordFocused || repeatPassword
+                ? "form-label-focused"
+                : ""
+            }`}
           >
             Repeat password
           </label>
@@ -216,10 +222,18 @@ export function NotificationPreferences() {
             </span>
             <button
               onClick={() => toggle.onChange(!toggle.enabled)}
-              className={`toggle-switch ${toggle.enabled ? "toggle-switch-enabled" : "toggle-switch-disabled"}`}
+              className={`toggle-switch ${
+                toggle.enabled
+                  ? "toggle-switch-enabled"
+                  : "toggle-switch-disabled"
+              }`}
             >
               <span
-                className={`toggle-handle ${toggle.enabled ? "toggle-handle-enabled" : "toggle-handle-disabled"}`}
+                className={`toggle-handle ${
+                  toggle.enabled
+                    ? "toggle-handle-enabled"
+                    : "toggle-handle-disabled"
+                }`}
               />
             </button>
           </div>
@@ -258,7 +272,7 @@ export function AgentList() {
     setSelectedAgents((prev) =>
       prev.includes(agentId)
         ? prev.filter((id) => id !== agentId)
-        : [...prev, agentId],
+        : [...prev, agentId]
     );
   };
 
@@ -306,7 +320,11 @@ export function AgentList() {
                 </span>
               </div>
               <div
-                className={`checkbox ${selectedAgents.includes(agent.id) ? "checkbox-checked" : "checkbox-unchecked"}`}
+                className={`checkbox ${
+                  selectedAgents.includes(agent.id)
+                    ? "checkbox-checked"
+                    : "checkbox-unchecked"
+                }`}
               >
                 {selectedAgents.includes(agent.id) && (
                   <span style={{ color: "white", fontSize: "12px" }}>✓</span>
@@ -574,8 +592,12 @@ export function TransactionList() {
                       width: "16px",
                       height: "16px",
                       backgroundColor: "var(--text-primary)",
-                      mask: `url(${transaction.icon || "/placeholder.svg"}) no-repeat center / contain`,
-                      WebkitMask: `url(${transaction.icon || "/placeholder.svg"}) no-repeat center / contain`,
+                      mask: `url(${
+                        transaction.icon || "/placeholder.svg"
+                      }) no-repeat center / contain`,
+                      WebkitMask: `url(${
+                        transaction.icon || "/placeholder.svg"
+                      }) no-repeat center / contain`,
                     }}
                   />
                 </div>
@@ -917,7 +939,7 @@ export function SortChips() {
     setSelectedChips((prev) =>
       prev.includes(chipId)
         ? prev.filter((id) => id !== chipId)
-        : [...prev, chipId],
+        : [...prev, chipId]
     );
   };
 
@@ -932,7 +954,11 @@ export function SortChips() {
             <button
               key={chip.id}
               onClick={() => toggleChip(chip.id)}
-              className={`chip ${selectedChips.includes(chip.id) ? "chip-selected" : "chip-unselected"}`}
+              className={`chip ${
+                selectedChips.includes(chip.id)
+                  ? "chip-selected"
+                  : "chip-unselected"
+              }`}
             >
               {chip.label}
             </button>

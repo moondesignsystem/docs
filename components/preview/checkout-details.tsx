@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import { Card, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
+import { Card, CardContent } from "@/components/preview/ui/card";
+import { Button } from "@/components/ui/button";
 
 export function CheckoutDetails() {
   return (
@@ -13,7 +13,9 @@ export function CheckoutDetails() {
             <img src="/location.svg" alt="Location" className="w-6 h-6" />
             <div className="flex flex-col">
               <span className="text-xs text-[#60646c]">Deliver to</span>
-              <span className="text-sm text-[#1c2024] font-medium">14 Church Road, London</span>
+              <span className="text-sm text-[#1c2024] font-medium">
+                14 Church Road, London
+              </span>
             </div>
           </div>
           <button className="px-2 h-8 bg-[#f0f0f3] hover:bg-[#e0e1e6] text-sm text-[#1c2024] font-medium rounded-lg transition-colors duration-150 active:scale-95">
@@ -24,8 +26,14 @@ export function CheckoutDetails() {
         {/* Payment Section */}
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <img src="/apple-pay-icon.svg" alt="Apple Pay" className="w-8 h-6" />
-            <span className="text-sm text-[#1c2024] font-medium">Apple Pay</span>
+            <img
+              src="/apple-pay-icon.svg"
+              alt="Apple Pay"
+              className="w-8 h-6"
+            />
+            <span className="text-sm text-[#1c2024] font-medium">
+              Apple Pay
+            </span>
           </div>
           <button className="px-2 h-8 bg-[#f0f0f3] hover:bg-[#e0e1e6] text-sm text-[#1c2024] font-medium rounded-lg transition-colors duration-150 active:scale-95">
             Change
@@ -38,5 +46,5 @@ export function CheckoutDetails() {
         </Button>
       </CardContent>
     </Card>
-  )
+  );
 }

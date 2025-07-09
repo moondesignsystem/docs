@@ -1,15 +1,15 @@
-import { EachRoute } from "@/lib/routes-config";
-import Anchor from "./anchor";
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
-import { cn } from "@/lib/utils";
 import { SheetClose } from "@/components/ui/sheet";
+import { EachRoute } from "@/lib/routes-config";
+import { cn } from "@/lib/utils";
 import { ChevronDown, ChevronRight } from "lucide-react";
-import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
+import Anchor from "./anchor";
 
 export default function SubLink({
   title,
@@ -98,7 +98,7 @@ export default function SubLink({
         <div
           className={cn(
             "flex flex-col items-start text-base dark:text-stone-300/85 text-stone-800 ml-0.5 mt-2.5 gap-3",
-            level > 0 && "pl-4 border-l ml-1.5",
+            level > 0 && "pl-4 border-l ml-1.5"
           )}
         >
           {items.map((item) => {
@@ -136,7 +136,7 @@ export default function SubLink({
           <div
             className={cn(
               "flex flex-col items-start text-base dark:text-stone-300/85 text-stone-800 ml-0.5 mt-2.5 gap-3",
-              level > 0 && "pl-4 border-l ml-1.5",
+              level > 0 && "pl-4 border-l ml-1.5"
             )}
           >
             {items?.map((innerLink) => {
