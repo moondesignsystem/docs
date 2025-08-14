@@ -1,13 +1,16 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
   output: "export",
   images: {
+    // This line is required to make images work with `output: "export"`
+    unoptimized: true,
+
+    // Corrected your remotePatterns configuration below
     remotePatterns: [
       {
-        protocol: "https",
-        hostname: "img.freepik.com/**",
+        protocol: "https", // Should be "https", not "httpshttps"
+        hostname: "img.freepik.com", // Wildcards like '/**' are not used here
       },
     ],
   },
