@@ -1,0 +1,68 @@
+---
+title: React
+description: Quickstart your project with our React library
+---
+
+## Install components
+
+```bash
+    # Using npm
+    npm install @heathmont/moon-core-tw
+
+    # Using pnpm
+    pnpm install @heathmont/moon-core-tw
+
+    # Using yarn
+    yarn add @heathmont/moon-core-tw
+```
+
+To use components:
+
+  ```tsx
+  import { Button, Input, Modal } from "@heathmont/moon-core-tw/lib";
+
+  const App = () => {
+    const [open, setOpen] = useState(false);
+
+    return (
+        <div>
+          <Input placeholder="Enter text..." />
+          <Button onClick={() => setOpen(true)}>Open Modal</Button>
+          {open && (
+            <Modal onClose={() => setOpen(false)}>
+              <p>This is a modal!</p>
+            </Modal>
+          )}
+        </div>
+      );
+    };
+
+   export default App;
+    ```
+
+## Install themes
+
+```bash
+# Using npm
+npm install @heathmont/moon-themes-tw
+
+# Using pnpm
+pnpm install @heathmont/moon-themes-tw
+
+# Using yarn
+yarn @heathmont/moon-themes-tw
+```
+
+To use themes:
+
+```bash
+@import "@heathmont/moon-themes-tw/lib/moon.css";
+```
+
+## Resources
+
+- React components, https://react.moon.io/?path=/docs/installation-guide--docs
+- React Core npm package, https://www.npmjs.com/package/@heathmont/moon-core-tw
+- React Themes npm package, https://www.npmjs.com/package/@heathmont/moon-themes-tw
+- React SearchCmdk npm package, https://www.npmjs.com/package/@heathmont/moon-cmdk-tw
+- React Table npm package, https://www.npmjs.com/package/@heathmont/moon-table-v8-tw

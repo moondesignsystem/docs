@@ -1,0 +1,84 @@
+---
+title: CSS
+description: Quickstart your project with our CSS library
+---
+
+## Installation
+
+- To get variables from Figma we use Variables REST API endpoints
+- Create `.env` file and add the necessary information:
+
+    ```bash
+    # Personal access token
+    FIGMA_TOKEN=figd_personal-access-token
+
+    # File ID (figma.com/design/file-id/file-name)
+    FIGMA_FILE=your-brand:BZiHkvF7pXFHrFH8P0cG2T
+    FIGMA_COMPONENTS_FILE=your-brand:S3q1SkVngbwHuwpxHKCsgtJj
+
+    # Installation directory (optional)
+    MOON_OUTPUT_DIR=assets
+    ```
+
+## Usage
+
+- Installation, this generates `css/your-brand-base.css` with all CSS variables.
+
+    ```
+    npx @heathmont/moon-css
+    ```
+
+- Generate Tailwind preset, this adds `js/your-brand-base-preset.js` for Tailwind utility classes (optional).
+
+    ```
+    npx @heathmont/moon-css --with-preset
+    ```
+
+- Include pre-built components, this generates `js/moon-components.js` with ready-to-use component classes (optional).
+
+    ```
+    npx @heathmont/moon-css --with-preset --with-components
+    ```
+
+## Project structure
+
+    <Files
+      items={[
+        {
+          type: "folder",
+          name: "moon-css",
+          isOpen: true,
+          children: [
+            {
+              type: "folder",
+              name: "css",
+              isOpen: true,
+              children: [
+                {
+                  type: "file", name: "your-brand-base.css"
+                },
+              ],
+            },
+            {
+              type: "folder",
+              name: "js",
+              isOpen: true,
+              children: [
+                {
+                  type: "file", name: "your-brand-base-preset.js"
+                },
+                {
+                  type: "file", name: "moon-components.js"
+                },
+              ],
+            },
+          ],
+        },
+      ]}
+    />
+
+## Explore further
+
+- Moon UI Storybook documentation, https://ui.moon.io/
+- npm package, https://npmjs.com/package/@heathmont/moon-css
+- Figma REST API, https://figma.com/developers/api#variables

@@ -28,11 +28,21 @@ export default function SubLink({
     if (path == href || path.includes(href)) setIsOpen(true);
   }, [href, path]);
 
+  // ## CHANGE 1: Determine the target link destination ##
+  // This new variable decides what the link's URL should be.
+  const targetHref = !noLink
+    ? href // If it's a normal link, use its own href.
+    : items?.length > 0
+      ? `${href}${items[0].href}` // If noLink is true and it has children, use the first child's href.
+      : undefined; // If noLink is true and it has NO children, it has no link.
+
+  // This component represents the clickable link element.
+  // It now uses `targetHref` instead of the original `href`.
   const Comp = (
     <Anchor
       className="text-primary"
       activeClassName="text-primary dark:font-bold font-bold"
-      href={href}
+      href={targetHref!} // Use the new targetHref
     >
       {title}
       {tag && (
@@ -43,7 +53,9 @@ export default function SubLink({
     </Anchor>
   );
 
-  const titleOrLink = !noLink ? (
+  // ## CHANGE 2: Decide whether to render a link or static text ##
+  // The logic now checks if a `targetHref` exists.
+  const titleOrLink = targetHref ? (
     isSheet ? (
       <SheetClose asChild>{Comp}</SheetClose>
     ) : (
@@ -64,6 +76,7 @@ export default function SubLink({
     return <div className="flex flex-col">{titleOrLink}</div>;
   }
 
+  // ... the rest of your component remains the same
   if (type === "static") {
     return (
       <div className="flex flex-col gap-2 mt-6">
@@ -98,7 +111,7 @@ export default function SubLink({
         <div
           className={cn(
             "flex flex-col items-start text-base dark:text-stone-300/85 text-stone-800 ml-0.5 mt-2.5 gap-3",
-            level > 0 && "pl-4 border-l ml-1.5"
+            level > 0 && "pl-4 border-l ml-1.5",
           )}
         >
           {items.map((item) => {
@@ -136,7 +149,7 @@ export default function SubLink({
           <div
             className={cn(
               "flex flex-col items-start text-base dark:text-stone-300/85 text-stone-800 ml-0.5 mt-2.5 gap-3",
-              level > 0 && "pl-4 border-l ml-1.5"
+              level > 0 && "pl-4 border-l ml-1.5",
             )}
           >
             {items?.map((innerLink) => {

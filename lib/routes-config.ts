@@ -18,7 +18,18 @@ export const ROUTES: EachRoute[] = [
     items: [
       { title: "Introduction", href: "/introduction" },
       { title: "Designer", href: "/designer" },
-      { title: "Developer", href: "/developer" },
+      {
+        title: "Developer",
+        href: "/developer",
+        noLink: true,
+        type: "expanded",
+        items: [
+          { title: "CSS", href: "/css" },
+          { title: "React", href: "/react" },
+          { title: "LiveView", href: "/liveview" },
+          { title: "Fluter", href: "/flutter" },
+        ],
+      },
     ],
   },
   {
@@ -119,6 +130,7 @@ export const ROUTES: EachRoute[] = [
         title: "Navigation",
         href: "/navigation",
         noLink: true,
+        type: "expanded",
         items: [
           { title: "Menu", href: "/menu" },
           { title: "Breadcrumb", href: "/breadcrumb" },

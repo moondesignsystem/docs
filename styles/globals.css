@@ -15,19 +15,46 @@
 
 @layer base {
     :root {
-        --background-primary: #ffffff;
-        --background-secondary: #f0f0f3;
-        --background-brand: #5b5bd6;
-        --background-brand-subtle: #e6e7ff;
-        --background-inverse: #111113;
-        --border-primary: #e0e1e6;
-        --border-secondary: #d9d9e0;
-        --border-brand: #5b5bd6;
-        --text-primary: #1c2024;
-        --text-secondary: #60646c;
-        --text-brand: #5b5bd6;
-        --text-on-brand: #f2f2f2;
-        --text-positive: #30a46c;
+        --background-primary: var(--gray-1);
+        --background-secondary: var(--gray-2);
+        --background-tertiary: var(--gray-3);
+        --background-inverse: var(--gray-12);
+        --background-brand: var(--mystic-indigo-9);
+        --background-brand-subtle: var(--mystic-indigo-4);
+        --background-brand-alpha: var(--mystic-indigo-alpha-12);
+        --background-positive: var(--green-9);
+        --background-positive-subtle: var(--green-4);
+        --background-caution: var(--orange-9);
+        --background-caution-subtle: var(--orange-4);
+        --background-negative: var(--red-9);
+        --background-negative-subtle: var(--red-4);
+        --background-info: var(--indigo-9);
+        --background-info-subtle: var(--indigo-4);
+        --background-hover: var(--gray-alpha-8);
+        --text-primary: var(--gray-12);
+        --text-secondary: var(--gray-11);
+        --text-inverse: var(--gray-1);
+        --text-brand: var(--mystic-indigo-9);
+        --text-brand-subtle: var(--mystic-indigo-4);
+        --text-brand-strong: var(--mystic-indigo-12);
+        --text-on-brand: var(--white);
+        --text-positive: var(--green-9);
+        --text-positive-strong: var(--green-12);
+        --text-caution: var(--orange-9);
+        --text-caution-strong: var(--orange-12);
+        --text-negative: var(--red-9);
+        --text-negative-strong: var(--red-12);
+        --text-info: var(--indigo-9);
+        --text-info-strong: var(--indigo-12);
+        --text-link: var(--mystic-indigo-9);
+        --border-primary: var(--gray-6);
+        --border-secondary: var(--gray-7);
+        --border-brand: var(--mystic-indigo-9);
+        --border-brand-alpha: var(--mystic-indigo-alpha-12);
+        --border-positive: var(--green-9);
+        --border-caution: var(--orange-9);
+        --border-negative: var(--red-9);
+        --border-info: var(--indigo-9);
         --radius-xs: 0px;
         --radius-md: 12px;
         --radius-xl: 24px;
@@ -93,21 +120,43 @@
         --background-primary: var(--gray-1);
         --background-secondary: var(--gray-2);
         --background-tertiary: var(--gray-3);
+        --background-inverse: var(--gray-12);
         --background-brand: var(--mystic-indigo-9);
         --background-brand-subtle: var(--mystic-indigo-4);
         --background-brand-alpha: var(--mystic-indigo-alpha-12);
+        --background-positive: var(--green-9);
+        --background-positive-subtle: var(--green-4);
+        --background-caution: var(--orange-9);
+        --background-caution-subtle: var(--orange-4);
+        --background-negative: var(--red-9);
+        --background-negative-subtle: var(--red-4);
+        --background-info: var(--indigo-9);
+        --background-info-subtle: var(--indigo-4);
         --background-hover: var(--gray-alpha-8);
         --text-primary: var(--gray-12);
         --text-secondary: var(--gray-11);
+        --text-inverse: var(--gray-1);
         --text-brand: var(--mystic-indigo-9);
         --text-brand-subtle: var(--mystic-indigo-4);
         --text-brand-strong: var(--mystic-indigo-12);
         --text-on-brand: var(--white);
+        --text-positive: var(--green-9);
+        --text-positive-strong: var(--green-12);
+        --text-caution: var(--orange-9);
+        --text-caution-strong: var(--orange-12);
+        --text-negative: var(--red-9);
+        --text-negative-strong: var(--red-12);
+        --text-info: var(--indigo-9);
+        --text-info-strong: var(--indigo-12);
         --text-link: var(--mystic-indigo-9);
         --border-primary: var(--gray-6);
         --border-secondary: var(--gray-7);
         --border-brand: var(--mystic-indigo-9);
         --border-brand-alpha: var(--mystic-indigo-alpha-12);
+        --border-positive: var(--green-9);
+        --border-caution: var(--orange-9);
+        --border-negative: var(--red-9);
+        --border-info: var(--indigo-9);
         --radius-xs: 0px;
         --radius-md: 12px;
         --radius-xl: 24px;
@@ -122,7 +171,7 @@
         --secondary: 240 3.7% 15.9%;
         --secondary-foreground: 0 0% 98%;
         --muted: 240 3.7% 15.9%;
-        --muted-foreground: var(--semantic-text-secondary);
+        --muted-foreground: var(--text-secondary);
         --accent: 240 3.7% 15.9%;
         --accent-foreground: 0 0% 98%;
         --destructive: 0 62.8% 30.6%;
@@ -161,6 +210,34 @@
             0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 8px 10px -1px hsl(0 0% 0% / 0.1);
         --shadow-2xl: 0 1px 3px 0px hsl(0 0% 0% / 0.25);
     }
+}
+
+.bg-background {
+    background-color: var(--background-primary);
+}
+
+.bg-secondary {
+    background-color: var(--background-tertiary);
+}
+
+.bg-brand {
+    background-color: var(--background-brand);
+}
+
+.bg-brand-hover {
+    background-color: hsl(230, 99, 61);
+}
+
+.text-primary {
+    color: var(--text-primary);
+}
+
+.text-secondary {
+    color: var(--text-secondary);
+}
+
+.text-on-brand {
+    color: var(--text-on-brand);
 }
 
 @layer base {
@@ -267,28 +344,6 @@ pre > code {
 
 td > code {
     word-break: keep-all !important;
-}
-
-.bg-secondary {
-    background-color: var(--background-tertiary);
-}
-.bg-brand {
-    background-color: var(--background-brand);
-}
-.bg-brand-hover {
-    background-color: hsl(230, 99, 61);
-}
-
-.text-primary {
-    color: var(--text-primary);
-}
-
-.text-secondary {
-    color: var(--text-secondary);
-}
-
-.text-on-brand {
-    color: var(--text-on-brand);
 }
 
 .border-gradient {
