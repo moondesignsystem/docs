@@ -28,13 +28,11 @@ export default function SubLink({
     if (path == href || path.includes(href)) setIsOpen(true);
   }, [href, path]);
 
-  // ## CHANGE 1: Determine the target link destination ##
-  // This new variable decides what the link's URL should be.
   const targetHref = !noLink
     ? href // If it's a normal link, use its own href.
-    : items?.length > 0
-      ? `${href}${items[0].href}` // If noLink is true and it has children, use the first child's href.
-      : undefined; // If noLink is true and it has NO children, it has no link.
+    : items && items.length > 0 // Check if items exists AND is not empty
+      ? `${href}${items[0].href}` // If yes, create the child link
+      : undefined; // Otherwise, there is no link.
 
   // This component represents the clickable link element.
   // It now uses `targetHref` instead of the original `href`.
