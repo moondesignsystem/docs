@@ -41,7 +41,7 @@ export default async function KnowledgebasePage(props: PageProps) {
   const res = await getCompiledBlogForSlug(slug);
   if (!res) notFound();
   return (
-    <div className="lg:w-[60%] sm:[95%] md:[75%] mx-auto">
+    <div className="lg:w-[60%] sm:[95%] md:[75%] mx-auto py-8">
       <Link
         className={buttonVariants({
           variant: "link",
@@ -70,7 +70,7 @@ export default async function KnowledgebasePage(props: PageProps) {
             alt="cover"
             width={700}
             height={400}
-            className="w-full h-[400px] rounded-md border object-cover"
+            className="w-full h-auto rounded-md border object-cover"
           />
         </div>
         <Typography>{res.content}</Typography>

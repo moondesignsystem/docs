@@ -18,7 +18,7 @@ export default async function BlogIndexPage() {
     (a, b) => stringToDate(b.date).getTime() - stringToDate(a.date).getTime(),
   );
   return (
-    <div className="flex flex-col gap-1 sm:min-h-[91vh] min-h-[88vh] pt-2">
+    <div className="flex flex-col gap-1 sm:min-h-[91vh] min-h-[88vh] py-4">
       <div className="mb-7 flex flex-col gap-2">
         <h1 className="sm:text-3xl text-2xl font-extrabold">Knowledgebase</h1>
         <p className="text-muted-foreground sm:text-[16.5px] text-[14.5px]">

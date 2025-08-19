@@ -1,6 +1,6 @@
 This repository contains the source code for the official documentation website for the ***Moon Design System**.
 
-Live documenation can be found at [www.moon.io] (https://moon.io/)
+Live documenation can be found at [www.moon.io](https://moon.io/)
 
 Moon is our open-source design system, built to help product teams build better digital experiences. This site serves as the central resource for design documentation and technical specifications.
 

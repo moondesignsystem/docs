@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
   images: {
     // This line is required to make images work with `output: "export"`
     unoptimized: true,
+    basePath: "/moon-docs",
 
     // Corrected your remotePatterns configuration below
     remotePatterns: [

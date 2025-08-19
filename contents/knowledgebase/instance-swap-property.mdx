@@ -1,0 +1,61 @@
+---
+title: "Using instance swap property in Figma"
+description: "Instance swap property allows you to replace elements inside a component with instances of other component. Doing so prevents the need to detach instances to change content."
+date: 18-08-2025
+authors:
+  - avatar: "https://avatars.githubusercontent.com/u/52241072?v=4"
+    handle: kungfury100
+    username: Karl
+    handleUrl: "https://github.com/kungfury100"
+
+cover: "/instance-swap-property-0.jpg"
+---
+
+## What is an instance?
+
+Instance is a reusable copy of a main component. Instances are linked to their parent component, meaning changes made to the main component will automatically update all its instances.
+
+A nested instance refers to a component placed within another component, for example a **Menu** component is nested inside a larger component, such as **Accordion**.
+
+![Nested instance](/instance-swap-property-1.jpg)
+
+## MDS components using instance swap
+
+In Moon Design System, the instance swap property is used by all container type components. This includes:
+
+- Dialog
+- Drawer
+- Dropdown
+- Card
+- Accordion
+- Bottom sheet
+- Table cell
+
+These components require this approach because their primary purpose is to provide consistent frame or interaction pattern for a variety of unpredictable content. For example, a Dialog's frame is always the same, but its content could be a form, a confirmation message or a detailed view of some item.
+
+## Using an instance swap property
+
+Follow these steps to place your own design into a slotted component.
+
+<Stepper>
+  <StepperItem title="Create your content as a component">
+      Design the content you want to place inside the wrapper. This can be anything from a simple text block to a complex form. **You must turn this content into a component.**
+  </StepperItem>
+  <StepperItem title="Place your slot component">
+      Copy an instance of the slotted component from the Assets panel into your file. It will appear with default placeholder content.
+  </StepperItem>
+  <StepperItem title="Swap the content">
+      With instance selected, locate the **Swap content** property in the right sidebar. Click the property's dropdown menu and select your custom component from the list.
+  </StepperItem>
+</Stepper>
+
+![Nested instance](/instance-swap-property-2.jpg)
+
+## Best practises
+
+When creating your custom content component, try to follow these practices:
+- **Add your own padding:** The wrapper component does not provide internal padding. You must add the necessary padding directly to your content component to ensure proper spacing
+- **Use clear naming convention:** To keep the component library organized and easy to navigate, name your custom component using the following structure: `.MDS Accordion → FAQ content`
+- **Optionally, hide the component:** If your component is created only for a specific slot and will not be reused, you can hide it from the library by prefixing its name with a period `.`
+
+Happy building!
