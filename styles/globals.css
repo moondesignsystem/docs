@@ -16,6 +16,7 @@
 @layer base {
     :root {
         --background-primary: var(--gray-1);
+        --background-primary-rgb: var(--gray-1-rgb);
         --background-secondary: var(--gray-2);
         --background-tertiary: var(--gray-3);
         --background-inverse: var(--gray-12);
@@ -118,6 +119,7 @@
 
     .dark {
         --background-primary: var(--gray-1);
+        --background-primary-rgb: var(--gray-1-rgb);
         --background-secondary: var(--gray-2);
         --background-tertiary: var(--gray-3);
         --background-inverse: var(--gray-12);
@@ -238,6 +240,11 @@
 
 .text-on-brand {
     color: var(--text-on-brand);
+}
+
+.bg-blur {
+    background-color: rgba(var(--background-primary-rgb) / 0.3);
+    backdrop-filter: blur(80px);
 }
 
 @layer base {

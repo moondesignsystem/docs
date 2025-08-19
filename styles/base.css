@@ -11,6 +11,7 @@
     --gray-10: #6d7e96;
     --gray-11: #57677e;
     --gray-12: #1c232f;
+    --gray-1-rgb: 255 255 255;
     --gray-alpha-0: rgba(255, 255, 255, 0);
     --gray-alpha-8: rgba(28, 35, 47, 0.08);
     --gray-alpha-72: rgba(28, 35, 47, 0.72);
@@ -90,6 +91,7 @@
     --gray-10: #6d7e96;
     --gray-11: #a6b7cf;
     --gray-12: #e4ecf8;
+    --gray-1-rgb: 15, 17, 20;
     --gray-alpha-0: rgba(15, 17, 20, 0);
     --gray-alpha-8: rgba(228, 236, 248, 0.08);
     --gray-alpha-72: rgba(31, 36, 43, 0.72);
