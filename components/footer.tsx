@@ -13,7 +13,7 @@ export function Footer() {
         </div>
 
         <div className="gap-4 items-center hidden md:flex">
-          <FooterButtons />
+          
         </div>
       </div>
     </footer>

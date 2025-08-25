@@ -20,6 +20,10 @@ export const NAVLINKS = [
     title: "Knowledgebase",
     href: "/knowledgebase",
   },
+  {
+    title: "About",
+    href: "/about",
+  },
 ];
 
 const algolia_props = {

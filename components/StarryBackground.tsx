@@ -40,7 +40,7 @@ const StarryBackground: React.FC<StarryBackgroundProps> = ({
 }) => {
   const canvasRef = React.useRef<HTMLCanvasElement>(null);
   const starsRef = React.useRef<Star[]>([]);
-  const animationFrameId = React.useRef<number>();
+  const animationFrameId = React.useRef<number | null>(null);
 
   // Function to initialize stars
   const initializeStars = (canvas: HTMLCanvasElement) => {
