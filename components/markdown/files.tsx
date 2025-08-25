@@ -7,6 +7,8 @@ export type FileType = {
   highlight?: boolean;
   indicator?: "add" | "delete";
   subtype?: "figma" | "flutter" | "react" | "css"; // ← Add more as needed
+  tag?: string;
+  noLink?: boolean;
 };
 
 export type FileOrFolderType = FolderType | FileType;
@@ -17,6 +19,7 @@ export type FolderType = {
   isOpen?: boolean;
   indicator: "add" | "delete";
   children?: FileOrFolderType[];
+  tag?: string;
 };
 
 export function isFile(f: FileOrFolderType): f is FileType {
