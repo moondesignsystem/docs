@@ -11,58 +11,54 @@ import {
 import { FileIcon, FolderIcon, FolderOpenIcon, Figma } from "lucide-react";
 import { cn, getIconName, hasSupportedExtension } from "@/lib/utils";
 
-export default function FileSys({
-  items: children,
-  sorted = false,
-}: {
-  items: FileOrFolderType[];
-  sorted?: boolean;
-}) {
-  const items = useMemo(() => {
-    return sorted ? sortFileAndFolder(children) : children;
-  }, [sorted, children]);
+const iconMap = {
+  figma: <Figma className="w-[1rem] h-[1rem] text-current mr-[0.14rem]" />,
+  flutter: <i className="devicon-flutter-plain text-[17px] mr-[0.14rem]" />,
+  react: <i className="devicon-react-original text-[17px] mr-[0.14rem]" />,
+  css: <i className="devicon-css3-plain text-[17px] mr-[0.14rem]" />,
+  elixir: <i className="devicon-elixir-plain text-[17px] mr-[0.14rem]" />,
+};
+
+function Indicator({ type }: { type?: "add" | "delete" }) {
+  if (!type) return null;
 
   return (
-    <div className="dark:bg-stone-950/25 bg-stone-50/25 rounded-md p-4 px-3 border flex flex-col gap-1.5 font-code max-w-full overflow-x-auto">
-      {items.map((item) =>
-        isFile(item) ? (
-          <File {...item} key={item.name} />
-        ) : (
-          <Folder {...item} key={item.name} sorted={sorted} />
-        ),
+    <span
+      className={cn(
+        "text-[13px] ml-3 px-1.5 rounded-md py-0.5 pb-1",
+        type === "delete" && "dark:text-red-400 text-red-500 bg-red-400/10",
+        type === "add" && "dark:text-green-400 text-green-500 bg-green-400/10",
       )}
-    </div>
+    >
+      {type}
+    </span>
   );
 }
 
-function File({ name, highlight, indicator, href, subtype }: FileType) {
+function File({
+  name,
+  href,
+  highlight,
+  indicator,
+  subtype,
+  tag,
+  noLink,
+}: FileType) {
   const renderIcon = () => {
-    if (subtype === "figma") {
-      return <Figma className="w-[1rem] h-[1rem] text-current mr-[0.14rem]" />;
+    if (subtype && iconMap[subtype]) {
+      return iconMap[subtype];
     }
-
-    if (subtype === "flutter") {
-      return <i className="devicon-flutter-plain text-[17px] mr-[0.14rem]" />;
-    }
-
-    if (subtype === "react") {
-      return <i className="devicon-react-original text-[17px] mr-[0.14rem]" />;
-    }
-
-    if (subtype === "css") {
-      return <i className="devicon-css3-plain text-[17px] mr-[0.14rem]" />;
-    }
-
     if (hasSupportedExtension(name)) {
       return (
         <i
-          className={`devicon-${getIconName(name)}-plain text-[17px] mr-[0.14rem]`}
+          className={`devicon-${getIconName(
+            name,
+          )}-plain text-[17px] mr-[0.14rem]`}
         />
       );
     }
-
     return (
-      <FileIcon className="sm:min-w-[1.2rem] sm:min-h-[1.2rem] sm:w-[1.2rem] sm:h-[1.2rem] min-w-[1rem] min-h-[1rem] w-[1rem] h-[1rem] text-current" />
+      <FileIcon className="sm:min-w-[1.2rem] sm:min-h-[1.2rem] w-[1rem] h-[1rem] text-current" />
     );
   };
 
@@ -74,9 +70,8 @@ function File({ name, highlight, indicator, href, subtype }: FileType) {
       )}
     >
       {renderIcon()}
-
-      <div className="sm:text-[15px] text-[13.5px]">
-        {href ? (
+      <div className="sm:text-[15px] text-[13.5px] flex items-center">
+        {href && !noLink ? (
           <a
             href={href}
             target="_blank"
@@ -89,20 +84,12 @@ function File({ name, highlight, indicator, href, subtype }: FileType) {
         ) : (
           name
         )}
-
-        {indicator && (
-          <span
-            className={cn(
-              "text-[13px] ml-3 px-1.5 rounded-md py-0.5 pb-1",
-              indicator === "delete" &&
-                "dark:text-red-400 text-red-500 bg-red-400/10",
-              indicator === "add" &&
-                "dark:text-green-400 text-green-500 bg-green-400/10",
-            )}
-          >
-            {indicator}
+        {tag && (
+          <span className="bg-secondary rounded-md px-1.5 py-0.5 mx-2 text-xs text-secondary !font-normal">
+            {tag}
           </span>
         )}
+        <Indicator type={indicator} />
       </div>
     </div>
   );
@@ -111,12 +98,13 @@ function File({ name, highlight, indicator, href, subtype }: FileType) {
 function Folder({
   name,
   children,
-  isOpen: defaultOpen,
+  isOpen: defaultOpen = false,
   highlight,
-  sorted = false,
   indicator,
+  sorted = false,
+  tag,
 }: FolderType & { sorted?: boolean }) {
-  const [isOpen, setIsOpen] = useState(defaultOpen ?? false);
+  const [isOpen, setIsOpen] = useState(defaultOpen);
 
   const items = useMemo(() => {
     return sorted && children ? sortFileAndFolder(children) : children;
@@ -136,34 +124,51 @@ function Folder({
         ) : (
           <FolderIcon className="sm:min-w-[1.2rem] sm:min-h-[1.2rem] w-[1rem] h-[1rem]" />
         )}
-        <div className="sm:text-[15px] text-[13.5px]">
+        <div className="sm:text-[15px] text-[13.5px] flex items-center">
           {name}
-          {indicator && (
-            <span
-              className={cn(
-                "text-[13px] ml-3 px-1.5 rounded-md py-0.5 pb-1",
-                indicator === "delete" &&
-                  "dark:text-red-400 text-red-500 bg-red-400/10",
-                indicator === "add" &&
-                  "dark:text-green-400 text-green-500 bg-green-400/10",
-              )}
-            >
-              {indicator}
+          {tag && (
+            <span className="dark:bg-blue-700 bg-blue-500 rounded-md px-1.5 py-0.5 ml-2 text-xs text-white !font-normal">
+              {tag}
             </span>
           )}
+          <Indicator type={indicator} />
         </div>
       </div>
 
-      {isOpen && items && items.length !== 0 && (
+      {isOpen && items && items.length > 0 && (
         <div className="pl-2 pt-1 flex flex-col gap-1.5 border-l ml-5">
-          {items.map((f) =>
-            isFile(f) ? (
-              <File {...f} key={f.name} />
+          {items.map((item) =>
+            isFile(item) ? (
+              <File {...item} key={item.name} />
             ) : (
-              <Folder {...f} key={f.name} sorted={sorted} />
+              <Folder {...item} key={item.name} sorted={sorted} />
             ),
           )}
         </div>
+      )}
+    </div>
+  );
+}
+
+export default function FileSys({
+  items: children,
+  sorted = false,
+}: {
+  items: FileOrFolderType[];
+  sorted?: boolean;
+}) {
+  const items = useMemo(() => {
+    return sorted ? sortFileAndFolder(children) : children;
+  }, [sorted, children]);
+
+  return (
+    <div className="dark:bg-stone-950/25 bg-stone-50/25 rounded-md p-4 px-3 border flex flex-col gap-1.5 font-code max-w-full overflow-x-auto">
+      {items.map((item) =>
+        isFile(item) ? (
+          <File {...item} key={item.name} />
+        ) : (
+          <Folder {...item} key={item.name} sorted={sorted} />
+        ),
       )}
     </div>
   );

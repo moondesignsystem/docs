@@ -26,8 +26,18 @@ export const ROUTES: EachRoute[] = [
         items: [
           { title: "CSS", href: "/css" },
           { title: "React", href: "/react" },
-          { title: "LiveView", href: "/liveview" },
-          { title: "Fluter", href: "/flutter" },
+          {
+            title: "LiveView",
+            href: "/liveview",
+            noLink: true,
+            tag: "Coming soon",
+          },
+          {
+            title: "Flutter",
+            href: "/flutter",
+            noLink: true,
+            tag: "Coming soon",
+          },
         ],
       },
     ],
@@ -57,6 +67,18 @@ export const ROUTES: EachRoute[] = [
         items: [
           { title: "Button", href: "/button" },
           { title: "Icon button", href: "/icon-button" },
+          {
+            title: "Tile button",
+            href: "/tile-button",
+            noLink: true,
+            tag: "Coming soon",
+          },
+          {
+            title: "Button group",
+            href: "/button-group",
+            noLink: true,
+            tag: "Coming soon",
+          },
         ],
       },
       {
@@ -74,6 +96,12 @@ export const ROUTES: EachRoute[] = [
           { title: "Chip", href: "/chip" },
           { title: "Authenticator", href: "/authenticator" },
           { title: "Segmented control", href: "/segmented-control" },
+          {
+            title: "Slider",
+            href: "/slider",
+            noLink: true,
+            tag: "Coming soon",
+          },
         ],
       },
       {
@@ -87,6 +115,12 @@ export const ROUTES: EachRoute[] = [
           { title: "Carousel", href: "/carousel" },
           { title: "List", href: "/list" },
           { title: "Table", href: "/table" },
+          {
+            title: "Card",
+            href: "/card",
+            noLink: true,
+            tag: "Coming soon",
+          },
         ],
       },
       {

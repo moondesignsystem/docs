@@ -29,30 +29,30 @@ export default function SubLink({
   }, [href, path]);
 
   const targetHref = !noLink
-    ? href // If it's a normal link, use its own href.
-    : items && items.length > 0 // Check if items exists AND is not empty
-      ? `${href}${items[0].href}` // If yes, create the child link
-      : undefined; // Otherwise, there is no link.
+    ? href
+    : items && items.length > 0
+      ? `${href}${items[0].href}`
+      : undefined;
 
-  // This component represents the clickable link element.
-  // It now uses `targetHref` instead of the original `href`.
+  const isParentOfActiveLink = items && path.includes(href);
   const Comp = (
     <Anchor
-      className="text-primary"
+      className={cn(
+        "text-primary",
+        isParentOfActiveLink && "dark:font-bold font-bold",
+      )}
       activeClassName="text-primary dark:font-bold font-bold"
-      href={targetHref!} // Use the new targetHref
+      href={targetHref!}
     >
       {title}
       {tag && (
-        <span className="dark:bg-blue-700 bg-blue-500 rounded-md px-1.5 py-0.5 mx-2 text-xs text-white !font-normal">
+        <span className="bg-brand rounded-md px-1.5 py-0.5 mx-2 text-xs text-on-brand !font-normal">
           {tag}
         </span>
       )}
     </Anchor>
   );
 
-  // ## CHANGE 2: Decide whether to render a link or static text ##
-  // The logic now checks if a `targetHref` exists.
   const titleOrLink = targetHref ? (
     isSheet ? (
       <SheetClose asChild>{Comp}</SheetClose>
@@ -60,10 +60,10 @@ export default function SubLink({
       Comp
     )
   ) : (
-    <h4 className="">
+    <h4 className="text-primary">
       {title}
       {tag && (
-        <span className="dark:bg-blue-700 bg-blue-500 rounded-md px-1.5 py-0.5 mx-2 text-xs text-white !font-normal">
+        <span className="bg-secondary rounded-md px-1.5 py-0.5 mx-2 text-xs text-secondary !font-normal">
           {tag}
         </span>
       )}
@@ -74,7 +74,6 @@ export default function SubLink({
     return <div className="flex flex-col">{titleOrLink}</div>;
   }
 
-  // ... the rest of your component remains the same
   if (type === "static") {
     return (
       <div className="flex flex-col gap-2 mt-6">

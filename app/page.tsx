@@ -1,5 +1,7 @@
 import { buttonVariants } from "@/components/ui/button";
 import Link from "next/link";
+import Image from "next/image";
+import StarryBackground from "@/components/StarryBackground"; // Adjust the import path as needed
 
 export const metadata = {
   title: "Moon Design System - Build the best digital experiences",
@@ -9,9 +11,24 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <>
+    // Use a div as a relative container to avoid nested <main> tags
+    <div className="relative w-full">
+      <StarryBackground
+        starCount={1000}
+        backgroundColor="#020617" // A dark blue that matches modern themes
+        flickerSpeed={0.004}
+      />
       <div className="flex flex-col sm:items-center text-center h-[calc(100vh-64px)] justify-center">
-        <div className="flex flex-col items-center pb-64 gap-4">
+        <div>
+          <Image
+            src="/moon-docs/moon-3d-logo.png"
+            alt="Moon Design System"
+            width={400}
+            height={400}
+            priority
+          />
+        </div>
+        <div className="flex flex-col items-center gap-4 z-10 py-24">
           <h1 className="text-8xl lg:text-8xl font-extrabold tracking-[-0.0625rem] text-center mb-4">
             Build the best digital experiences
           </h1>
@@ -38,6 +55,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }

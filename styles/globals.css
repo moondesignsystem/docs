@@ -247,6 +247,26 @@
     backdrop-filter: blur(80px);
 }
 
+.border-nav-b {
+    background: radial-gradient(
+        62.87% 100% at 50% 100%,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(255, 255, 255, 1) 100%
+    );
+    background-color: rgba(0, 0, 0, 0);
+    background-position-x: 0%;
+    background-position-y: 0%;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-image: radial-gradient(
+        62.87% 100% at 50% 100%,
+        rgba(255, 255, 255, 0.12) 0%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    background-size: auto;
+    background-origin: padding-box;
+}
+
 @layer base {
     * {
         @apply border-border;

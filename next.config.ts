@@ -5,7 +5,6 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   output: "export",
 
-  // Correct placement for basePath
   basePath: "/moon-docs",
 
   images: {
