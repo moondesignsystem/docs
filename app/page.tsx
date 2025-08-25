@@ -21,7 +21,7 @@ export default function Home() {
       <div className="flex flex-col sm:items-center text-center h-[calc(100vh-64px)] justify-center">
         <div>
           <Image
-            src="/moon-docs/moon-3d-logo.png"
+            src="/moon-3d-logo.png"
             alt="Moon Design System"
             width={400}
             height={400}
