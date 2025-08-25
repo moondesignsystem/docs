@@ -43,8 +43,8 @@ export const ROUTES: EachRoute[] = [
     ],
   },
   {
-    title: "Design language",
-    href: "/design-language",
+    title: "Design tokens",
+    href: "/design-tokens",
     noLink: true,
     type: "static",
     items: [

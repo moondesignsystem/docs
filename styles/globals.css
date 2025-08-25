@@ -247,24 +247,27 @@
     backdrop-filter: blur(80px);
 }
 
-.border-nav-b {
-    background: radial-gradient(
-        62.87% 100% at 50% 100%,
-        rgba(255, 255, 255, 1) 0%,
-        rgba(255, 255, 255, 1) 100%
+.nav-link {
+    transition: 0.3s cubic-bezier(0.6, 0.6, 0, 1);
+}
+
+.nav-link:hover {
+    opacity: 0.8;
+}
+
+.border-nav-b::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+    width: 90%;
+    height: 1px;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0.2),
+        /* Center of the glow */ rgba(255, 255, 255, 0)
     );
-    background-color: rgba(0, 0, 0, 0);
-    background-position-x: 0%;
-    background-position-y: 0%;
-    background-repeat: repeat;
-    background-attachment: scroll;
-    background-image: radial-gradient(
-        62.87% 100% at 50% 100%,
-        rgba(255, 255, 255, 0.12) 0%,
-        rgba(255, 255, 255, 0) 100%
-    );
-    background-size: auto;
-    background-origin: padding-box;
 }
 
 @layer base {
