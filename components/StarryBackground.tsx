@@ -148,7 +148,7 @@ const StarryBackground: React.FC<StarryBackgroundProps> = ({
           left: 0,
           width: "100%",
           height: "100%",
-          backgroundImage: 'url("/bg.png")',
+          backgroundImage: 'url("/moon-docs/bg.png")',
           backgroundSize: "cover",
           backgroundPosition: "center",
           opacity: "0.8",

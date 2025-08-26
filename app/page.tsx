@@ -1,31 +1,44 @@
+// file: app/home-page-client.tsx
+
+"use client";
+
 import { buttonVariants } from "@/components/ui/button";
 import Link from "next/link";
-import Image from "next/image";
-import StarryBackground from "@/components/StarryBackground"; // Adjust the import path as needed
+import StarryBackground from "@/components/StarryBackground";
+import { useRive } from "@rive-app/react-canvas";
 
-export const metadata = {
-  title: "Moon Design System - Build the best digital experiences",
-  description:
-    "Moon Design System is an open-source, complete design system built to help product teams across the world build better digital experiences.",
-};
+export default function HomePageClient() {
+  const { RiveComponent, rive } = useRive({
+    src: "/moon-docs/moon.riv", // This line has been updated
+    stateMachines: "Rotate",
+    autoplay: true,
+  });
 
-export default function Home() {
+  const handleMouseEnter = () => {
+    if (rive) {
+      rive.pause();
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (rive) {
+      rive.play();
+    }
+  };
+
   return (
-    // Use a div as a relative container to avoid nested <main> tags
     <div className="relative w-full">
       <StarryBackground
         starCount={1000}
-        backgroundColor="#020617" // A dark blue that matches modern themes
+        backgroundColor="#020617"
         flickerSpeed={0.004}
       />
       <div className="flex flex-col sm:items-center text-center h-[calc(100vh-64px)] justify-center">
         <div>
-          <Image
-            src="/moon-3d-logo.png"
-            alt="Moon Design System"
-            width={400}
-            height={400}
-            priority
+          <RiveComponent
+            className="w-[400px] h-[400px] cursor-pointer"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
           />
         </div>
         <div className="flex flex-col items-center gap-4 z-10 py-24">
