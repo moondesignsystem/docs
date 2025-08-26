@@ -21,10 +21,29 @@ const monoFont = DM_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Moon Design System",
-  metadataBase: new URL("https://moon.io/"),
+  title: {
+    default: "Moon Design System",
+    template: "%s | Moon Design System",
+  },
+  metadataBase: new URL("https://www.moon.io"),
   description:
-    "Moon is a complete design system built to help product teams across the world build better digital experiences. Whether you're a designer or a developer, this documentation includes all the necessary resources you'll need to start building your next great idea.",
+    "Moon is a complete design system built to help product teams across the world build better digital experiences.",
+  openGraph: {
+    title: "Moon Design System",
+    description:
+      "Moon is an open-source design system built for fast, scalable digital experiences.",
+    url: "https://www.moon.io/",
+    siteName: "Moon Design System",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
@@ -34,24 +53,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <link
-          rel="stylesheet"
-          type="text/css"
-          href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
-        />
-        <meta property="og:title" content="Moon Design System" />
-        <meta
-          property="og:description"
-          content="Moon is an open-source design system built for fast, scalable digital experiences."
-        />
-        <meta
-          property="og:image"
-          content="https://moondocs.vercel.app/og-image.jpg"
-        />
-        <meta property="og:url" content="https://moondocs.vercel.app/" />
-      </head>
-
       <body
         className={`${sansFont.variable} ${monoFont.variable} font-regular antialiased tracking-wide theme-moon-dark`}
         suppressHydrationWarning
@@ -66,7 +67,6 @@ export default function RootLayout({
           <main className="sm:container mx-auto w-[90vw] h-auto scroll-smooth">
             {children}
           </main>
-
           <FooterWrapper />
         </ThemeProvider>
       </body>
