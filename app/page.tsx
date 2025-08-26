@@ -9,7 +9,7 @@ import { useRive } from "@rive-app/react-canvas";
 
 export default function HomePageClient() {
   const { RiveComponent, rive } = useRive({
-    src: "/moon-docs/moon.riv", // This line has been updated
+    src: "/moon.riv", // This line has been updated
     stateMachines: "Rotate",
     autoplay: true,
   });
