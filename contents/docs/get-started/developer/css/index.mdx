@@ -11,33 +11,20 @@ description: Quickstart your project with our CSS library
     ```bash
     # Personal access token
     FIGMA_TOKEN=figd_personal-access-token
-
-    # File ID (figma.com/design/file-id/file-name)
-    FIGMA_FILE=your-brand:BZiHkvF7pXFHrFH8P0cG2T
-    FIGMA_COMPONENTS_FILE=your-brand:S3q1SkVngbwHuwpxHKCsgtJj
-
-    # Installation directory (optional)
-    MOON_OUTPUT_DIR=assets
     ```
 
 ## Usage
 
-- Installation, this generates `css/your-brand-base.css` with all CSS variables.
+- Installation, this generates `css/moon-core.css` with all CSS variables.
 
     ```
-    npx @heathmont/moon-css
+    npx @heathmont/moon-ui
     ```
 
-- Generate Tailwind preset, this adds `js/your-brand-base-preset.js` for Tailwind utility classes (optional).
+- Include pre-built components, this generates `css/moon-components.css` with ready-to-use component classes (optional).
 
     ```
-    npx @heathmont/moon-css --with-preset
-    ```
-
-- Include pre-built components, this generates `js/moon-components.js` with ready-to-use component classes (optional).
-
-    ```
-    npx @heathmont/moon-css --with-preset --with-components
+    npx @heathmont/moon-ui --add-components
     ```
 
 ## Project structure
@@ -46,7 +33,7 @@ description: Quickstart your project with our CSS library
       items={[
         {
           type: "folder",
-          name: "moon-css",
+          name: "project-dir",
           isOpen: true,
           children: [
             {
@@ -55,21 +42,11 @@ description: Quickstart your project with our CSS library
               isOpen: true,
               children: [
                 {
-                  type: "file", name: "your-brand-base.css"
-                },
-              ],
-            },
-            {
-              type: "folder",
-              name: "js",
-              isOpen: true,
-              children: [
-                {
-                  type: "file", name: "your-brand-base-preset.js"
+                  type: "file", name: "moon-core.css",
                 },
                 {
-                  type: "file", name: "moon-components.js"
-                },
+                  type: "file", name: "moon-components.css"
+                }
               ],
             },
           ],
@@ -80,5 +57,5 @@ description: Quickstart your project with our CSS library
 ## Explore further
 
 - Moon UI Storybook documentation, https://ui.moon.io/
-- npm package, https://npmjs.com/package/@heathmont/moon-css
+- npm package, https://npmjs.com/package/@heathmont/moon-ui
 - Figma REST API, https://figma.com/developers/api#variables
