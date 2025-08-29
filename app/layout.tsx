@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/contexts/theme-provider";
+import { HomePageThemeProvider } from "@/components/contexts/homepage-theme-provider";
 import { Navbar } from "@/components/navbar";
 import { DM_Sans, DM_Mono } from "next/font/google";
 import { FooterWrapper } from "@/components/ui/footer-wrapper";
@@ -63,11 +64,13 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar />
-          <main className="sm:container mx-auto w-[90vw] h-auto scroll-smooth">
-            {children}
-          </main>
-          <FooterWrapper />
+          <HomePageThemeProvider>
+            <Navbar />
+            <main className="sm:container mx-auto w-[90vw] h-auto scroll-smooth">
+              {children}
+            </main>
+            <FooterWrapper />
+          </HomePageThemeProvider>
         </ThemeProvider>
       </body>
     </html>

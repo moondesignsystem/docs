@@ -379,3 +379,46 @@ td > code {
 .border-gradient {
     box-shadow: var(--shadow-300);
 }
+
+/* Home page dark mode enforcement */
+.homepage-dark-mode,
+.homepage-dark-mode .homepage-force-dark {
+    /* Force dark theme variables regardless of global theme */
+    --background-primary: var(--gray-1);
+    --background-primary-rgb: var(--gray-1-rgb);
+    --background-secondary: var(--gray-2);
+    --background-tertiary: var(--gray-3);
+    --background-inverse: var(--gray-12);
+    --text-primary: var(--gray-12);
+    --text-secondary: var(--gray-11);
+    --text-inverse: var(--gray-1);
+    
+    /* Ensure navbar and overall page background */
+    background-color: var(--gray-1);
+    color: var(--gray-12);
+}
+
+/* Ensure navbar text elements stay dark-themed on home page */
+.homepage-dark-mode nav * {
+    border-color: var(--gray-4);
+}
+
+.homepage-dark-mode nav .nav-link {
+    color: var(--text-primary) !important;
+}
+
+/* Ensure all text elements on home page are properly colored */
+.homepage-dark-mode * {
+    color: inherit;
+}
+
+/* Override any light mode styles that might interfere */
+.homepage-dark-mode .homepage-force-dark {
+    background-color: transparent;
+    color: var(--gray-12);
+}
+
+/* Ensure buttons and interactive elements maintain proper styling */
+.homepage-dark-mode .homepage-force-dark .nav-link {
+    color: var(--text-primary) !important;
+}
