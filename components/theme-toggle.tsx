@@ -3,11 +3,18 @@
 import * as React from "react";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
+import { usePathname } from "next/navigation";
 
 import { Button } from "@/components/ui/button";
 
 export function ModeToggle() {
   const { theme, setTheme } = useTheme();
+  const pathname = usePathname();
+
+  // Don't render theme toggle on home page
+  if (pathname === "/") {
+    return null;
+  }
 
   return (
     <Button
