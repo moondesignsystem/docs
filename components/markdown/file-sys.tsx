@@ -15,7 +15,7 @@ import { cn, getIconName, hasSupportedExtension } from "@/lib/utils";
 const iconMap: { [key: string]: React.ReactNode } = {
   figma: (
     <Image
-      src="/moon-docs/icons/figma.svg"
+      src="/icons/figma.svg"
       alt="Figma icon"
       width={24}
       height={24}
@@ -24,7 +24,7 @@ const iconMap: { [key: string]: React.ReactNode } = {
   ),
   flutter: (
     <Image
-      src="/moon-docs/icons/flutter.svg"
+      src="/icons/flutter.svg"
       alt="Flutter icon"
       width={24}
       height={24}
@@ -33,7 +33,7 @@ const iconMap: { [key: string]: React.ReactNode } = {
   ),
   react: (
     <Image
-      src="/moon-docs/icons/react.svg"
+      src="/icons/react.svg"
       alt="React icon"
       width={24}
       height={24}
@@ -42,7 +42,7 @@ const iconMap: { [key: string]: React.ReactNode } = {
   ),
   css: (
     <Image
-      src="/moon-docs/icons/css.svg"
+      src="/icons/css.svg"
       alt="CSS icon"
       width={24}
       height={24}
@@ -51,7 +51,7 @@ const iconMap: { [key: string]: React.ReactNode } = {
   ),
   elixir: (
     <Image
-      src="/moon-docs/icons/elixir.svg"
+      src="/icons/elixir.svg"
       alt="Elixir icon"
       width={24}
       height={24}
