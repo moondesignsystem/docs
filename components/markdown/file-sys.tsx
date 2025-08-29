@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import Image from "next/image"; // Import the Next.js Image component
 import {
   FileOrFolderType,
   FileType,
@@ -8,16 +9,57 @@ import {
   isFile,
   sortFileAndFolder,
 } from "./files";
-import { FileIcon, FolderIcon, FolderOpenIcon, Figma } from "lucide-react";
+import { FileIcon, FolderIcon, FolderOpenIcon } from "lucide-react";
 import { cn, getIconName, hasSupportedExtension } from "@/lib/utils";
 
-const iconMap = {
-  figma: <Figma className="w-[1rem] h-[1rem] text-current mr-[0.14rem]" />,
-  flutter: <i className="devicon-flutter-plain text-[17px] mr-[0.14rem]" />,
-  react: <i className="devicon-react-original text-[17px] mr-[0.14rem]" />,
-  css: <i className="devicon-css3-plain text-[17px] mr-[0.14rem]" />,
-  elixir: <i className="devicon-elixir-plain text-[17px] mr-[0.14rem]" />,
+const iconMap: { [key: string]: React.ReactNode } = {
+  figma: (
+    <Image
+      src="/moon-docs/icons/figma.svg"
+      alt="Figma icon"
+      width={24}
+      height={24}
+      className="mr-[0.14rem] not-prose"
+    />
+  ),
+  flutter: (
+    <Image
+      src="/moon-docs/icons/flutter.svg"
+      alt="Flutter icon"
+      width={24}
+      height={24}
+      className="mr-[0.14rem] not-prose"
+    />
+  ),
+  react: (
+    <Image
+      src="/moon-docs/icons/react.svg"
+      alt="React icon"
+      width={24}
+      height={24}
+      className="mr-[0.14rem] not-prose"
+    />
+  ),
+  css: (
+    <Image
+      src="/moon-docs/icons/css.svg"
+      alt="CSS icon"
+      width={24}
+      height={24}
+      className="mr-[0.14rem] not-prose"
+    />
+  ),
+  elixir: (
+    <Image
+      src="/moon-docs/icons/elixir.svg"
+      alt="Elixir icon"
+      width={24}
+      height={24}
+      className="mr-[0.14rem] not-prose"
+    />
+  ),
 };
+// --- MODIFICATION END ---
 
 function Indicator({ type }: { type?: "add" | "delete" }) {
   if (!type) return null;
@@ -45,18 +87,17 @@ function File({
   noLink,
 }: FileType) {
   const renderIcon = () => {
-    if (subtype && iconMap[subtype]) {
-      return iconMap[subtype];
+    // --- MODIFICATION START ---
+    // This logic is now simplified. It prioritizes 'subtype' and then checks
+    // the file name. The `<i>` tag and devicon classes are removed.
+    const iconKey =
+      subtype || (hasSupportedExtension(name) ? getIconName(name) : null);
+
+    if (iconKey && iconMap[iconKey]) {
+      return iconMap[iconKey];
     }
-    if (hasSupportedExtension(name)) {
-      return (
-        <i
-          className={`devicon-${getIconName(
-            name,
-          )}-plain text-[17px] mr-[0.14rem]`}
-        />
-      );
-    }
+    // --- MODIFICATION END ---
+
     return (
       <FileIcon className="sm:min-w-[1.2rem] sm:min-h-[1.2rem] w-[1rem] h-[1rem] text-current" />
     );
@@ -162,7 +203,7 @@ export default function FileSys({
   }, [sorted, children]);
 
   return (
-    <div className="dark:bg-stone-950/25 bg-stone-50/25 rounded-md p-4 px-3 border flex flex-col gap-1.5 font-code max-w-full overflow-x-auto">
+    <div className="dark:bg-stone-950/25 bg-stone-50/25 rounded-md p-4 px-3 border flex flex-col gap-1.5 font-code max-w-full overflow-x-auto gap-4">
       {items.map((item) =>
         isFile(item) ? (
           <File {...item} key={item.name} />
