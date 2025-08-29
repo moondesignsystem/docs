@@ -2,3 +2,114 @@
 title: LiveView
 description: Quickstart your project with our LiveView library
 ---
+
+## Step 1: Add a dependency
+
+Add a private moon_live package to mix.exs file:
+
+```elixir
+defp deps do
+  [
+    {:moon_live, "~> 4.0.0-beta.1", organization: "coingaming"},
+  ]
+end
+```
+
+## Step 2: Configure Tailwind
+
+Ensure you have the latest Tailwind version installed in config.exs file:
+
+```elixir
+config :tailwind,
+  version: "4.1.12",
+```
+
+## Step 3: Install dependencies
+
+Ensure you are authenticated on hex under the coingaming organization. Install dependencies:
+
+```bash
+mix deps.get
+```
+
+## Step 4: Add static plug
+
+Add a static plug to endpoint.ex file to serve static moon icons:
+
+```elixir
+plug Plug.Static,
+  at: "/moon_assets/",
+  from: :moon_assets,
+  gzip: true
+
+plug Plug.Static,
+  at: "/moon_live/",
+  from: :moon_live,
+  gzip: true
+```
+
+## Step 5: Add MoonLive
+
+Add MoonLive to html_helpers function to make the package available globally:
+
+```elixir
+defp html_helpers do
+  quote do
+    use MoonLive
+  end
+end
+```
+
+## Step 6: Add MoonHooks
+
+Add moonHooks to app.js file to enable MoonLive components' functionality:
+
+```javascript
+import moonHooks from "../../deps/moon_live/assets/js/hooks/";
+
+let liveSocket = new LiveSocket("/live", Socket, {
+  hooks: {
+    ...
+    ...moonHooks,
+  },
+});
+```
+
+## Step 7: Update Tailwind configuration in app.css file
+
+Add moonBasePreset to tailwind.config.js file to extend the default Tailwind configuration. Additionally, update the content section to configure paths to MoonLive:
+
+```css
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap");
+
+@import "tailwindcss";
+
+@import "../../deps/moon_live/assets/css/moon-core.css";
+@import "../../deps/moon_live/assets/css/moon-components.css";
+@import "../../deps/moon_live/assets/css/moon-extra-components.css";
+```
+
+## Step 8: Update root HTML file
+
+Update HTML and BODY tags in root.html.heex file. Add dir attribute to the HTML tag to fully enable the LTR/RTL feature of Tailwind. Additionally, add a main theme class to the BODY tag to enable theme support in your app:
+
+```html
+<html dir="ltr">
+  <body class="light-theme"></body>
+</html>
+```
+
+## Step 9: Happy coding!
+
+Now you are ready to use MoonLive in your project. Enjoy!
+
+```bash
+mix phx.server
+```
+
+## Resources
+
+- Liveview components, https://liveview.moon.io/
+- Liveview hex package, https://hex.pm/packages/coingaming/moon_live

@@ -20,7 +20,6 @@ description: "Also known as: Label, Pill, Badge"
 
 </svg>
 
-
 ## Resources
 
 <Files
@@ -29,49 +28,39 @@ description: "Also known as: Label, Pill, Badge"
       type: "file",
       name: "Figma",
       subtype: "figma",
-      href: "https://www.figma.com/design/DaFfH14zF1u05CfvSnEYT6/MDS-Tag?m=auto&t=dfjzH5X3eFHujjmu-6"
+      href: "https://www.figma.com/design/DaFfH14zF1u05CfvSnEYT6/MDS-Tag?m=auto&t=dfjzH5X3eFHujjmu-6",
     },
     {
       type: "file",
       name: "CSS",
       subtype: "css",
-      href: "https://ui.moon.io/?path=/docs/indicators-status-tag--docs"
+      href: "https://ui.moon.io/?path=/docs/indicators-status-tag--docs",
     },
     {
       type: "file",
       name: "React",
       subtype: "react",
-      href: "https://react.moon.io/?path=/docs/indicators-status-tag--docs"
-    },
-    {
-      type: "file",
-      name: "Flutter",
-      subtype: "flutter",
-      href: "#",
-      noLink: true,
-      tag: "Coming soon"
+      href: "https://react.moon.io/?path=/docs/indicators-status-tag--docs",
     },
     {
       type: "file",
       name: "LiveView",
       subtype: "elixir",
-      href: "#",
-      noLink: true,
-      tag: "Coming soon"
+      href: "https://liveview.moon.io/indicators_&_status/tag",
     },
   ]}
 />
 
 ## Properties
 
-| **Property**                        | **Values**                                                      | **Default**
-|-----------------------------------  |-----------------------------------------------------------------| -----------------------------------------------
-| Size `Variant`                      | `2Xs \| Xs`                                                     | `Xs`
-| Has start item `Boolean`            | `true \| false`                                                 | `true`
-| Start item  `InstanceSwap`          | `Any icon`                                                               | `heart`
-| Label `Text`                        | `string`                                                        | `Label`
-| Has end item `Boolean`              | `true \| false`                                                 | `true`
-| End item  `InstanceSwap`            | `Any icon`                                                               | `close`
+| **Property**              | **Values**      | **Default** |
+| ------------------------- | --------------- | ----------- |
+| Size `Variant`            | `2Xs \| Xs`     | `Xs`        |
+| Has start item `Boolean`  | `true \| false` | `true`      |
+| Start item `InstanceSwap` | `Any icon`      | `heart`     |
+| Label `Text`              | `string`        | `Label`     |
+| Has end item `Boolean`    | `true \| false` | `true`      |
+| End item `InstanceSwap`   | `Any icon`      | `close`     |
 
 ## When to use
 
@@ -79,7 +68,7 @@ description: "Also known as: Label, Pill, Badge"
 {<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M5 13l4 4L19 7" style={{ stroke: "var(--text-positive)" }} strokeWidth="2" /></svg>} If the user needs to interact with the tags by adding or removing them. <br/>
 {<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M5 13l4 4L19 7" style={{ stroke: "var(--text-positive)" }} strokeWidth="2" /></svg>} When displaying static or descriptive keywords to help users filter or understand the content. <br/><br/>
 {<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M6 6L18 18M6 18L18 6" style={{ stroke: "var(--text-negative)" }} strokeWidth="2" /></svg>} If the labels need to be selected or deselected repeatedly as part of a multi-selection process. Use chip instead. <br/>
-{<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M6 6L18 18M6 18L18 6" style={{ stroke: "var(--text-negative)" }} strokeWidth="2" /></svg>}  If the labels are interactive and need to represent actions like adding or removing items. Use chip instead. <br/>
+{<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M6 6L18 18M6 18L18 6" style={{ stroke: "var(--text-negative)" }} strokeWidth="2" /></svg>} If the labels are interactive and need to represent actions like adding or removing items. Use chip instead. <br/>
 
 ## Size
 
@@ -100,7 +89,7 @@ Dimensions of the tag are tied to the global `scale` tokens. This ensures that t
 
 Some common variants are already created and ready to use (see the table), but you have the possibility to add new variants or customize every visual aspect through tokens and token modes.
 
-| **Variant**                        | **When to use**
-|----------------------------------- |----------------------------------------------
-| `Fill`                             | Fill variant emphasizes visibility and interaction priority. Visually, it has high contrast compared to its surroundings.
-| `Outline`                          | Outline variant blends more with the surroundings, but is separated from the background with a border.
+| **Variant** | **When to use**                                                                                                           |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------- |
+| `Fill`      | Fill variant emphasizes visibility and interaction priority. Visually, it has high contrast compared to its surroundings. |
+| `Outline`   | Outline variant blends more with the surroundings, but is separated from the background with a border.                    |
