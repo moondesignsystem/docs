@@ -29,15 +29,13 @@ export const ROUTES: EachRoute[] = [
           {
             title: "LiveView",
             href: "/liveview",
-            noLink: true,
-            tag: "Coming soon",
           },
-          {
-            title: "Flutter",
-            href: "/flutter",
-            noLink: true,
-            tag: "Coming soon",
-          },
+          // {
+          //   title: "Flutter",
+          //   href: "/flutter",
+          //   noLink: true,
+          //   tag: "Coming soon",
+          // },
         ],
       },
     ],

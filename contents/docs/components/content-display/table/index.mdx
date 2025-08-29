@@ -22,8 +22,6 @@ description: "Also known as: Data table, Grid"
 <path style={{ fill: "var(--border-primary)" }} d="M400 191.5V192.5H80V191.5H400Z"/>
 </svg>
 
-
-
 ## Resources
 
 <Files
@@ -32,70 +30,60 @@ description: "Also known as: Data table, Grid"
       type: "file",
       name: "Figma",
       subtype: "figma",
-      href: "https://www.figma.com/design/iA7zguMRTMpnwWQTLfM6sW/MDS-Table?m=auto&t=dfjzH5X3eFHujjmu-6"
+      href: "https://www.figma.com/design/iA7zguMRTMpnwWQTLfM6sW/MDS-Table?m=auto&t=dfjzH5X3eFHujjmu-6",
     },
     {
       type: "file",
       name: "CSS",
       subtype: "css",
-      href: "https://ui.moon.io/?path=/docs/content-display-table--docs"
+      href: "https://ui.moon.io/?path=/docs/content-display-table--docs",
     },
     {
       type: "file",
       name: "React",
       subtype: "react",
-      href: "https://react.moon.io/?path=/docs/content-display-table--docs"
-    },
-    {
-      type: "file",
-      name: "Flutter",
-      subtype: "flutter",
-      href: "#",
-      noLink: true,
-      tag: "Coming soon"
+      href: "https://react.moon.io/?path=/docs/content-display-table--docs",
     },
     {
       type: "file",
       name: "LiveView",
       subtype: "elixir",
-      href: "#",
-      noLink: true,
-      tag: "Coming soon"
+      href: "https://liveview.moon.io/content_display/table",
     },
   ]}
 />
 
-
 ## Properties
 
 Table component is assembled by the component user, taking into account its specific context and data requirements. Table consists of subcomponents that work together to display data:
+
 - **Table column:** Defines the structure of each vertical column in the table (width, alignment and sortability).
 - **Header cell:** Represents the individual cells within the table's header row. Typically displays the title and serves as a control for sorting and filtering.
 - **Data cell:** Displays the actual data within each row and column of the table body.
 
-| **Property**                        | **Values**                                              | **Default**
-|-----------------------------------  |---------------------------------------------------------| -----------------------------------------------
-| Size `Variant`                      | `Sm \| Md \| Lg \| Xl`                                  | `Lg`
-| Table column `Variant`              | `Label \| Tags \| Quick actions \| Asset \| Checkbox`   | `Label`
-| Title cell `Variant`                | `Title \| Checkbox`                                     | `Label`
-| Data cell `Variant`                 | `Label \| Tags \| Quick actions \| Asset \| Checkbox`   | `Label`
+| **Property**           | **Values**                                            | **Default** |
+| ---------------------- | ----------------------------------------------------- | ----------- |
+| Size `Variant`         | `Sm \| Md \| Lg \| Xl`                                | `Lg`        |
+| Table column `Variant` | `Label \| Tags \| Quick actions \| Asset \| Checkbox` | `Label`     |
+| Title cell `Variant`   | `Title \| Checkbox`                                   | `Label`     |
+| Data cell `Variant`    | `Label \| Tags \| Quick actions \| Asset \| Checkbox` | `Label`     |
 
 ## When to use
 
-{<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M5 13l4 4L19 7" style={{ stroke: "var(--text-positive)" }} strokeWidth="2" /></svg>}  When displaying structured data that needs to be compared across rows and columns. <br/>
+{<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M5 13l4 4L19 7" style={{ stroke: "var(--text-positive)" }} strokeWidth="2" /></svg>} When displaying structured data that needs to be compared across rows and columns. <br/>
 {<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M5 13l4 4L19 7" style={{ stroke: "var(--text-positive)" }} strokeWidth="2" /></svg>} When users need to scan, sort, or filter information efficiently. <br/>
 {<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M5 13l4 4L19 7" style={{ stroke: "var(--text-positive)" }} strokeWidth="2" /></svg>} When presenting large datasets that require clear organization. <br/><br/>
 {<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M6 6L18 18M6 18L18 6" style={{ stroke: "var(--text-negative)" }} strokeWidth="2" /></svg>} When displaying small amounts of simple data, use list instead. <br/>
-{<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M6 6L18 18M6 18L18 6" style={{ stroke: "var(--text-negative)" }} strokeWidth="2" /></svg>}  Don't use for dense data, consider using table instead. <br/>
+{<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M6 6L18 18M6 18L18 6" style={{ stroke: "var(--text-negative)" }} strokeWidth="2" /></svg>} Don't use for dense data, consider using table instead. <br/>
 
 ## Behaviour
 
 Tables organize data into rows and columns, allowing for easy comparison and analysis of information. Table behavior often includes:
+
 - **Data presentation:** Rows represent individual data, columns represent attributes of the data.
 - **Interaction:** Tables are often interactive, sorting rows by column headers, filtering data based on rules and searching for data.
 - **Selection:** Users may be able to select individual or multiple rows and columns for further actions.
 - **Scrolling:** Some tables exceed the visible area and implement a vertical or horizontal scrolling, with an option for fixed headers.
-
 
 ## Size
 

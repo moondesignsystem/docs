@@ -8,51 +8,53 @@ description: Quickstart your project with our CSS library
 - To get variables from Figma we use Variables REST API endpoints
 - Create `.env` file and add the necessary information:
 
-    ```bash
-    # Personal access token
-    FIGMA_TOKEN=figd_personal-access-token
-    ```
+```bash
+# Personal access token
+FIGMA_TOKEN=figd_personal-access-token
+```
 
 ## Usage
 
 - Installation, this generates `css/moon-core.css` with all CSS variables.
 
-    ```
-    npx @heathmont/moon-ui
-    ```
+```bash
+npx @heathmont/moon-ui
+```
 
 - Include pre-built components, this generates `css/moon-components.css` with ready-to-use component classes (optional).
 
-    ```
-    npx @heathmont/moon-ui --add-components
-    ```
+```bash
+npx @heathmont/moon-ui --add-components
+```
 
 ## Project structure
 
-    <Files
-      items={[
+<Files
+  items={[
+    {
+      type: "folder",
+      name: "project-dir",
+      isOpen: true,
+      children: [
         {
           type: "folder",
-          name: "project-dir",
+          name: "css",
           isOpen: true,
           children: [
             {
-              type: "folder",
-              name: "css",
-              isOpen: true,
-              children: [
-                {
-                  type: "file", name: "moon-core.css",
-                },
-                {
-                  type: "file", name: "moon-components.css"
-                }
-              ],
+              type: "file",
+              name: "moon-core.css",
+            },
+            {
+              type: "file",
+              name: "moon-components.css",
             },
           ],
         },
-      ]}
-    />
+      ],
+    },
+  ]}
+/>
 
 ## Explore further
 

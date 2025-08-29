@@ -1,10 +1,9 @@
 // next.config.js
 
-
 const nextConfig = {
   output: "export",
 
-  basePath: "/moon-docs",
+  basePath: "",
 
   images: {
     unoptimized: true,
