@@ -23,7 +23,7 @@ export default function HomePageClient() {
         <div className="relative z-10 flex flex-col items-center justify-between text-center h-[calc(100vh-64px)] px-4 pt-0 pb-24 sm:pb-32">
           <RiveComponent className="w-[280px] h-[280px] sm:w-[400px] sm:h-[400px]" />
           <div className="flex flex-col items-center gap-4 z-10">
-            <h1 className="text-7xl lg:text-6xl font-medium tracking-[-0.0625rem] text-center">
+            <h1 className="text-5xl lg:text-6xl font-medium tracking-[-0.0625rem] text-center">
               Build the best digital experiences
             </h1>
             <p className="text-lg font-normal text-center max-w-3xl mb-4">
