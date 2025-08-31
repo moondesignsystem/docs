@@ -6,68 +6,38 @@ import StarryBackground from "@/components/StarryBackground";
 import { useRive } from "@rive-app/react-canvas";
 
 export default function HomePageClient() {
-  const { RiveComponent, rive } = useRive({
+  const { RiveComponent } = useRive({
     src: "/moon.riv",
-    stateMachines: "Rotate",
+    stateMachines: "Rest",
     autoplay: true,
   });
 
-  const handleMouseEnter = () => {
-    if (rive) {
-      rive.pause();
-    }
-  };
-
-  const handleMouseLeave = () => {
-    if (rive) {
-      rive.play();
-    }
-  };
-
   return (
     <>
-      {/* The homepage-force-dark class works with our CSS to ensure dark mode */}
-      <div className="relative w-full homepage-force-dark">
+      <div className="relative w-full">
         <StarryBackground
           starCount={1000}
-          backgroundColor="#020617" // Hardcoded background for the canvas
+          backgroundColor="#020617"
           flickerSpeed={0.004}
         />
-        <div className="flex flex-col sm:items-center text-center h-[calc(100vh-64px)] justify-center">
-          <div>
-            <RiveComponent
-              className="w-[400px] h-[400px] cursor-pointer"
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-            />
-          </div>
-          <div className="flex flex-col items-center gap-4 z-10 py-24">
-            <h1 className="text-8xl lg:text-8xl font-extrabold tracking-[-0.0625rem] text-center mb-4">
+        <div className="relative z-10 flex flex-col items-center justify-between text-center h-[calc(100vh-64px)] px-4 pt-0 pb-24 sm:pb-32">
+          <RiveComponent className="w-[280px] h-[280px] sm:w-[400px] sm:h-[400px]" />
+          <div className="flex flex-col items-center gap-4 z-10">
+            <h1 className="text-7xl lg:text-6xl font-medium tracking-[-0.0625rem] text-center">
               Build the best digital experiences
             </h1>
-            <div className="flex flex-col gap-0 text-center items-center">
-              <p className="text-lg font-normal text-center max-w-3xl mb-8">
-                Moon Design System is an open-source, complete design system.
-                It&apos;s built to help product teams across the world build
-                better digital experiences.
-              </p>
-              <div className="sm:flex sm:flex-row grid grid-cols-2 items-center sm;gap-5 gap-3 mb-8">
-                <Link
-                  href="/docs/get-started/introduction"
-                  className={buttonVariants({ size: "xl" })}
-                >
-                  Get started
-                </Link>
-                <Link
-                  href="/knowledgebase"
-                  className={buttonVariants({
-                    variant: "secondary",
-                    size: "xl",
-                  })}
-                >
-                  Knowledgebase
-                </Link>
-              </div>
+            <p className="text-lg font-normal text-center max-w-3xl mb-4">
+              Moon Design System is an open-source, complete design system.
+              It&apos;s built to help product teams across the world build
+              better digital experiences.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link
+                href="/docs/get-started/introduction"
+                className={buttonVariants({ variant: "glassy", size: "xl" })}
+              >
+                Get started
+              </Link>
             </div>
           </div>
         </div>
