@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { ThemeProvider } from "@/components/contexts/theme-provider";
 import { HomePageThemeProvider } from "@/components/contexts/homepage-theme-provider";
 import { Navbar } from "@/components/navbar";
@@ -6,6 +7,8 @@ import { DM_Sans, DM_Mono } from "next/font/google";
 import { FooterWrapper } from "@/components/ui/footer-wrapper";
 import "@/styles/globals.css";
 import "@/styles/base.css";
+
+const GTAG = "G-31RDD16D55";
 
 const sansFont = DM_Sans({
   subsets: ["latin"],
@@ -54,6 +57,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        {/* Google Analytics */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GTAG}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', ${GTAG});
+          `}
+        </Script>
+      </head>
       <body
         className={`${sansFont.variable} ${monoFont.variable} font-regular antialiased tracking-wide theme-moon-dark`}
         suppressHydrationWarning
