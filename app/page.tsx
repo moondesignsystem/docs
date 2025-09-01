@@ -21,7 +21,7 @@ export default function HomePageClient() {
           flickerSpeed={0.004}
         />
         <div className="relative z-10 flex flex-col gap-4 items-center justify-around text-center h-[calc(100vh-64px)] pb-24 sm:pb-32">
-          <RiveComponent className="w-[280px] h-[280px] sm:w-[400px] sm:h-[400px]" />
+          <RiveComponent className="size-48 sm:size-96" />
           <div className="flex flex-col items-center gap-4 z-10 max-w-screen-xl">
             <h1 className="text-6xl lg:text-8xl font-medium tracking-[-0.0625rem] text-center">
               Build the best digital experiences
