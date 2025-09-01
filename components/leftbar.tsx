@@ -45,9 +45,9 @@ export function SheetLeftbar() {
           <div className="ml-2 pl-5">
             <DocsMenu isSheet />
           </div>
-          <div className="p-6 pb-4 flex gap-2.5">
+          {/* <div className="p-6 pb-4 flex gap-2.5">
             <FooterButtons />
-          </div>
+          </div> */}
         </div>
       </SheetContent>
     </Sheet>

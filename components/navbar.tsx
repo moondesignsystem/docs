@@ -19,10 +19,10 @@ export const NAVLINKS = [
     title: "Knowledgebase",
     href: "/knowledgebase",
   },
-  {
-    title: "About",
-    href: "/about",
-  },
+  // {
+  //   title: "About",
+  //   href: "/about",
+  // },
 ];
 
 const algolia_props = {
@@ -48,7 +48,7 @@ export function Navbar() {
           <NavMenu />
         </div>
 
-        <div className="flex items-center sm:justify-normal justify-between sm:gap-3 ml-1 sm:w-fit w-[90%]">
+        <div className="flex items-center sm:justify-normal justify-between sm:gap-3 ml-1 sm:w-fit">
           {/* <AlgoliaSearch {...algolia_props} /> */}
           <div className="flex items-center justify-between sm:gap-2">
             <div className="flex ml-4 sm:ml-0">
@@ -63,7 +63,7 @@ export function Navbar() {
 
 export function Logo() {
   return (
-    <Link href="/" className="flex items-center gap-2.5">
+    <Link href="/" className="flex items-center gap-2.5 ps-4">
       <svg
         width="70"
         height="40"
