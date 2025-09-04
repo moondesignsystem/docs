@@ -31,15 +31,15 @@ export default function SubLink({
   const targetHref = !noLink
     ? href
     : items && items.length > 0
-      ? `${href}${items[0].href}`
-      : undefined;
+    ? `${href}${items[0].href}`
+    : undefined;
 
   const isParentOfActiveLink = items && path.includes(href);
   const Comp = (
     <Anchor
       className={cn(
         "text-primary",
-        isParentOfActiveLink && "dark:font-bold font-bold",
+        isParentOfActiveLink && "dark:font-bold font-bold"
       )}
       activeClassName="text-primary dark:font-bold font-bold"
       href={targetHref!}
@@ -107,8 +107,8 @@ export default function SubLink({
         </div>
         <div
           className={cn(
-            "flex flex-col items-start text-base dark:text-stone-300/85 text-stone-800 ml-0.5 mt-2.5 gap-3",
-            level > 0 && "pl-4 border-l ml-1.5",
+            "flex flex-col items-start text-secondary ml-0.5 mt-2.5 gap-3",
+            level > 0 && "pl-4 border-l ml-1.5"
           )}
         >
           {items.map((item) => {
@@ -146,7 +146,7 @@ export default function SubLink({
           <div
             className={cn(
               "flex flex-col items-start text-base dark:text-stone-300/85 text-stone-800 ml-0.5 mt-2.5 gap-3",
-              level > 0 && "pl-4 border-l ml-1.5",
+              level > 0 && "pl-4 border-l ml-1.5"
             )}
           >
             {items?.map((innerLink) => {

@@ -1,5 +1,4 @@
 "use client";
-import { Button, IconButton } from "@heathmont/moon-core-tw";
 import ColorControls from "@/components/markdown/colorcontrols";
 
 const MoonComponents = () => {
@@ -10,7 +9,7 @@ const MoonComponents = () => {
       </div>
       <div>
         <div className="flex items-end gap-4">
-          <Button
+          {/* <Button
             style={{
               background: "var(--background-brand)",
               color: "var(--text-on-brand)",
@@ -251,7 +250,7 @@ const MoonComponents = () => {
             variant="ghost"
           >
             Button
-          </Button>
+          </Button> */}
         </div>
       </div>
     </div>

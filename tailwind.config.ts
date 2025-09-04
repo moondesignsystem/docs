@@ -3,14 +3,11 @@ import type { Config } from "tailwindcss";
 import animate from "tailwindcss-animate";
 
 const config = {
-  darkMode: ["class"],
   content: [
     "./pages/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",
     "./app/**/*.{ts,tsx}",
     "./src/**/*.{ts,tsx}",
-    "./node_modules/@heathmont/moon-core-tw/**/*.{js,ts,jsx,tsx}",
-    "./node_modules/@heathmont/moon-base-tw/**/*.{js,ts,jsx,tsx}",
   ],
   prefix: "",
   theme: {
@@ -84,9 +81,6 @@ const config = {
     },
   },
   plugins: [animate, typography],
-  presets: [
-    require("@heathmont/moon-core-tw/lib/es/private/presets/ds-moon-preset"),
-  ],
 } satisfies Config;
 
 export default config;

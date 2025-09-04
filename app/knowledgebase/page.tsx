@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 export default async function KnowledgebaseIndexPage() {
   const blogs = (await getAllBlogsFrontmatter()).sort(
-    (a, b) => stringToDate(b.date).getTime() - stringToDate(a.date).getTime(),
+    (a, b) => stringToDate(b.date).getTime() - stringToDate(a.date).getTime()
   );
   return (
     <div className="flex flex-col gap-1 sm:min-h-[91vh] min-h-[88vh] pt-8">
@@ -46,7 +46,7 @@ function BlogCard({
   return (
     <Link
       href={`/knowledgebase/${slug}`}
-      className="flex flex-col gap-2 items-start border rounded-md py-5 px-3 min-h-[400px]"
+      className="flex flex-col gap-2 items-start border border-primary rounded-400 py-5 px-3 min-h-[400px]"
     >
       <h3 className="text-md font-semibold -mt-1 pr-7">{title}</h3>
       <div className="w-full">
@@ -56,7 +56,7 @@ function BlogCard({
           width={400}
           height={150}
           quality={80}
-          className="w-full rounded-md object-cover h-[180px] border"
+          className="w-full rounded-400 object-cover h-[180px] border"
         />
       </div>
       <p className="text-sm text-muted-foreground">{description}</p>

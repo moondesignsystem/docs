@@ -69,7 +69,7 @@ function Indicator({ type }: { type?: "add" | "delete" }) {
       className={cn(
         "text-[13px] ml-3 px-1.5 rounded-md py-0.5 pb-1",
         type === "delete" && "dark:text-red-400 text-red-500 bg-red-400/10",
-        type === "add" && "dark:text-green-400 text-green-500 bg-green-400/10",
+        type === "add" && "dark:text-green-400 text-green-500 bg-green-400/10"
       )}
     >
       {type}
@@ -107,7 +107,7 @@ function File({
     <div
       className={cn(
         "flex items-center gap-1.5 w-full hover:dark:bg-neutral-900 hover:bg-neutral-100 px-3 py-1 rounded-md relative",
-        highlight && "dark:text-blue-400 text-blue-500",
+        highlight && "dark:text-blue-400 text-blue-500"
       )}
     >
       {renderIcon()}
@@ -156,7 +156,7 @@ function Folder({
       <div
         className={cn(
           "cursor-pointer flex items-center gap-1.5 w-full hover:dark:bg-neutral-900 hover:bg-neutral-100 px-3 py-1 rounded-md",
-          highlight && "dark:text-blue-400 text-blue-500",
+          highlight && "dark:text-blue-400 text-blue-500"
         )}
         onClick={() => setIsOpen(!isOpen)}
       >
@@ -183,7 +183,7 @@ function Folder({
               <File {...item} key={item.name} />
             ) : (
               <Folder {...item} key={item.name} sorted={sorted} />
-            ),
+            )
           )}
         </div>
       )}
@@ -203,13 +203,13 @@ export default function FileSys({
   }, [sorted, children]);
 
   return (
-    <div className="dark:bg-stone-950/25 bg-stone-50/25 rounded-md p-4 px-3 border flex flex-col gap-1.5 font-code max-w-full overflow-x-auto gap-4">
+    <div className="dark:bg-stone-950/25 bg-stone-50/25 rounded-md p-4 px-3 border border-primary flex flex-col font-code max-w-full overflow-x-auto gap-4">
       {items.map((item) =>
         isFile(item) ? (
           <File {...item} key={item.name} />
         ) : (
           <Folder {...item} key={item.name} sorted={sorted} />
-        ),
+        )
       )}
     </div>
   );
