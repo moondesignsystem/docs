@@ -26,19 +26,17 @@ export default function HomePageClient() {
             <h1 className="text-6xl lg:text-8xl font-medium tracking-[-0.0625rem] text-center">
               Build the best digital experiences
             </h1>
-            <p className="text-md lg:text-lg font-normal text-center max-w-3xl">
+            <p className="text-md lg:text-lg text-center max-w-3xl mb-4">
               Moon Design System is an open-source, complete design system.
               It&apos;s built to help product teams across the world build
               better digital experiences.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-4">
-              <Link
-                href="/docs/get-started/introduction"
-                className={buttonVariants({ variant: "glassy", size: "xl" })}
-              >
-                Get started
-              </Link>
-            </div>
+            <Link
+              href="/docs/get-started/introduction"
+              className="moon-button moon-button-outline moon-button-neutral moon-button-xl"
+            >
+              Get started
+            </Link>
           </div>
         </div>
       </div>

@@ -17,7 +17,8 @@ export default function Quickstart({ items }: { items: QuickstartItem[] }) {
           href={item.href}
           className={buttonVariants({
             variant: "secondary",
-            className: "sm:py-32 px-24 w-full flex flex-col no-underline",
+            className:
+              "sm:py-32 px-24 w-full flex flex-col no-underline hover:bg-hover",
           })}
         >
           <span className="md:text-4xl font-bold">{item.title}</span>

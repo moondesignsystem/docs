@@ -6,7 +6,6 @@ import { Navbar } from "@/components/navbar";
 import { DM_Sans, DM_Mono } from "next/font/google";
 import { FooterWrapper } from "@/components/ui/footer-wrapper";
 import "@/styles/globals.css";
-import "@/styles/base.css";
 
 const GTAG = "G-31RDD16D55";
 
@@ -29,14 +28,17 @@ export const metadata: Metadata = {
     default: "Moon Design System",
     template: "%s | Moon Design System",
   },
-  metadataBase: new URL("https://www.moon.io"),
+  metadataBase: new URL("https://beta.moon.io"),
   description:
     "Moon is a complete design system built to help product teams across the world build better digital experiences.",
+  icons: {
+    icon: "/favicon.ico",
+  },
   openGraph: {
     title: "Moon Design System",
     description:
       "Moon is an open-source design system built for fast, scalable digital experiences.",
-    url: "https://www.moon.io/",
+    url: "https://beta.moon.io/",
     siteName: "Moon Design System",
     images: [
       {
@@ -56,7 +58,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" dir="ltr" suppressHydrationWarning>
       <head>
         {/* Google Analytics */}
         <Script
@@ -73,7 +75,7 @@ export default function RootLayout({
         </Script>
       </head>
       <body
-        className={`${sansFont.variable} ${monoFont.variable} font-regular antialiased tracking-wide theme-moon-dark`}
+        className="bg-primary text-primary font-default"
         suppressHydrationWarning
       >
         <ThemeProvider
@@ -81,6 +83,12 @@ export default function RootLayout({
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
+          themes={["light-theme", "dark-theme"]}
+          value={{
+            light: "light-theme",
+            dark: "dark-theme",
+            system: "system",
+          }}
         >
           <HomePageThemeProvider>
             <Navbar />

@@ -70,7 +70,7 @@ export default async function KnowledgebasePage(props: PageProps) {
             alt="cover"
             width={700}
             height={400}
-            className="w-full h-auto rounded-md border object-cover"
+            className="w-full h-auto rounded-400 border object-cover"
           />
         </div>
         <Typography>{res.content}</Typography>
