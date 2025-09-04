@@ -31,6 +31,9 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://beta.moon.io"),
   description:
     "Moon is a complete design system built to help product teams across the world build better digital experiences.",
+  icons: {
+    icon: "/favicon.ico",
+  },
   openGraph: {
     title: "Moon Design System",
     description:
