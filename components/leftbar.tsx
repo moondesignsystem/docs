@@ -1,3 +1,4 @@
+import { Icon } from "@heathmont/moon-react-assets";
 import {
   Sheet,
   SheetClose,
@@ -6,9 +7,6 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { Logo, NavMenu } from "./navbar";
-import { Button } from "./ui/button";
-import { AlignLeftIcon } from "lucide-react";
-import { FooterButtons } from "./footer";
 import { DialogTitle } from "./ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import DocsMenu from "./docs-menu";
@@ -27,11 +25,14 @@ export function SheetLeftbar() {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <Button variant="ghost" size="icon" className="md:hidden flex">
-          <AlignLeftIcon />
-        </Button>
+        <button className="moon-icon-button moon-icon-button-ghost moon-icon-button-neutral">
+          <Icon name="menu" />
+        </button>
       </SheetTrigger>
-      <SheetContent className="flex flex-col gap-4 px-0" side="left">
+      <SheetContent
+        className="flex flex-col gap-4 px-0 bg-primary border-primary"
+        side="left"
+      >
         <DialogTitle className="sr-only">Menu</DialogTitle>
         <SheetHeader>
           <SheetClose className="px-5" asChild>

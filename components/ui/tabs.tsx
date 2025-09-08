@@ -16,7 +16,7 @@ const TabsList = React.forwardRef<
     ref={ref}
     className={cn(
       "inline-flex h-10 items-center gap-2 text-muted-foreground font-mono -mb-28 w-full",
-      className,
+      className
     )}
     {...props}
   />
@@ -57,7 +57,7 @@ const TabsTrigger = React.forwardRef<
       // Active state overrides
       "data-[state=active]:bg-[var(--background-brand)] data-[state=active]:text-[var(--text-on-brand)]",
 
-      className,
+      className
     )}
     {...props}
   >
@@ -75,7 +75,7 @@ const TabsContent = React.forwardRef<
     ref={ref}
     className={cn(
       "ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
-      className,
+      className
     )}
     {...props}
   />
