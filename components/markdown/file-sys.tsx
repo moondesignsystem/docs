@@ -106,7 +106,7 @@ function File({
   return (
     <div
       className={cn(
-        "flex items-center gap-1.5 w-full hover:dark:bg-neutral-900 hover:bg-neutral-100 px-3 py-1 rounded-md relative",
+        "flex items-center gap-1.5 w-full hover:bg-hover px-3 py-1 rounded-200 relative",
         highlight && "dark:text-blue-400 text-blue-500"
       )}
     >
@@ -118,7 +118,6 @@ function File({
             target="_blank"
             rel="noopener noreferrer"
             className="no-underline"
-            style={{ color: "var(--tw-prose-body)" }}
           >
             {name}
           </a>
@@ -155,7 +154,7 @@ function Folder({
     <div>
       <div
         className={cn(
-          "cursor-pointer flex items-center gap-1.5 w-full hover:dark:bg-neutral-900 hover:bg-neutral-100 px-3 py-1 rounded-md",
+          "cursor-pointer flex items-center gap-1.5 w-full hover:bg-hover px-3 py-1 rounded-200",
           highlight && "dark:text-blue-400 text-blue-500"
         )}
         onClick={() => setIsOpen(!isOpen)}
@@ -203,7 +202,7 @@ export default function FileSys({
   }, [sorted, children]);
 
   return (
-    <div className="dark:bg-stone-950/25 bg-stone-50/25 rounded-md p-4 px-3 border border-primary flex flex-col font-code max-w-full overflow-x-auto gap-4">
+    <div className="bg-tertiary rounded-400 p-4 px-3 border border-primary flex flex-col font-code max-w-full overflow-x-auto gap-4">
       {items.map((item) =>
         isFile(item) ? (
           <File {...item} key={item.name} />

@@ -1,6 +1,5 @@
 "use client";
 import Link from "next/link";
-import { buttonVariants } from "@/components/ui/button";
 
 export type QuickstartItem = {
   href: string;
@@ -15,13 +14,9 @@ export default function Quickstart({ items }: { items: QuickstartItem[] }) {
         <Link
           key={item.href}
           href={item.href}
-          className={buttonVariants({
-            variant: "secondary",
-            className:
-              "sm:py-32 px-24 w-full flex flex-col no-underline hover:bg-hover",
-          })}
+          className="sm:py-32 px-24 w-full flex flex-col no-underline bg-tertiary hover:bg-hover rounded-400 text-center md:text-4xl font-bold"
         >
-          <span className="md:text-4xl font-bold">{item.title}</span>
+          {item.title}
         </Link>
       ))}
     </div>

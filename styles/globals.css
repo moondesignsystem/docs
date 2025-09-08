@@ -9,3 +9,7 @@
 @import url("./components.css"); */
 @import "./moon-core.css";
 @import "./moon-components.css";
+
+@theme inline {
+  --font-default: "DM Sans", sans-serif;
+}
