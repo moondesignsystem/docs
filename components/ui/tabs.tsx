@@ -52,10 +52,10 @@ const TabsTrigger = React.forwardRef<
     className={cn(
       // Base styles
       "inline-flex items-center justify-center whitespace-nowrap w-full px-3 py-4 text-sm font-medium transition-all rounded-md border-b-0",
-      "bg-[var(--background-secondary)] text-[var(--text-primary)]",
+      "bg-[var(--color-background-secondary)] text-[var(--color-text-primary)]",
 
       // Active state overrides
-      "data-[state=active]:bg-[var(--background-brand)] data-[state=active]:text-[var(--text-on-brand)]",
+      "data-[state=active]:bg-[var(--color-background-brand)] data-[state=active]:text-[var(--color-text-on-brand)]",
 
       className
     )}

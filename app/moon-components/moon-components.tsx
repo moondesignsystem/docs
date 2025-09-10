@@ -11,8 +11,8 @@ const MoonComponents = () => {
         <div className="flex items-end gap-4">
           {/* <Button
             style={{
-              background: "var(--background-brand)",
-              color: "var(--text-on-brand)",
+              background: "var(--color-background-brand)",
+              color: "var(--color-text-on-brand)",
               borderRadius: "var(--radius-md)",
             }}
             size="xs"
@@ -22,8 +22,8 @@ const MoonComponents = () => {
 
           <Button
             style={{
-              background: "var(--background-brand)",
-              color: "var(--text-on-brand)",
+              background: "var(--color-background-brand)",
+              color: "var(--color-text-on-brand)",
               borderRadius: "var(--radius-md)",
             }}
             size="sm"
@@ -33,8 +33,8 @@ const MoonComponents = () => {
 
           <Button
             style={{
-              background: "var(--background-brand)",
-              color: "var(--text-on-brand)",
+              background: "var(--color-background-brand)",
+              color: "var(--color-text-on-brand)",
               borderRadius: "var(--radius-md)",
             }}
             size="md"
@@ -44,8 +44,8 @@ const MoonComponents = () => {
 
           <Button
             style={{
-              background: "var(--background-brand)",
-              color: "var(--text-on-brand)",
+              background: "var(--color-background-brand)",
+              color: "var(--color-text-on-brand)",
               borderRadius: "var(--radius-md)",
             }}
             size="lg"
@@ -55,8 +55,8 @@ const MoonComponents = () => {
 
           <Button
             style={{
-              background: "var(--background-brand)",
-              color: "var(--text-on-brand)",
+              background: "var(--color-background-brand)",
+              color: "var(--color-text-on-brand)",
               borderRadius: "var(--radius-md)",
             }}
             size="xl"
@@ -67,8 +67,8 @@ const MoonComponents = () => {
         <div className="flex items-end gap-4">
           <Button
             style={{
-              background: "var(--background-brand-subtle)",
-              color: "var(--text-primary)",
+              background: "var(--color-background-brand-subtle)",
+              color: "var(--color-text-primary)",
               boxShadow: "none",
               borderRadius: "var(--radius-md)",
             }}
@@ -80,8 +80,8 @@ const MoonComponents = () => {
 
           <Button
             style={{
-              background: "var(--background-brand-subtle)",
-              color: "var(--text-primary)",
+              background: "var(--color-background-brand-subtle)",
+              color: "var(--color-text-primary)",
               boxShadow: "none",
               borderRadius: "var(--radius-md)",
             }}
@@ -93,8 +93,8 @@ const MoonComponents = () => {
 
           <Button
             style={{
-              background: "var(--background-brand-subtle)",
-              color: "var(--text-primary)",
+              background: "var(--color-background-brand-subtle)",
+              color: "var(--color-text-primary)",
               boxShadow: "none",
               borderRadius: "var(--radius-md)",
             }}
@@ -106,8 +106,8 @@ const MoonComponents = () => {
 
           <Button
             style={{
-              background: "var(--background-brand-subtle)",
-              color: "var(--text-primary)",
+              background: "var(--color-background-brand-subtle)",
+              color: "var(--color-text-primary)",
               boxShadow: "none",
               borderRadius: "var(--radius-md)",
             }}
@@ -119,8 +119,8 @@ const MoonComponents = () => {
 
           <Button
             style={{
-              background: "var(--background-brand-subtle)",
-              color: "var(--text-primary)",
+              background: "var(--color-background-brand-subtle)",
+              color: "var(--color-text-primary)",
               boxShadow: "none",
               borderRadius: "var(--radius-md)",
             }}
@@ -133,10 +133,10 @@ const MoonComponents = () => {
         <div className="flex items-end gap-4">
           <Button
             style={{
-              color: "var(--text-primary)",
+              color: "var(--color-text-primary)",
               boxShadow: "none",
               borderRadius: "var(--radius-md)",
-              border: "1px solid var(--border-primary)",
+              border: "1px solid var(--color-border-primary)",
             }}
             size="xs"
             variant="outline"
@@ -146,10 +146,10 @@ const MoonComponents = () => {
 
           <Button
             style={{
-              color: "var(--text-primary)",
+              color: "var(--color-text-primary)",
               boxShadow: "none",
               borderRadius: "var(--radius-md)",
-              border: "1px solid var(--border-primary)",
+              border: "1px solid var(--color-border-primary)",
             }}
             size="sm"
             variant="outline"
@@ -159,10 +159,10 @@ const MoonComponents = () => {
 
           <Button
             style={{
-              color: "var(--text-primary)",
+              color: "var(--color-text-primary)",
               boxShadow: "none",
               borderRadius: "var(--radius-md)",
-              border: "1px solid var(--border-primary)",
+              border: "1px solid var(--color-border-primary)",
             }}
             size="md"
             variant="outline"
@@ -172,10 +172,10 @@ const MoonComponents = () => {
 
           <Button
             style={{
-              color: "var(--text-primary)",
+              color: "var(--color-text-primary)",
               boxShadow: "none",
               borderRadius: "var(--radius-md)",
-              border: "1px solid var(--border-primary)",
+              border: "1px solid var(--color-border-primary)",
             }}
             size="lg"
             variant="outline"
@@ -185,10 +185,10 @@ const MoonComponents = () => {
 
           <Button
             style={{
-              color: "var(--text-primary)",
+              color: "var(--color-text-primary)",
               boxShadow: "none",
               borderRadius: "var(--radius-md)",
-              border: "1px solid var(--border-primary)",
+              border: "1px solid var(--color-border-primary)",
             }}
             size="xl"
             variant="outline"
@@ -199,7 +199,7 @@ const MoonComponents = () => {
         <div className="flex items-end gap-4">
           <Button
             style={{
-              color: "var(--text-primary)",
+              color: "var(--color-text-primary)",
               borderRadius: "var(--radius-md)",
             }}
             size="xs"
@@ -210,7 +210,7 @@ const MoonComponents = () => {
 
           <Button
             style={{
-              color: "var(--text-primary)",
+              color: "var(--color-text-primary)",
               borderRadius: "var(--radius-md)",
             }}
             size="sm"
@@ -221,7 +221,7 @@ const MoonComponents = () => {
 
           <Button
             style={{
-              color: "var(--text-primary)",
+              color: "var(--color-text-primary)",
               borderRadius: "var(--radius-md)",
             }}
             size="md"
@@ -232,7 +232,7 @@ const MoonComponents = () => {
 
           <Button
             style={{
-              color: "var(--text-primary)",
+              color: "var(--color-text-primary)",
               borderRadius: "var(--radius-md)",
             }}
             size="lg"
@@ -243,7 +243,7 @@ const MoonComponents = () => {
 
           <Button
             style={{
-              color: "var(--text-primary)",
+              color: "var(--color-text-primary)",
               borderRadius: "var(--radius-md)",
             }}
             size="xl"

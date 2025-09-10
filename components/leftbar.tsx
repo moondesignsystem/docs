@@ -25,7 +25,7 @@ export function SheetLeftbar() {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <button className="moon-icon-button moon-icon-button-ghost moon-icon-button-neutral">
+        <button className="moon-icon-button moon-icon-button-ghost moon-icon-button-neutral md:hidden">
           <Icon name="menu" />
         </button>
       </SheetTrigger>

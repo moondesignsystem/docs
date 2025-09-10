@@ -1,9 +1,9 @@
 "use client";
 
-import { buttonVariants } from "@/components/ui/button";
 import Link from "next/link";
 import StarryBackground from "@/components/StarryBackground";
 import { useRive } from "@rive-app/react-canvas";
+import { Icon } from "@heathmont/moon-react-assets";
 
 export default function HomePageClient() {
   const { RiveComponent } = useRive({
@@ -22,8 +22,8 @@ export default function HomePageClient() {
         />
         <div className="relative z-10 flex flex-col gap-4 items-center justify-around text-center h-[calc(100vh-64px)] pb-24 sm:pb-32">
           <RiveComponent className="size-48 sm:size-96" />
-          <div className="flex flex-col items-center gap-4 z-10 max-w-screen-xl">
-            <h1 className="text-6xl lg:text-8xl font-medium tracking-[-0.0625rem] text-center">
+          <div className="flex flex-col items-center gap-6 z-10 max-w-screen-xl">
+            <h1 className="text-4xl lg:text-8xl font-medium text-center">
               Build the best digital experiences
             </h1>
             <p className="text-md lg:text-lg text-center max-w-3xl mb-4">
@@ -33,7 +33,7 @@ export default function HomePageClient() {
             </p>
             <Link
               href="/docs/get-started/introduction"
-              className="moon-button moon-button-outline moon-button-neutral moon-button-xl"
+              className="moon-button moon-button-xl"
             >
               Get started
             </Link>

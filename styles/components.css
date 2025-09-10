@@ -1,9 +1,9 @@
 .moon-components button,
 .preview-button {
-    background-color: var(--background-secondary) !important;
-    color: var(--text-primary) !important;
+  background-color: var(--color-background-secondary) !important;
+  color: var(--color-text-primary) !important;
 }
 .moon-components input {
-    background-color: var(--background-primary) !important;
-    border: 1px solid var(--border-primary) !important;
+  background-color: var(--color-background-primary) !important;
+  border: 1px solid var(--color-border-primary) !important;
 }
