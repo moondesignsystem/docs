@@ -1,9 +1,7 @@
 "use client";
 
 import { ModeToggle } from "@/components/theme-toggle";
-import { GithubIcon } from "lucide-react";
 import Link from "next/link";
-import { buttonVariants } from "./ui/button";
 import Anchor from "./anchor";
 import { SheetLeftbar } from "./leftbar";
 import { page_routes } from "@/lib/routes-config";
@@ -44,7 +42,7 @@ export function Navbar() {
           </div>
         </div>
 
-        <div className="lg:flex hidden absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 gap-6">
+        <div className="md:flex hidden absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 gap-6">
           <NavMenu />
         </div>
 

@@ -13,7 +13,7 @@ export default function ColorControls() {
       document.documentElement.style.removeProperty("--background-secondary");
       document.documentElement.style.removeProperty("--background-brand");
       document.documentElement.style.removeProperty(
-        "--background-brand-subtle",
+        "--background-brand-subtle"
       );
       document.documentElement.style.removeProperty("--text-primary");
       document.documentElement.style.removeProperty("--text-brand");
@@ -21,60 +21,60 @@ export default function ColorControls() {
     } else if (selectedComboId === "green") {
       document.documentElement.style.setProperty(
         "--background-primary",
-        "var(--theme-2-background-primary)",
+        "var(--theme-2-background-primary)"
       );
       document.documentElement.style.setProperty(
         "--background-secondary",
-        "var(--theme-2-background-secondary)",
+        "var(--theme-2-background-secondary)"
       );
       document.documentElement.style.setProperty(
         "--background-brand",
-        "var(--theme-2-background-brand)",
+        "var(--theme-2-background-brand)"
       );
       document.documentElement.style.setProperty(
         "--background-brand-subtle",
-        "var(--theme-2-background-brand-subtle)",
+        "var(--theme-2-background-brand-subtle)"
       );
       document.documentElement.style.setProperty(
         "--text-primary",
-        "var(--theme-2-text-primary)",
+        "var(--theme-2-text-primary)"
       );
       document.documentElement.style.setProperty(
         "--text-brand",
-        "var(--theme-2-text-brand)",
+        "var(--theme-2-text-brand)"
       );
       document.documentElement.style.setProperty(
         "--text-on-brand",
-        "var(--theme-2-text-on-brand)",
+        "var(--theme-2-text-on-brand)"
       );
     } else if (selectedComboId === "orange") {
       document.documentElement.style.setProperty(
         "--background-primary",
-        "var(--theme-3-background-primary)",
+        "var(--theme-3-background-primary)"
       );
       document.documentElement.style.setProperty(
         "--background-secondary",
-        "var(--theme-3-background-secondary)",
+        "var(--theme-3-background-secondary)"
       );
       document.documentElement.style.setProperty(
         "--background-brand",
-        "var(--theme-3-background-brand)",
+        "var(--theme-3-background-brand)"
       );
       document.documentElement.style.setProperty(
         "--background-brand-subtle",
-        "var(--theme-3-background-brand-subtle)",
+        "var(--theme-3-background-brand-subtle)"
       );
       document.documentElement.style.setProperty(
         "--text-primary",
-        "var(--theme-3-text-primary)",
+        "var(--theme-3-text-primary)"
       );
       document.documentElement.style.setProperty(
         "--text-brand",
-        "var(--theme-3-text-brand)",
+        "var(--theme-3-text-brand)"
       );
       document.documentElement.style.setProperty(
         "--text-on-brand",
-        "var(--theme-3-text-on-brand)",
+        "var(--theme-3-text-on-brand)"
       );
     }
   }, [selectedComboId]);
@@ -168,10 +168,10 @@ export default function ColorControls() {
             height: 40,
             border:
               selectedRadius === "xs"
-                ? "1px solid var(--border-primary)"
-                : "0px solid var(--border-secondary)",
+                ? "1px solid var(--color-border-primary)"
+                : "0px solid var(--color-border-secondary)",
             borderRadius: "0px",
-            background: "var(--background-secondary)",
+            background: "var(--color-background-secondary)",
             cursor: "pointer",
             padding: 0,
             outline: "none",
@@ -188,10 +188,10 @@ export default function ColorControls() {
             height: 40,
             border:
               selectedRadius === "md"
-                ? "1px solid var(--border-primary)"
-                : "0px solid var(--border-secondary)",
+                ? "1px solid var(--color-border-primary)"
+                : "0px solid var(--color-border-secondary)",
             borderRadius: "12px",
-            background: "var(--background-secondary)",
+            background: "var(--color-background-secondary)",
             cursor: "pointer",
             padding: 0,
             outline: "none",
@@ -208,10 +208,10 @@ export default function ColorControls() {
             height: 40,
             border:
               selectedRadius === "xl"
-                ? "1px solid var(--border-primary)"
-                : "0px solid var(--border-secondary)",
+                ? "1px solid var(--color-border-primary)"
+                : "0px solid var(--color-border-secondary)",
             borderRadius: "24px",
-            background: "var(--background-secondary)",
+            background: "var(--color-background-secondary)",
             cursor: "pointer",
             padding: 0,
             outline: "none",

@@ -6,6 +6,7 @@ description: Docs for using typography in your products.
 ## Approach
 
 Typography system is structured using design tokens, available as variables in both Figma and CSS libraries. These tokens are integrated throughout the entire design system and form a foundational layer. Typography system can be categorized into:
+
 - **Tokens:** Individual tokens representing various text properties.
 - **Styles:** Tokens combined into named and reusable styles, applied directly to UI elements.
 
@@ -35,7 +36,7 @@ This abstraction allows you to update underlying primitive values (e.g. font-siz
 Example of semantic tokens:
 
 ```css
---body-400-font-size: var(--text-16);
+--body-400-font-size: var(--color-text-16);
 --body-400-line-height: var(--space-24);
 --body-400-font-weight: var(--font-weight-regular);
 --body-400-font-family: var(--font-family-primary);
@@ -62,12 +63,12 @@ Typography styles are built by combining individual tokens into composite tokens
 
 Anatomy of a text style:
 
-| **Property**          | **Token**                 | **Value**
-|---------------------  |---------------------------|----------------
-| Font-size             | `--body-400-font-size`    | 16px
-| Line-height           | `--body-400-line-height`  | 24px
-| Font-family           | `--body-400-font-weight`  | Regular
-| Font-weight           | `--body-400-font-family`  | DM Sans, sans-serif
+| **Property** | **Token**                | **Value**           |
+| ------------ | ------------------------ | ------------------- |
+| Font-size    | `--body-400-font-size`   | 16px                |
+| Line-height  | `--body-400-line-height` | 24px                |
+| Font-family  | `--body-400-font-weight` | Regular             |
+| Font-weight  | `--body-400-font-family` | DM Sans, sans-serif |
 
 ### Semantic styles
 
