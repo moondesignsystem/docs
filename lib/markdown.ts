@@ -21,6 +21,7 @@ import Outlet from "@/components/markdown/outlet";
 import Pre from "@/components/markdown/pre";
 import Quickstart from "@/components/markdown/quickstart";
 import { Stepper, StepperItem } from "@/components/markdown/stepper";
+import TokenList from "@/components/markdown/token-list";
 import { FooterWrapper } from "@/components/ui/footer-wrapper";
 import {
   Table,
@@ -48,6 +49,7 @@ const components = {
   Files,
   ColorControls,
   Quickstart,
+  TokenList,
   FooterWrapper,
   table: Table,
   thead: TableHeader,

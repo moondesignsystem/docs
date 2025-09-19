@@ -1,22 +1,16 @@
 "use client";
 
 import { useTheme } from "next-themes";
-import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Icon } from "@heathmont/moon-react-assets";
 
 export function ModeToggle() {
   const { theme, setTheme } = useTheme();
-  const pathname = usePathname();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
   }, []);
-
-  if (pathname === "/") {
-    return null;
-  }
 
   if (!mounted) {
     return null;

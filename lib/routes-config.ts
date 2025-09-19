@@ -41,14 +41,15 @@ export const ROUTES: EachRoute[] = [
     ],
   },
   {
-    title: "Design language",
-    href: "/design-language",
+    title: "Design tokens",
+    href: "/design-tokens",
     noLink: true,
     type: "static",
     items: [
       { title: "Color", href: "/color" },
-      { title: "Typography", href: "/typography" },
-      { title: "Elevation", href: "/elevation" },
+      { title: "Dimension", href: "/dimension" },
+      { title: "Text", href: "/text" },
+      { title: "Shadow", href: "/shadow" },
     ],
   },
   {
@@ -65,18 +66,6 @@ export const ROUTES: EachRoute[] = [
         items: [
           { title: "Button", href: "/button" },
           { title: "Icon button", href: "/icon-button" },
-          {
-            title: "Tile button",
-            href: "/tile-button",
-            noLink: true,
-            tag: "Coming soon",
-          },
-          {
-            title: "Button group",
-            href: "/button-group",
-            noLink: true,
-            tag: "Coming soon",
-          },
         ],
       },
       {
@@ -113,12 +102,6 @@ export const ROUTES: EachRoute[] = [
           { title: "Carousel", href: "/carousel" },
           { title: "List", href: "/list" },
           { title: "Table", href: "/table" },
-          {
-            title: "Card",
-            href: "/card",
-            noLink: true,
-            tag: "Coming soon",
-          },
         ],
       },
       {

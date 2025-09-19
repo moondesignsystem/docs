@@ -13,3 +13,7 @@
 @theme inline {
   --font-default: "DM Sans", sans-serif;
 }
+
+h2, h3 {
+    font-weight: 400;
+}

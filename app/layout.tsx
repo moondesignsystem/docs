@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import { ThemeProvider } from "@/components/contexts/theme-provider";
-import { HomePageThemeProvider } from "@/components/contexts/homepage-theme-provider";
 import { Navbar } from "@/components/navbar";
 import { DM_Sans, DM_Mono } from "next/font/google";
 import { FooterWrapper } from "@/components/ui/footer-wrapper";
+import "@/styles/core.css";
 import "@/styles/globals.css";
+
 
 const GTAG = "G-31RDD16D55";
 
@@ -90,13 +91,11 @@ export default function RootLayout({
             system: "system",
           }}
         >
-          <HomePageThemeProvider>
-            <Navbar />
-            <main className="sm:container mx-auto w-[90vw] h-auto scroll-smooth">
-              {children}
-            </main>
-            <FooterWrapper />
-          </HomePageThemeProvider>
+          <Navbar />
+          <main className="sm:container mx-auto w-[90vw] h-auto scroll-smooth">
+            {children}
+          </main>
+          <FooterWrapper />
         </ThemeProvider>
       </body>
     </html>
