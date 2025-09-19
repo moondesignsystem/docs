@@ -4,6 +4,7 @@ import { ThemeProvider } from "@/components/contexts/theme-provider";
 import { Navbar } from "@/components/navbar";
 import { DM_Sans, DM_Mono } from "next/font/google";
 import { FooterWrapper } from "@/components/ui/footer-wrapper";
+import "@/styles/moon-core.css";
 import "@/styles/core.css";
 import "@/styles/globals.css";
 
