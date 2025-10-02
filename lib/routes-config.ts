@@ -49,7 +49,7 @@ export const ROUTES: EachRoute[] = [
       { title: "Color", href: "/color" },
       { title: "Dimension", href: "/dimension" },
       { title: "Text", href: "/text" },
-      { title: "Shadow", href: "/shadow" },
+      { title: "Style", href: "/style" },
     ],
   },
   {

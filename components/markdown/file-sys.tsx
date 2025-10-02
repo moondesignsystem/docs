@@ -202,7 +202,7 @@ export default function FileSys({
   }, [sorted, children]);
 
   return (
-    <div className="bg-tertiary rounded-400 p-4 px-3 border border-primary flex flex-col font-code max-w-full overflow-x-auto gap-4">
+    <div className="bg-primary rounded-400 p-4 px-3 border border-primary flex flex-col font-code max-w-full overflow-x-auto gap-4">
       {items.map((item) =>
         isFile(item) ? (
           <File {...item} key={item.name} />

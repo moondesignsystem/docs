@@ -21,7 +21,7 @@ export function ModeToggle() {
       className="moon-icon-button moon-icon-button-ghost moon-icon-button-neutral"
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
     >
-      <Icon name={theme === "dark" ? "moon" : "sun"} />
+      <Icon name={theme === "dark" ? "sun" : "moon"} />
       <span className="sr-only">Toggle theme</span>
     </button>
   );

@@ -13,6 +13,7 @@ import { getIconName, hasSupportedExtension } from "./utils";
 
 // custom components imports
 import ColorControls from "@/components/markdown/colorcontrols";
+import CSSVariablesDisplay from "@/components/design-tokens/css-variables-display";
 import Files from "@/components/markdown/files";
 import Image from "@/components/markdown/image";
 import Link from "@/components/markdown/link";
@@ -21,7 +22,11 @@ import Outlet from "@/components/markdown/outlet";
 import Pre from "@/components/markdown/pre";
 import Quickstart from "@/components/markdown/quickstart";
 import { Stepper, StepperItem } from "@/components/markdown/stepper";
-import TokenList from "@/components/markdown/token-list";
+import { Icon } from "@heathmont/moon-react-assets";
+import { BottomSheetDemo } from "@/components/markdown/bottom-sheet-demo";
+import { DialogDemo } from "@/components/markdown/dialog-demo";
+import { DrawerDemo } from "@/components/markdown/drawer-demo";
+import { DropdownDemo } from "@/components/markdown/dropdown-demo";
 import { FooterWrapper } from "@/components/ui/footer-wrapper";
 import {
   Table,
@@ -48,9 +53,14 @@ const components = {
   Outlet,
   Files,
   ColorControls,
+  CSSVariablesDisplay,
   Quickstart,
-  TokenList,
   FooterWrapper,
+  Icon,
+  BottomSheetDemo,
+  DialogDemo,
+  DrawerDemo,
+  DropdownDemo,
   table: Table,
   thead: TableHeader,
   th: TableHead,
