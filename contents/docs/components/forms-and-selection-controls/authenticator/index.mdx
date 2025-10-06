@@ -7,12 +7,12 @@ description: "Also known as: OTP input, 2FA input"
 
 <div className="w-full bg-primary h-[320px] flex items-center justify-center border border-primary gap-4">
     <div className="moon-authenticator">
-      <input type="text" maxlength="1"/>
-      <input type="text" maxlength="1"/>
-      <input type="text" maxlength="1"/>
-      <input type="text" maxlength="1"/>
-      <input type="text" maxlength="1"/>
-      <input type="text" maxlength="1"/>
+      <input type="text" maxLength="1"/>
+      <input type="text" maxLength="1"/>
+      <input type="text" maxLength="1"/>
+      <input type="text" maxLength="1"/>
+      <input type="text" maxLength="1"/>
+      <input type="text" maxLength="1"/>
     </div>
 </div>
 
@@ -24,7 +24,7 @@ description: "Also known as: OTP input, 2FA input"
       type: "file",
       name: "Figma",
       subtype: "figma",
-      href: "https://www.figma.com/design/FUBwdPX05YWTigAMVFkKoL/MDS-Authenticator",
+      href: "https://www.figma.com/community/file/1555928673224949701/mds-authenticator",
     },
     {
       type: "file",
@@ -51,19 +51,19 @@ description: "Also known as: OTP input, 2FA input"
 
 | **Property**         | **Values**                                                 | **Default** |
 | -------------------- | ---------------------------------------------------------- | ----------- |
-| Size `Variant`       | `Sm \| Md \| Lg \| Xl`                                     | `Md`        |
-| State `Variant`      | `Default \| Hover \| Focus \| Active \| Error \| Disabled` | `Default`   |
-| Has label `Boolean`  | `true \| false`                                            | `true`      |
-| Label `Text`         | `string`                                                   | `Label`     |
-| Value `Text`         | `string`                                                   | `9`         |
-| Has helper `Boolean` | `true \| false`                                            | `true`      |
+| Variant `Mode`       | Fill \| Outline                                            | Fill        |
+| Size `Variant`       | Sm \| Md \| Lg \| Xl                                       | Md          |
+| State `Variant`      | Default \| Hover \| Focus \| Active \| Error \| Disabled   | Default     |
+| Label `Text`         | string                                                     | Label       |
+| Value `Text`         | string                                                     | 9           |
+| Helper `Boolean`     | true \| false                                              | false       |
 
 ## When to use
 
 {<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M5 13l4 4L19 7" style={{ stroke: "var(--color-text-positive)" }} strokeWidth="2" /></svg>} When two-factor authentication is required for the user to get access to the application, or when performing sensitive actions. <br/>
 {<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M5 13l4 4L19 7" style={{ stroke: "var(--color-text-positive)" }} strokeWidth="2" /></svg>} Confirming user email address or phone number during onboarding. <br/>
 {<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M5 13l4 4L19 7" style={{ stroke: "var(--color-text-positive)" }} strokeWidth="2" /></svg>} Automatically make the next field active after entering a value. <br/>
-{<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M5 13l4 4L19 7" style={{ stroke: "var(--color-text-positive)" }} strokeWidth="2" /></svg>} Provide real-time feedback on the field. <br/><br/>
+{<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M5 13l4 4L19 7" style={{ stroke: "var(--color-text-positive)" }} strokeWidth="2" /></svg>} Provide real-time feedback on the field. <br/>
 {<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M6 6L18 18M6 18L18 6" style={{ stroke: "var(--color-text-negative)" }} strokeWidth="2" /></svg>} If the system supports a more seamless authentication method, such as biometric authentication. <br/>
 
 ## Behaviour
@@ -80,32 +80,17 @@ Using states ensure clear user feedback, highlighting possible actions or barrie
 | `Error`    | Used when an invalid action occurs. Component may appear red or display helper, signaling an issue that needs resolution.                            |
 | `Disabled` | A non-interactive state where the component appears faded or grayed out. It indicates that the action is unavailable at the moment.                  |
 
-## Size
-
-Dimensions of the authenticator are tied to the global `scale` tokens. This ensures that the components, especially forms, with similar size settings remain consistent across the interface. `scale` tokens also provides more granular control over dimensional settings.
-
-```css:scale.css showLineNumbers
---scale-height-<size>
---scale-width-<size>
---scale-padding-<size>
---scale-gap-<size>
---scale-radius-<size>
---scale-text-size-<size>
---scale-text-height-<size>
-```
-
 ## Length
 
 The length of the authenticator is flexible. Depending on the type of code, slot amount can be adjusted between 4 and 6.
 
 ## Helper component
 
-Helper is a nested component and can optionally be shown below the authenticator. Use helper text if providing additional context about the form item (error message or hint).
+Helper is a nested component and can optionally be shown below the textarea container. Use helper text if providing additional context about the form item (error message or hint).
 Keep the message concise and clear, optionally show an icon to support the message.
 
 | **Property**        | **Values**      | **Default** |
 | ------------------- | --------------- | ----------- |
-| Error `Boolean`     | `true \| false` | `false`     |
-| Has icon `Boolean`  | `true \| false` | `true`      |
-| Icon `InstanceSwap` | `Icon`          | `info`      |
-| Label `Text`        | `string`        | `Helper`    |
+| Type `Variant`      | Hint \| Error   | Hint        |
+| Icon `Boolean`      | true \| false   | true        |
+| Label `Text`        | string          | Hint        |

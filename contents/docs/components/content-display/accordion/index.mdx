@@ -57,7 +57,7 @@ description: "Also known as: Expandable section, Disclosure"
       type: "file",
       name: "Figma",
       subtype: "figma",
-      href: "https://www.figma.com/design/1986ylXTOrC1FP9Ma9Bm9X/MDS-Accordion",
+      href: "https://www.figma.com/community/file/1555928155526186944/mds-accordion",
     },
     {
       type: "file",
@@ -82,13 +82,13 @@ description: "Also known as: Expandable section, Disclosure"
 
 ## Properties
 
-| **Property**                | **Values**             | **Default** |
-| --------------------------- | ---------------------- | ----------- |
-| Is open `Boolean`           | `true \| false`        | `false`     |
-| Size `Variant`              | `Sm \| Md \| Lg \| Xl` | `Md`        |
-| Title `Text`                | `string`               | `Title`     |
-| Has separator `Boolean`     | `true \| false`        | `true`      |
-| Swap content `InstanceSwap` | `Any component`        | `Text`      |
+| **Property**                | **Values**                | **Default** |
+| --------------------------- | ------------------------- | ----------- |
+| Variant `Mode`              | Fill \| Outline \| Ghost  | Fill        |
+| Open `Boolean`              | true \| false             | false       |
+| Size `Variant`              | Sm \| Md \| Lg \| Xl      | Md          |
+| Start item `Boolean`        | true \| false             | false       |
+| Title `Text`                | string                    | Title       |
 
 ## Best practises
 
@@ -102,7 +102,7 @@ description: "Also known as: Expandable section, Disclosure"
 
 {<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M5 13l4 4L19 7" style={{ stroke: "var(--color-text-positive)" }} strokeWidth="2" /></svg>} When presenting a lot of related content while keeping the interface compact. <br/>
 {<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M5 13l4 4L19 7" style={{ stroke: "var(--color-text-positive)" }} strokeWidth="2" /></svg>} Where users don’t need all the information at once but should have the option to expand details.<br/>
-{<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M5 13l4 4L19 7" style={{ stroke: "var(--color-text-positive)" }} strokeWidth="2" /></svg>} When user needs to browse grouped content selectively. <br/><br/>
+{<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M5 13l4 4L19 7" style={{ stroke: "var(--color-text-positive)" }} strokeWidth="2" /></svg>} When user needs to browse grouped content selectively. <br/>
 {<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M6 6L18 18M6 18L18 6" style={{ stroke: "var(--color-text-negative)" }} strokeWidth="2" /></svg>} When users need to see everything at the same time. <br/>
 {<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M6 6L18 18M6 18L18 6" style={{ stroke: "var(--color-text-negative)" }} strokeWidth="2" /></svg>} If users need to compare multiple sections at once. <br/>
 
@@ -116,17 +116,3 @@ description: "Also known as: Expandable section, Disclosure"
 
 Accordions expand and collapse content vertically when their headers are clicked. This allows to show or hide sections without navigating away. Accordion item will remain open until the user closes it.
 Typically, only one accordion item is open at a time. Accordion header is the trigger for expanding and collapsing.
-
-## Size
-
-Dimensions of the accordion are tied to the global `scale` tokens. This ensures that the components with similar size settings remain consistent across the interface. `scale` tokens also provides more granular control over dimensional settings.
-
-```css:scale.css showLineNumbers
---scale-height-<size>
---scale-padding-<size>
---scale-gap-<size>
---scale-radius-<size>
---scale-icon-size-<size>
---scale-text-size-<size>
---scale-text-height-<size>
-```

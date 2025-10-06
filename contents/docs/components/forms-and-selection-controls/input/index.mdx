@@ -17,7 +17,7 @@ description: "Also known as: Text field, Textbox, Form"
       type: "file",
       name: "Figma",
       subtype: "figma",
-      href: "https://www.figma.com/design/JYqk7yF9vTBduC6Sw7M1yE/MDS-Input",
+      href: "https://www.figma.com/community/file/1556938429649409849/mds-input",
     },
     {
       type: "file",
@@ -44,12 +44,14 @@ description: "Also known as: Text field, Textbox, Form"
 
 | **Property**              | **Values**                                                 | **Default** |
 | ------------------------- | ---------------------------------------------------------- | ----------- |
-| Size `Variant`            | Sm \| Md \| Lg \| Xl                                       | Md          |
 | Variant `Mode`            | Fill \| Outline                                            | Fill        |
-| Has label `Boolean`       | true \| false                                              | true        |
+| Size `Variant`            | Sm \| Md \| Lg \| Xl                                       | Md          |
+| State `Variant`           | Default \| Hover \| Focus \| Error \| Disabled             | Default     |
+| Label `Text`              | string                                                     | Label       |
 | Start item `Boolean`      | true \| false                                              | false       |
+| Value `Text`              | string                                                     | Value       |
 | End item `Boolean`        | true \| false                                              | false       |
-| Has helper `Boolean`      | true \| false                                              | false       |
+| Helper `Boolean`          | true \| false                                              | false       |
 
 ## When to use
 
@@ -76,20 +78,6 @@ Using states ensure clear user feedback, highlighting possible actions or barrie
 Input component can be configured to use various HTML input types, such as: `number`, `date`, `password`, `search`, `email`, `text`, `time` and `URL`.
 These types help ensure forms can validate whether the user has provided the correct input format.
 
-## Size
-
-Dimensions of the input are tied to the global `scale` tokens. This ensures that the components, especially forms, with similar size settings remain consistent across the interface. `scale` tokens also provides more granular control over dimensional settings.
-
-```css:scale.css showLineNumbers
---scale-height-<size>
---scale-padding-<size>
---scale-gap-<size>
---scale-radius-<size>
---scale-icon-size-<size>
---scale-text-size-<size>
---scale-text-height-<size>
-```
-
 ## Required and optional
 
 Use an asterisk (\*) to indicate a required field. When the majority of fields in form group are optional, label only the required ones for clarity.
@@ -107,7 +95,6 @@ Keep the message concise and clear, optionally show an icon to support the messa
 
 | **Property**        | **Values**      | **Default** |
 | ------------------- | --------------- | ----------- |
-| Error `Boolean`     | `true \| false` | `false`     |
-| Has icon `Boolean`  | `true \| false` | `true`      |
-| Icon `InstanceSwap` | `Icon`          | `info`      |
-| Label `Text`        | `string`        | `Helper`    |
+| Type `Variant`      | Hint \| Error   | Hint        |
+| Icon `Boolean`      | true \| false   | true        |
+| Label `Text`        | string          | Hint        |

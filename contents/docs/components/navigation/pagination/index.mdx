@@ -17,7 +17,7 @@ description: "Also known as: Page navigation, Next/previous button"
       type: "file",
       name: "Figma",
       subtype: "figma",
-      href: "https://www.figma.com/design/VOsOwxAzbAi9yzO7tyig64/MDS-Pagination",
+      href: "https://www.figma.com/community/file/1556988621052163204/mds-pagination",
     },
     {
       type: "file",
@@ -42,32 +42,17 @@ description: "Also known as: Page navigation, Next/previous button"
 
 ## Properties
 
-| **Property**             | **Values**                  | **Default** |
-| ------------------------ | --------------------------- | ----------- |
-| Has navigation `Boolean` | `true \| false`             | `true`      |
-| State `Variant`          | `Default \| Hover \| Focus` | `Default`   |
-| Selected `Boolean`       | `true \| false`             | `false`     |
-| Label `Text`             | `string`                    | `1`         |
+| **Property**              | **Values**                  | **Default** |
+| ------------------------- | --------------------------- | ----------- |
+| Selected `Variant`        | Default \| Active           | Default     |
+| State `Variant`           | Default \| Hover \| Focus   | Default     |
+| Label `Text`              | string                      | Page 1      |
+| Controls `Booleans`       | false \| true               | false       |
 
 ## When to use
 
 {<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M5 13l4 4L19 7" style={{ stroke: "var(--color-text-positive)" }} strokeWidth="2" /></svg>} There is a large amount of content that needs to be split across multiple pages. <br/>
 {<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M5 13l4 4L19 7" style={{ stroke: "var(--color-text-positive)" }} strokeWidth="2" /></svg>} The content is not loaded dynamically. <br/>
-{<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M5 13l4 4L19 7" style={{ stroke: "var(--color-text-positive)" }} strokeWidth="2" /></svg>} Users may need to jump to a specific page. <br/><br/>
+{<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M5 13l4 4L19 7" style={{ stroke: "var(--color-text-positive)" }} strokeWidth="2" /></svg>} Users may need to jump to a specific page. <br/>
 {<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M6 6L18 18M6 18L18 6" style={{ stroke: "var(--color-text-negative)" }} strokeWidth="2" /></svg>} Infinite scrolling or a “Load more” button provides a better user experience. <br/>
 {<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M6 6L18 18M6 18L18 6" style={{ stroke: "var(--color-text-negative)" }} strokeWidth="2" /></svg>} The pages don’t have a logical sequence, for example independent categories instead of continuous content. <br/>
-
-## Size
-
-Dimensions of the breadcrumb are tied to the global `scale` tokens. This ensures that the components with similar size settings remain consistent across the interface. `scale` tokens also provides more granular control over dimensional settings.
-
-```css:scale.css showLineNumbers
---scale-width-<size>
---scale-height-<size>
---scale-padding-<size>
---scale-gap-<size>
---scale-radius-<size>
---scale-icon-size-<size>
---scale-text-size-<size>
---scale-text-height-<size>
-```

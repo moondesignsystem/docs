@@ -42,20 +42,18 @@ description: "Also known as: Multiline input, Comment box"
 
 ## Properties
 
-| **Property**         | **Values**                                                 | **Default** |
-| -------------------- | ---------------------------------------------------------- | ----------- |
-| Size `Variant`       | `Sm \| Md \| Lg \| Xl`                                     | `Md`        |
-| State `Variant`      | `Default \| Hover \| Focus \| Active \| Error \| Disabled` | `Default`   |
-| Has label `Boolean`  | `true \| false`                                            | `true`      |
-| Label `Text`         | `string`                                                   | `Label`     |
-| Value `Text`         | `string`                                                   | `Value`     |
-| Has resize `Boolean` | `true \| false`                                            | `true`      |
-| Has helper `Boolean` | `true \| false`                                            | `true`      |
+| **Property**              | **Values**                                                 | **Default** |
+| ------------------------- | ---------------------------------------------------------- | ----------- |
+| Variant `Mode`            | Fill \| Outline                                            | Fill        |
+| Size `Variant`            | Sm \| Md \| Lg \| Xl                                       | Md          |
+| Label `Text`              | string                                                     | Label       |
+| Value `Text`              | string                                                     | Value       |
+| Helper `Boolean`          | true \| false                                              | false       |
 
 ## When to use
 
 {<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M5 13l4 4L19 7" style={{ stroke: "var(--color-text-positive)" }} strokeWidth="2" /></svg>} When user needs to input multiple lines of text, such as comments or descriptions. <br/>
-{<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M5 13l4 4L19 7" style={{ stroke: "var(--color-text-positive)" }} strokeWidth="2" /></svg>} When content length is unpredictable. <br/><br/>
+{<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M5 13l4 4L19 7" style={{ stroke: "var(--color-text-positive)" }} strokeWidth="2" /></svg>} When content length is unpredictable. <br/>
 {<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M6 6L18 18M6 18L18 6" style={{ stroke: "var(--color-text-negative)" }} strokeWidth="2" /></svg>} Use regular input if the expected input is short. <br/>
 {<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M6 6L18 18M6 18L18 6" style={{ stroke: "var(--color-text-negative)" }} strokeWidth="2" /></svg>} When rich text formatting is required, use dedicated text editor. <br/>
 
@@ -73,19 +71,6 @@ Using states ensure clear user feedback, highlighting possible actions or barrie
 | `Error`    | Used when an invalid action occurs. Component may appear red or display helper, signaling an issue that needs resolution.                            |
 | `Disabled` | A non-interactive state where the component appears faded or grayed out. It indicates that the action is unavailable at the moment.                  |
 
-## Size
-
-Dimensions of the textarea are tied to the global `scale` tokens. This ensures that the components, especially forms, with similar size settings remain consistent across the interface. `scale` tokens also provides more granular control over dimensional settings.
-
-```css:scale.css showLineNumbers
---scale-height-<size>
---scale-padding-<size>
---scale-gap-<size>
---scale-radius-<size>
---scale-text-size-<size>
---scale-text-height-<size>
-```
-
 ## Required and optional
 
 Use an asterisk (\*) to indicate a required field. When the majority of fields in form group are optional, label only the required ones for clarity.
@@ -96,10 +81,6 @@ Alternatively, if most fields in the form group are required, highlight only the
 Field label is typically positioned on top of the textarea container. For the `Xl` size, the label appears inside the textarea container.
 Initially, label for `Xl` size behaves similar to a placeholder, but as the user provides input, the label resizes and moves to the top of the textarea container.
 
-## Resize
-
-Users can resize the textarea horizontally and vertically by dragging the icon in the bottom right. This feature can be turned off if needed.
-
 ## Helper component
 
 Helper is a nested component and can optionally be shown below the textarea container. Use helper text if providing additional context about the form item (error message or hint).
@@ -107,7 +88,6 @@ Keep the message concise and clear, optionally show an icon to support the messa
 
 | **Property**        | **Values**      | **Default** |
 | ------------------- | --------------- | ----------- |
-| Error `Boolean`     | `true \| false` | `false`     |
-| Has icon `Boolean`  | `true \| false` | `true`      |
-| Icon `InstanceSwap` | `Icon`          | `info`      |
-| Label `Text`        | `string`        | `Helper`    |
+| Type `Variant`      | Hint \| Error   | Hint        |
+| Icon `Boolean`      | true \| false   | true        |
+| Label `Text`        | string          | Hint        |

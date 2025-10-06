@@ -42,43 +42,46 @@ description: "Also known as: Label, Pill, Badge"
 
 ## Properties
 
-| **Property**              | **Values**      | **Default** |
-| ------------------------- | --------------- | ----------- |
-| Size `Variant`            | `2Xs \| Xs`     | `Xs`        |
-| Has start item `Boolean`  | `true \| false` | `true`      |
-| Start item `InstanceSwap` | `Any icon`      | `heart`     |
-| Label `Text`              | `string`        | `Label`     |
-| Has end item `Boolean`    | `true \| false` | `true`      |
-| End item `InstanceSwap`   | `Any icon`      | `close`     |
+| **Property**              | **Values**                                                   | **Default**   |
+| ------------------------- | ------------------------------------------------------------ | ------------- |
+| Variant `Mode`            | Fill \| Soft \| Outline \| Ghost                             | Fill          |
+| Context `Mode`            | Brand \| Neutral \| Positive \| Negative \| Caution \| Info  | Brand         |
+| Size `Variant`            | 2Xs \| Xs                                                    | Xs            |
+| Start item `Boolean`      | true \| false                                                | true          |
+| Label `Text`              | string                                                       | Label         |
+| End item `Boolean`        | true \| false                                                | true          |
 
 ## When to use
 
 {<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M5 13l4 4L19 7" style={{ stroke: "var(--color-text-positive)" }} strokeWidth="2" /></svg>} When categorizing or labeling content in a way that helps users understand context. <br/>
 {<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M5 13l4 4L19 7" style={{ stroke: "var(--color-text-positive)" }} strokeWidth="2" /></svg>} If the user needs to interact with the tags by adding or removing them. <br/>
-{<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M5 13l4 4L19 7" style={{ stroke: "var(--color-text-positive)" }} strokeWidth="2" /></svg>} When displaying static or descriptive keywords to help users filter or understand the content. <br/><br/>
+{<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M5 13l4 4L19 7" style={{ stroke: "var(--color-text-positive)" }} strokeWidth="2" /></svg>} When displaying static or descriptive keywords to help users filter or understand the content. <br/>
 {<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M6 6L18 18M6 18L18 6" style={{ stroke: "var(--color-text-negative)" }} strokeWidth="2" /></svg>} If the labels need to be selected or deselected repeatedly as part of a multi-selection process. Use chip instead. <br/>
 {<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M6 6L18 18M6 18L18 6" style={{ stroke: "var(--color-text-negative)" }} strokeWidth="2" /></svg>} If the labels are interactive and need to represent actions like adding or removing items. Use chip instead. <br/>
 
-## Size
-
-Dimensions of the tag are tied to the global `scale` tokens. This ensures that the components, especially forms, with similar size settings remain consistent across the interface. `scale` tokens also provides more granular control over dimensional settings.
-
-```css:scale.css showLineNumbers
---scale-width-<size>
---scale-height-<size>
---scale-padding-<size>
---scale-gap-<size>
---scale-radius-<size>
---scale-icon-size-<size>
---scale-text-size-<size>
---scale-text-height-<size>
-```
-
 ## Variants
 
-Some common variants are already created and ready to use (see the table), but you have the possibility to add new variants or customize every visual aspect through tokens and token modes.
+Variants define the visual appearance of components and communicate the priority of the action or information they represent. Some common variants are provided out of the box (see the table below), but you can also create new variants to match your system's needs. 
 
-| **Variant** | **When to use**                                                                                                           |
-| ----------- | ------------------------------------------------------------------------------------------------------------------------- |
-| `Fill`      | Fill variant emphasizes visibility and interaction priority. Visually, it has high contrast compared to its surroundings. |
-| `Outline`   | Outline variant blends more with the surroundings, but is separated from the background with a border.                    |
+Variants are created and managed through variable modes in the design system tokens.
+
+| **Variant** | **When to use**                                                                                                                          |
+| ----------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| `Fill`      | Used as a primary component style to display highest priority. Visually, it has high contrast compared to its surroundings.              |
+| `Soft`      | Used as a complimentary style, uses less contrasting fill color.                                                                         |
+| `Outline`   | Outline components blend more with the surroundings, but are separated from the background with a border.                                |
+| `Ghost`     | Used for the lowest priority of components, only text label is visible.                                                                  |
+
+## Context
+
+Context modes extend the visual identity of components by applying semantic meaning through color. Each context type communicates a specific purpose or state, helping users understand the intent of their actions.
+
+Available context types:
+- **Brand:** Primary actions and key interactions or communications (default)
+- **Neutral:** Standard actions or communications without specific semantic meaning
+- **Positive:** Success states, confirmations and constructive actions and communications
+- **Negative:** Destructive actions or communications, errors and warnings that require caution
+- **Caution:** Warning states and actions or communications that need user attention
+- **Info:** Informational actions or communications.
+
+Context is applied through CSS classes (e.g., `moon-tag-positive`, `moon-tag-negative`) and automatically adapts the button's colors to match the semantic meaning across all variants (fill, soft, outline, ghost).

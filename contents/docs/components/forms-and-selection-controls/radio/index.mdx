@@ -17,7 +17,7 @@ description: "Also known as: Radio button, Option button"
       type: "file",
       name: "Figma",
       subtype: "figma",
-      href: "https://www.figma.com/design/h2kAECtCYgISfnvsXDkbpP/MDS-Radio",
+      href: "https://www.figma.com/community/file/1556987856805388414/mds-radio",
     },
     {
       type: "file",
@@ -44,30 +44,18 @@ description: "Also known as: Radio button, Option button"
 
 | **Property**             | **Values**                                       | **Default** |
 | ------------------------ | ------------------------------------------------ | ----------- |
-| Selected `Boolean`       | `true \| false`                                  | `false`     |
-| State `Variant`          | `Default \| Hover \| Focus \| Error \| Disabled` | `Default`   |
-| Has label `Boolean`      | `true \| false`                                  | `true`      |
-| Label `Text`             | `string`                                         | `Label`     |
-| Label position `Variant` | `Start \| End`                                   | `End`       |
+| Selected `Variant`       | Default  \| Checked                              | Default     |
+| State `Variant`          | Default \| Hover \| Focus \| Error \| Disabled   | Default     |
 
 ## When to use
 
 {<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M5 13l4 4L19 7" style={{ stroke: "var(--color-text-positive)" }} strokeWidth="2" /></svg>} Use if users must select only one option from the list. <br/>
-{<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M5 13l4 4L19 7" style={{ stroke: "var(--color-text-positive)" }} strokeWidth="2" /></svg>} When choices or options are clear and distinct from each other, requiring users to make a deliberate selection. <br/><br/>
+{<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M5 13l4 4L19 7" style={{ stroke: "var(--color-text-positive)" }} strokeWidth="2" /></svg>} When choices or options are clear and distinct from each other, requiring users to make a deliberate selection. <br/>
 {<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M6 6L18 18M6 18L18 6" style={{ stroke: "var(--color-text-negative)" }} strokeWidth="2" /></svg>} When there is only one option, use checkbox instead for enabling or disabling a setting. <br/>
 {<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M6 6L18 18M6 18L18 6" style={{ stroke: "var(--color-text-negative)" }} strokeWidth="2" /></svg>} When multiple options can be selected, use checkbox instead. <br/>
 {<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M6 6L18 18M6 18L18 6" style={{ stroke: "var(--color-text-negative)" }} strokeWidth="2" /></svg>} When the list of options is too long, use select instead. <br/>
 
-## Behaviour
-
-### Selection
-
-Radio has two selection states:
-
-- Usually, `unchecked` state is the default, where no option should be assumed, ensuring users consciously select an option before proceeding.
-- Depending on the context, `checked` state can also be used as the default, when for example there is a highly common or recommended choice, or users have previously selected an option and the system remembers their choice.
-
-### States
+## States
 
 Radio (and all other forms and selection controls) express states. States indicate current condition of the component to someone interacting with it.
 Using states ensure clear user feedback, highlighting possible actions or barriers. We have included most common states:

@@ -21,7 +21,7 @@ description: "Also known as: Navigation, Selectable"
       type: "file",
       name: "Figma",
       subtype: "figma",
-      href: "https://www.figma.com/design/eIBBIqrvI1kPUHJEJGZrV4/MDS-Menu?m=auto",
+      href: "https://www.figma.com/community/file/1556988844477917317/mds-menu",
     },
     {
       type: "file",
@@ -48,27 +48,23 @@ description: "Also known as: Navigation, Selectable"
 
 | **Property**              | **Values**                                        | **Default** |
 | ------------------------- | ------------------------------------------------- | ----------- |
-| Size `Variant`            | `Sm \| Md \| Lg \| Xl \| 2Xl`                     | `Md`        |
-| State `Variant`           | `Default \| Hover \| Focus \| Active \| Disabled` | `Default`   |
-| Has start item `Boolean`  | `true \| false`                                   | `true`      |
-| Start item `InstanceSwap` | `Icon \| Checkbox \| Radio \| Asset`              | `Icon`      |
-| Label `Text`              | `string`                                          | `Label`     |
-| Has end item `Boolean`    | `true \| false`                                   | `false`     |
-| End item `InstanceSwap`   | `Icon \| Checkbox \| Radio \| Asset`              | `Icon`      |
+| Size `Variant`            | Sm \| Md \| Lg                                    | Md          |
+| State `Variant`           | Default \| Hover \| Focus \| Active \| Disabled   | Default     |
+| Start item `Boolean`      | true \| false                                     | true        |
+| Label `Text`              | string                                            | Label       |
+| End item `Boolean`        | true \| false                                     | true        |
 
 ## When to use
 
 {<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M5 13l4 4L19 7" style={{ stroke: "var(--color-text-positive)" }} strokeWidth="2" /></svg>} Presenting a list of related actions, navigation links or options in a compact form. <br/>
-{<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M5 13l4 4L19 7" style={{ stroke: "var(--color-text-positive)" }} strokeWidth="2" /></svg>} Providing contextual actions based on the user’s selection, such as right-click menus. <br/><br/>
+{<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M5 13l4 4L19 7" style={{ stroke: "var(--color-text-positive)" }} strokeWidth="2" /></svg>} Providing contextual actions based on the user’s selection, such as right-click menus. <br/>
 {<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M6 6L18 18M6 18L18 6" style={{ stroke: "var(--color-text-negative)" }} strokeWidth="2" /></svg>} If only one action is available, use a button instead. <br/>
 
-## Behaviour
-
-### Selection
+## Selection
 
 Menu items have two visual states: `selected` and `unselected`, signaling whether an option is active or not.
 
-### States
+## States
 
 Menu (and all other forms and selection controls) express states. States indicate current condition of the component to someone interacting with it.
 Using states ensure clear user feedback, highlighting possible actions or barriers. We have included most common states:
@@ -79,18 +75,3 @@ Using states ensure clear user feedback, highlighting possible actions or barrie
 | `Hover`    | When the user moves their cursor over the component, but is not taking the action. Slight visual change can indicate interactivity of the component. |
 | `Focus`    | When user selects the component via keyboard navigation, but has not yet taken action on it.                                                         |
 | `Disabled` | A non-interactive state where the component appears faded or grayed out. It indicates that the action is unavailable at the moment.                  |
-
-## Size
-
-Dimensions of the menu are tied to the global `scale` tokens. This ensures that the components with similar size settings remain consistent across the interface. `scale` tokens also provides more granular control over dimensional settings.
-
-```css:scale.css showLineNumbers
---scale-width-<size>
---scale-height-<size>
---scale-padding-<size>
---scale-gap-<size>
---scale-radius-<size>
---scale-icon-size-<size>
---scale-text-size-<size>
---scale-text-height-<size>
-```

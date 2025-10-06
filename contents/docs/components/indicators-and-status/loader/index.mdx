@@ -17,7 +17,7 @@ description: "Also known as: Spinner, Activity indicator"
       type: "file",
       name: "Figma",
       subtype: "figma",
-      href: "https://www.figma.com/design/0TrX628fEtP24yvRv9VG1W/MDS-Loader",
+      href: "https://www.figma.com/community/file/1555917567247712121/mds-loader",
     },
     {
       type: "file",
@@ -44,21 +44,13 @@ description: "Also known as: Spinner, Activity indicator"
 
 | **Property**   | **Values**                    | **Default** |
 | -------------- | ----------------------------- | ----------- |
-| Size `Variant` | `2Xs \| Xs \| Sm \| Md \| Lg` | `Md`        |
+| Size `Variant` | 2Xs \| Xs \| Sm \| Md \| Lg   | Md          |
 
 ## When to use
 
 {<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M5 13l4 4L19 7" style={{ stroke: "var(--color-text-positive)" }} strokeWidth="2" /></svg>} When an action is processing and the user is waiting for a result (e.g., submitting a form or loading new content). <br/>
-{<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M5 13l4 4L19 7" style={{ stroke: "var(--color-text-positive)" }} strokeWidth="2" /></svg>} When the duration is unknown, and progress can’t be measured. <br/><br/>
+{<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M5 13l4 4L19 7" style={{ stroke: "var(--color-text-positive)" }} strokeWidth="2" /></svg>} When the duration is unknown, and progress can’t be measured. <br/>
 {<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M6 6L18 18M6 18L18 6" style={{ stroke: "var(--color-text-negative)" }} strokeWidth="2" /></svg>} When progress can be tracked or estimated, use a progress instead. <br/>
 {<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M6 6L18 18M6 18L18 6" style={{ stroke: "var(--color-text-negative)" }} strokeWidth="2" /></svg>} When the delay is too short to be noticeable, instant updates feel smoother. <br/>
 {<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M6 6L18 18M6 18L18 6" style={{ stroke: "var(--color-text-negative)" }} strokeWidth="2" /></svg>} When it disrupts the flow unnecessarily, use placeholder instead. <br/>
 
-## Size
-
-Dimensions of the loader are tied to the global `scale` tokens. This ensures that the components with similar size settings remain consistent across the interface. `scale` tokens also provides more granular control over dimensional settings.
-
-```css:scale.css showLineNumbers
---scale-width-<size>
---scale-height-<size>
-```

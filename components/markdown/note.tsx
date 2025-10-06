@@ -20,7 +20,7 @@ export default function Note({
       type === "warning",
     "dark:bg-green-950 bg-green-100 border-green-200 dark:border-green-900":
       type === "success",
-    "dark:bg-blue-950 bg-blue-100 border-blue-200 dark:border-blue-900":
+    "bg-info-subtle text-primary border-info":
       type === "info",
   });
 

@@ -6,7 +6,7 @@ description: "Also known as: Progress bar, Loading bar"
 ## Preview
 
 <div className="w-full bg-primary h-[320px] flex items-center justify-center border border-primary gap-4">    
-    <div className="moon-linear-progress-wrapper"><progress value="75" max="100" id="linearProgress" className="moon-linear-progress w-[320px]"></progress><label for="linearProgress">75%</label></div>
+    <div className="moon-linear-progress-wrapper"><progress value="75" max="100" id="linearProgress" className="moon-linear-progress w-[320px]"></progress><label htmlFor="linearProgress">75%</label></div>
 </div>
 
 ## Resources
@@ -17,7 +17,7 @@ description: "Also known as: Progress bar, Loading bar"
       type: "file",
       name: "Figma",
       subtype: "figma",
-      href: "https://www.figma.com/design/Gw6s5FuTfPdOg17r3WIgrC/MDS-Linear-progress",
+      href: "https://www.figma.com/community/file/1556938779817129788/mds-linear-progress",
     },
     {
       type: "file",
@@ -42,27 +42,13 @@ description: "Also known as: Progress bar, Loading bar"
 
 ## Properties
 
-| **Property**        | **Values**      | **Default** |
-| ------------------- | --------------- | ----------- |
-| Size `Variant`      | `3Xs \| 2Xs`    | `2Xs`       |
-| Has label `Boolean` | `true \| false` | `true`      |
-| Label `Text`        | `string`        | `15%`       |
+| **Property**        | **Values**                    | **Default** |
+| ------------------- | ----------------------------- | ----------- |
+| Size `Variant`      | 5Xs \| 4Xs \| 3Xs \| 2Xs      | 2Xs         |
+| Label `Text`        | string                        | 75%         |
 
 ## When to use
 
 {<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M5 13l4 4L19 7" style={{ stroke: "var(--color-text-positive)" }} strokeWidth="2" /></svg>} When progress is determinate, meaning the system can measure and display completion percentage. <br/>
-{<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M5 13l4 4L19 7" style={{ stroke: "var(--color-text-positive)" }} strokeWidth="2" /></svg>} When progress moves towards completion in a linear manner, such as file uploads, form completion or loading screens. <br/><br/>
+{<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M5 13l4 4L19 7" style={{ stroke: "var(--color-text-positive)" }} strokeWidth="2" /></svg>} When progress moves towards completion in a linear manner, such as file uploads, form completion or loading screens. <br/>
 {<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M6 6L18 18M6 18L18 6" style={{ stroke: "var(--color-text-negative)" }} strokeWidth="2" /></svg>} When the progress is indeterminate and you cannot measure completion, use loader instead. <br/>
-
-## Size
-
-Dimensions of the linear progress are tied to the global `scale` tokens. This ensures that the components with similar size settings remain consistent across the interface. `scale` tokens also provides more granular control over dimensional settings.
-
-```css:scale.css showLineNumbers
---scale-width-<size>
---scale-height-<size>
---scale-gap-<size>
---scale-radius-<size>
---scale-text-size-<size>
---scale-text-height-<size>
-```

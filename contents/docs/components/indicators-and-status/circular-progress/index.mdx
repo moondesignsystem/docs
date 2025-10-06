@@ -17,7 +17,7 @@ description: "Also known as: Spinner, Radial loader"
       type: "file",
       name: "Figma",
       subtype: "figma",
-      href: "https://www.figma.com/design/xb8aKCWEra74DiQGM8y1Z5/MDS-Circular-progress",
+      href: "https://www.figma.com/community/file/1555915545072042859/mds-circular-progress",
     },
     {
       type: "file",
@@ -42,23 +42,15 @@ description: "Also known as: Spinner, Radial loader"
 
 ## Properties
 
-| **Property**   | **Values**                                 | **Default** |
-| -------------- | ------------------------------------------ | ----------- |
-| Size `Variant` | `2Xs \| Xs \| Sm \| Md \| Lg \| Xl \| 2Xl` | `2Xs`       |
+| **Property**   | **Values**                          | **Default** |
+| -------------- | ----------------------------------- | ----------- |
+| Size `Variant` | Xs \| Sm \| Md \| Lg \| Xl \| 2Xl   | Md          |
 
 ## When to use
 
 {<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M5 13l4 4L19 7" style={{ stroke: "var(--color-text-positive)" }} strokeWidth="2" /></svg>} When progress is determinate, meaning the system can measure and display completion percentage. <br/>
 {<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M5 13l4 4L19 7" style={{ stroke: "var(--color-text-positive)" }} strokeWidth="2" /></svg>} When progress moves towards completion in a linear manner, such as file uploads, form completion or loading screens. <br/>
-{<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M5 13l4 4L19 7" style={{ stroke: "var(--color-text-positive)" }} strokeWidth="2" /></svg>} When indicating progress related to a user's account or profile. <br/><br/>
+{<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M5 13l4 4L19 7" style={{ stroke: "var(--color-text-positive)" }} strokeWidth="2" /></svg>} When indicating progress related to a user's account or profile. <br/>
 {<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M6 6L18 18M6 18L18 6" style={{ stroke: "var(--color-text-negative)" }} strokeWidth="2" /></svg>} When the progress is indeterminate and you cannot measure completion, use loader instead. <br/>
 {<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M6 6L18 18M6 18L18 6" style={{ stroke: "var(--color-text-negative)" }} strokeWidth="2" /></svg>} When users need more detailed progress information with labels or percentages, use linear progress instead. <br/>
 
-## Size
-
-Dimensions of the circular progress are tied to the global `scale` tokens. This ensures that the components with similar size settings remain consistent across the interface. `scale` tokens also provides more granular control over dimensional settings.
-
-```css:scale.css showLineNumbers
---scale-width-<size>
---scale-height-<size>
-```
