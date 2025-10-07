@@ -22,7 +22,7 @@ export function FooterButtons() {
   return (
     <>
       <Link
-        href="https://www.figma.com/design/S3q1SkVngbwHuwpxHKCsgtJj/MDS-Components?node-id=69257-3604&t=R9Bvf8yxWLzlbXZL-0"
+        href="https://www.figma.com/@moon_design"
         target="_blank"
         className={buttonVariants({ variant: "outline", size: "sm" })}
       >
