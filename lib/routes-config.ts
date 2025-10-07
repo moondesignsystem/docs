@@ -83,12 +83,6 @@ export const ROUTES: EachRoute[] = [
           { title: "Chip", href: "/chip" },
           { title: "Authenticator", href: "/authenticator" },
           { title: "Segmented control", href: "/segmented-control" },
-          {
-            title: "Slider",
-            href: "/slider",
-            noLink: true,
-            tag: "Coming soon",
-          },
         ],
       },
       {

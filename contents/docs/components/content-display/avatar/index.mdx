@@ -19,7 +19,7 @@ description: "Also known as: Profile image, User icon"
       type: "file",
       name: "Figma",
       subtype: "figma",
-      href: "https://www.figma.com/design/sXfqO9M8Lr11hhS5yUA2hz/MDS-Avatar",
+      href: "https://www.figma.com/community/file/1555928877838283718/mds-avatar",
     },
     {
       type: "file",
@@ -46,10 +46,11 @@ description: "Also known as: Profile image, User icon"
 
 | **Property**        | **Values**                          | **Default** |
 | ------------------- | ----------------------------------- | ----------- |
-| Variant `Variant`   | `Initials \| Picture \| Icon`       | `Icon`      |
-| Size `Variant`      | `Xs \| Sm \| Md \| Lg \| Xl \| 2Xl` | `Md`        |
-| Initials `Text`     | `string`                            | `DS`        |
-| Icon `InstanceSwap` | `Any icon`                          | `user`      |
+| Variant `Mode`      | Fill \| Soft   | Fill               |
+| Content `Variant`   | Initials \| Picture \| Icon         | Icon      |
+| Size `Variant`      | Xs \| Sm \| Md \| Lg \| Xl \| 2Xl   | Md        |
+| Initials `Text`     | string                              | DS        |
+| Icon `InstanceSwap` | Any icon                            | user      |
 
 ## Best practises
 
@@ -59,20 +60,11 @@ description: "Also known as: Profile image, User icon"
 
 ## Variants
 
-Some common variants are already created and ready to use (see the table), but you have the possibility to add new variants or customize every visual aspect through tokens and token modes.
+Variants define the visual appearance of components and communicate the priority of the action or information they represent. Some common variants are provided out of the box (see the table below), but you can also create new variants to match your system's needs. 
 
-| **Variant** | `Fill \| Soft \| Outline` |
-| ----------- | ------------------------- |
+Variants are created and managed through variable modes in the design system tokens.
 
-## Size
-
-Dimensions of the avatar are tied to the global `scale` tokens. This ensures that the components with similar size settings remain consistent across the interface. `scale` tokens also provides more granular control over dimensional settings.
-
-```css:scale.css showLineNumbers
---scale-width-<size>
---scale-height-<size>
---scale-radius-<size>
---scale-icon-size-<size>
---scale-text-size-<size>
---scale-text-height-<size>
-```
+| **Variant** | **When to use**                                                                                                                          |
+| ----------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| `Fill`      | Used as a primary component style to display highest priority. Visually, it has high contrast compared to its surroundings.              |
+| `Soft`      | Used as a complimentary style, uses less contrasting fill color.                                                                         |

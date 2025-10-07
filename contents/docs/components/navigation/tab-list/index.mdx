@@ -18,7 +18,7 @@ description: "Also known as: Page navigation, segmented control"
       type: "file",
       name: "Figma",
       subtype: "figma",
-      href: "https://www.figma.com/design/Khxe76kTBhO7pFTsmgQeYX/MDS-Tab-list",
+      href: "https://www.figma.com/community/file/1557109745317152754/mds-tab-list",
     },
     {
       type: "file",
@@ -43,42 +43,23 @@ description: "Also known as: Page navigation, segmented control"
 
 ## Properties
 
-| **Property**              | **Values**                              | **Default** |
-| ------------------------- | --------------------------------------- | ----------- |
-| Size `Variant`            | `Sm \| Md`                              | `Md`        |
-| Selected `Boolean`        | `true \| false`                         | `false`     |
-| State `Variant`           | `Default \| Hover \| Focus \| Disabled` | `Default`   |
-| Has start item `Boolean`  | `true \| false`                         | `true`      |
-| Start item `InstanceSwap` | `Any icon`                              | `heart`     |
-| Label `Text`              | `string`                                | `Label`     |
-| Has end item `Boolean`    | `true \| false`                         | `true`      |
-| End item `InstanceSwap`   | `Any icon`                              | `heart`     |
+| **Property**              | **Values**                  | **Default** |
+| ------------------------- | --------------------------- | ----------- |
+| Size `Variant`            | Sm \| Md                    | Md          |
+| Selected `Variant`        | Default \| Active           | Default     |
+| State `Variant`           | Default \| Hover \| Focus   | Default     |
+| Start item `Boolean`      | true \| false               | false       |
+| Label `Text`              | string                      | Label       |
+| End item `Boolean`        | true \| false               | false       |
 
 ## When to use
 
 {<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M5 13l4 4L19 7" style={{ stroke: "var(--color-text-positive)" }} strokeWidth="2" /></svg>} You need to switch between multiple content sections within the same page. <br/>
-{<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M5 13l4 4L19 7" style={{ stroke: "var(--color-text-positive)" }} strokeWidth="2" /></svg>} The content under each tab is related and should be easily comparable. <br/><br/>
+{<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M5 13l4 4L19 7" style={{ stroke: "var(--color-text-positive)" }} strokeWidth="2" /></svg>} The content under each tab is related and should be easily comparable. <br/>
 {<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M6 6L18 18M6 18L18 6" style={{ stroke: "var(--color-text-negative)" }} strokeWidth="2" /></svg>} There are only two options, use a segmented control instead. <br/>
 {<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M6 6L18 18M6 18L18 6" style={{ stroke: "var(--color-text-negative)" }} strokeWidth="2" /></svg>} The content under each tab is independent and not meant for quick comparisons. <br/>
 
-## Size
-
-Dimensions of the segmented control are tied to the global `scale` tokens. This ensures that the components, especially forms, with similar size settings remain consistent across the interface. `scale` tokens also provides more granular control over dimensional settings.
-
-```css:scale.css showLineNumbers
---scale-height-<size>
---scale-width-<size>
---scale-padding-<size>
---scale-gap-<size>
---scale-radius-<size>
---scale-icon-size-<size>
---scale-text-size-<size>
---scale-text-height-<size>
-```
-
-## Behaviour
-
-### States
+## States
 
 Tab list (and all other forms and selection controls) express states. States indicate current condition of the component to someone interacting with it.
 Using states ensure clear user feedback, highlighting possible actions or barriers. We have included most common states:

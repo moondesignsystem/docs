@@ -17,7 +17,7 @@ description: "Also known as: Tickbox, Selection box"
       type: "file",
       name: "Figma",
       subtype: "figma",
-      href: "https://www.figma.com/design/JW01MXhzN6kDDqesWUqqvP/MDS-Checkbox",
+      href: "https://www.figma.com/community/file/1556183080174556081/mds-checkbox",
     },
     {
       type: "file",
@@ -44,32 +44,20 @@ description: "Also known as: Tickbox, Selection box"
 
 | **Property**             | **Values**                                       | **Default** |
 | ------------------------ | ------------------------------------------------ | ----------- |
-| Selected `Variant`       | `Unchecked \| Indeterminate \| Checked`          | `Unchecked` |
-| State `Variant`          | `Default \| Hover \| Focus \| Error \| Disabled` | `Default`   |
-| Has label `Boolean`      | `true \| false`                                  | `true`      |
-| Label `Text`             | `string`                                         | `Label`     |
-| Label position `Variant` | `Start \| End`                                   | `End`       |
+| Selected `Variant`       | Default \| Indeterminate \| Checked              | Default     |
+| State `Variant`          | Default \| Hover \| Focus \| Error \| Disabled   | Default     |
+
 
 ## When to use
 
 {<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M5 13l4 4L19 7" style={{ stroke: "var(--color-text-positive)" }} strokeWidth="2" /></svg>} If users need to select one or more options from a list. <br/>
 {<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M5 13l4 4L19 7" style={{ stroke: "var(--color-text-positive)" }} strokeWidth="2" /></svg>} When enabling or disabling settings (agreeing to marketing messages or terms & conditions). <br/>
-{<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M5 13l4 4L19 7" style={{ stroke: "var(--color-text-positive)" }} strokeWidth="2" /></svg>} If clear visibility of all choices is important. <br/><br/>
+{<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M5 13l4 4L19 7" style={{ stroke: "var(--color-text-positive)" }} strokeWidth="2" /></svg>} If clear visibility of all choices is important. <br/>
 {<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M6 6L18 18M6 18L18 6" style={{ stroke: "var(--color-text-negative)" }} strokeWidth="2" /></svg>} If only one option should be selected, use radio instead. <br/>
 {<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M6 6L18 18M6 18L18 6" style={{ stroke: "var(--color-text-negative)" }} strokeWidth="2" /></svg>} When action requires an immediate effect, use switch instead. <br/>
 {<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M6 6L18 18M6 18L18 6" style={{ stroke: "var(--color-text-negative)" }} strokeWidth="2" /></svg>} If the selection of options is too long, use select instead. <br/>
 
-## Behaviour
-
-### Selection
-
-Checkbox has three selection states:
-
-- Usually, `unchecked` state is the default.
-- `checked` state can also be used as the default in specific contexts where opting in is expected or beneficial.
-- `indeterminate` state represents a partially selected state. Can be used as a parent checkbox, when some, but not all, child checkboxes are selected.
-
-### States
+## States
 
 Checkbox (and all other forms and selection controls) express states. States indicate current condition of the component to someone interacting with it.
 Using states ensure clear user feedback, highlighting possible actions or barriers. We have included most common states:

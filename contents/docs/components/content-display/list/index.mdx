@@ -17,7 +17,7 @@ description: "Also known as: List group, Menu list"
       type: "file",
       name: "Figma",
       subtype: "figma",
-      href: "https://www.figma.com/design/H4XwbPFwNy4tXBfjS8r4us/MDS-List",
+      href: "https://www.figma.com/community/file/1556939007104461629/mds-list",
     },
     {
       type: "file",
@@ -44,18 +44,16 @@ description: "Also known as: List group, Menu list"
 
 | **Property**              | **Values**                           | **Default** |
 | ------------------------- | ------------------------------------ | ----------- |
-| Size `Variant`            | `Sm \| Md \| Lg \| Xl \| 2Xl`        | `Md`        |
-| Has start item `Boolean`  | `true \| false`                      | `true`      |
-| Start item `InstanceSwap` | `Icon \| Checkbox \| Radio \| Asset` | `Icon`      |
-| Label `Text`              | `string`                             | `Label`     |
-| Has end item `Boolean`    | `true \| false`                      | `false`     |
-| End item `InstanceSwap`   | `Icon \| Checkbox \| Radio \| Asset` | `Icon`      |
+| Size `Variant`            | Sm \| Md \| Lg                       | Md          |
+| Start item `Boolean`      | true \| false                        | true        |
+| Label `Text`              | string                               | Label       |
+| End item `Boolean`        | true \| false                        | false        |
 
 ## When to use
 
 {<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M5 13l4 4L19 7" style={{ stroke: "var(--color-text-positive)" }} strokeWidth="2" /></svg>} Use for structured lists, such as settings, navigation menus and dropdowns. <br/>
 {<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M5 13l4 4L19 7" style={{ stroke: "var(--color-text-positive)" }} strokeWidth="2" /></svg>} Sort lists in a logical way to help users scan the content, such as alphabetical, numerical, chronological order. <br/>
-{<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M5 13l4 4L19 7" style={{ stroke: "var(--color-text-positive)" }} strokeWidth="2" /></svg>} Use icons, images and text in a consistent pattern. <br/><br/>
+{<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M5 13l4 4L19 7" style={{ stroke: "var(--color-text-positive)" }} strokeWidth="2" /></svg>} Use icons, images and text in a consistent pattern. <br/>
 {<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M6 6L18 18M6 18L18 6" style={{ stroke: "var(--color-text-negative)" }} strokeWidth="2" /></svg>} Don't overload the list with elements if the clarity suffers. <br/>
 {<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M6 6L18 18M6 18L18 6" style={{ stroke: "var(--color-text-negative)" }} strokeWidth="2" /></svg>} Don't use for dense data, consider using table instead. <br/>
 
@@ -67,15 +65,3 @@ By default, lists display static information, but list items can be configured t
 - **Static display:** Simple information presentation for consumption (feature lists or contact details).
 - **Interactive lists:** Lists can allow for user interaction, including selection (single or multiple) and reordering (drag-and-drop).
 - **Dynamic loading:** For very long lists, items might load dynamically as the user scrolls, improving page load performance.
-
-## Size
-
-Dimensions of the list item are tied to the global `scale` tokens. This ensures that the components with similar size settings remain consistent across the interface. `scale` tokens also provides more granular control over dimensional settings.
-
-```css:scale.css showLineNumbers
---scale-height-<size>
---scale-gap-<size>
---scale-icon-size-<size>
---scale-text-size-<size>
---scale-text-height-<size>
-```

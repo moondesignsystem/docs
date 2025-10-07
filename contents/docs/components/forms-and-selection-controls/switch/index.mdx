@@ -17,7 +17,7 @@ description: "Also known as: Toggle, On/Off switch"
       type: "file",
       name: "Figma",
       subtype: "figma",
-      href: "https://www.figma.com/design/41isqyVwQJU3U6i6tFM23K/MDS-Switch?m=auto&t=ZIxiX1ueDPMFKryf-6",
+      href: "https://www.figma.com/community/file/1557109462002840560/mds-switch",
     },
     {
       type: "file",
@@ -44,34 +44,20 @@ description: "Also known as: Toggle, On/Off switch"
 
 | **Property**              | **Values**                              | **Default** |
 | ------------------------- | --------------------------------------- | ----------- |
-| Size `Variant`            | `2Xs \| Xs \| Sm`                       | `Sm`        |
-| Selected `Boolean`        | `true \| false`                         | `false`     |
-| State `Variant`           | `Default \| Hover \| Focus \| Disabled` | `Default`   |
-| Has start icon `Boolean`  | `true \| false`                         | `false`     |
-| Start icon `InstanceSwap` | `Any icon`                              | `heart`     |
-| Has end icon `Boolean`    | `true \| false`                         | `false`     |
-| End icon `InstanceSwap`   | `Any icon`                              | `heart`     |
-| Has label `Boolean`       | `true \| false`                         | `true`      |
-| Label `Text`              | `string`                                | `Label`     |
-| Label position `Variant`  | `Start \| End`                          | `End`       |
+| Size `Variant`            | 2Xs \| Xs \| Sm                         | Sm          |
+| Selected `Variant`        | Default \| Checked                      | Default     |
+| State `Variant`           | Default \| Hover \| Focus \| Disabled   | Default     |
+| Start icon `Boolean`      | true \| false                           | false       |
+| End icon `Boolean`        | true \| false                           | false       |
 
 ## When to use
 
 {<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M5 13l4 4L19 7" style={{ stroke: "var(--color-text-positive)" }} strokeWidth="2" /></svg>} If users need to make a binary action (on/off, switching color mode or enabling notifications). <br/>
-{<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M5 13l4 4L19 7" style={{ stroke: "var(--color-text-positive)" }} strokeWidth="2" /></svg>} When the setting doesn't require confirmation and takes effect immediately. <br/><br/>
+{<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M5 13l4 4L19 7" style={{ stroke: "var(--color-text-positive)" }} strokeWidth="2" /></svg>} When the setting doesn't require confirmation and takes effect immediately. <br/>
 {<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M6 6L18 18M6 18L18 6" style={{ stroke: "var(--color-text-negative)" }} strokeWidth="2" /></svg>} When multiple switches affect each other in a complex way, leading to confusion. <br/>
 {<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M6 6L18 18M6 18L18 6" style={{ stroke: "var(--color-text-negative)" }} strokeWidth="2" /></svg>} If user needs to take a non-binary action, such as choosing between "Daily" vs "Weekly" notifications, use radio button instead. <br/>
 
-## Behaviour
-
-### Selection
-
-Switch has two selection states:
-
-- Use `unselected` state as default, when the setting is optional and user should enable it themselves or if most users are unlikely to need it on by default.
-- Use `selected` state as default, when the setting is expected or recommended for must users, it’s a common practice (such as enable notifications), or if the switch represents a system default setting.
-
-### States
+## States
 
 Switch (and all other forms and selection controls) express states. States indicate current condition of the component to someone interacting with it.
 Using states ensure clear user feedback, highlighting possible actions or barriers. We have included most common states:
@@ -82,13 +68,3 @@ Using states ensure clear user feedback, highlighting possible actions or barrie
 | `Hover`    | When the user moves their cursor over the component, but is not taking the action. Slight visual change can indicate interactivity of the component. |
 | `Focus`    | When user selects the component via keyboard navigation, but has not yet taken action on it.                                                         |
 | `Disabled` | A non-interactive state where the component appears faded or grayed out. It indicates that the action is unavailable at the moment.                  |
-
-## Size
-
-Dimensions of the switch are tied to the global `scale` tokens. This ensures that the components, especially forms, with similar size settings remain consistent across the interface. `scale` tokens also provides more granular control over dimensional settings.
-
-```css:scale.css showLineNumbers
---scale-height-<size>
---scale-width-<size>
---scale-icon-size-<size>
-```

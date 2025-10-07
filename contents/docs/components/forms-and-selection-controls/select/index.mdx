@@ -17,7 +17,7 @@ description: "Also known as: Dropdown, Picker"
       type: "file",
       name: "Figma",
       subtype: "figma",
-      href: "https://www.figma.com/design/xdX0f0t1pkRCQ6sCrnpoSj/MDS-Select",
+      href: "https://www.figma.com/community/file/1556989399970568329/mds-select",
     },
     {
       type: "file",
@@ -44,19 +44,18 @@ description: "Also known as: Dropdown, Picker"
 
 | **Property**              | **Values**                                                 | **Default** |
 | ------------------------- | ---------------------------------------------------------- | ----------- |
-| Size `Variant`            | `Sm \| Md \| Lg \| Xl`                                     | `Md`        |
-| State `Variant`           | `Default \| Hover \| Focus \| Active \| Error \| Disabled` | `Default`   |
-| Has label `Boolean`       | `true \| false`                                            | `true`      |
-| Label `Text`              | `string`                                                   | `Label`     |
-| Has start item `Boolean`  | `true \| false`                                            | `true`      |
-| Start item `InstanceSwap` | `Any icon`                                                 | `heart`     |
-| Value `Text`              | `string`                                                   | `Value`     |
-| Has end item `Boolean`    | `true \| false`                                            | `true`      |
-| Has helper `Boolean`      | `true \| false`                                            | `true`      |
+| Variant `Mode`            | Fill \| Outline                                            | Fill        |
+| Size `Variant`            | Sm \| Md \| Lg \| Xl                                       | Md          |
+| State `Variant`           | Default \| Hover \| Focus \| Error \| Disabled             | Default     |
+| Label `Text`              | string                                                     | Label       |
+| Start item `Boolean`      | true \| false                                              | false       |
+| Value `Text`              | string                                                     | Value       |
+| End item `Boolean`        | true \| false                                              | false       |
+| Helper `Boolean`          | true \| false                                              | false       |
 
 ## When to use
 
-{<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M5 13l4 4L19 7" style={{ stroke: "var(--color-text-positive)" }} strokeWidth="2" /></svg>} When users need to choose from a predefined list of options. <br/><br/>
+{<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M5 13l4 4L19 7" style={{ stroke: "var(--color-text-positive)" }} strokeWidth="2" /></svg>} When users need to choose from a predefined list of options. <br/>
 {<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M6 6L18 18M6 18L18 6" style={{ stroke: "var(--color-text-negative)" }} strokeWidth="2" /></svg>} When there are only few options, consider using radio buttons instead. <br/>
 {<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M6 6L18 18M6 18L18 6" style={{ stroke: "var(--color-text-negative)" }} strokeWidth="2" /></svg>} In case a single action is expected, use button instead. <br/>
 
@@ -73,20 +72,6 @@ Using states ensure clear user feedback, highlighting possible actions or barrie
 | `Active`   | State that communicates that the user has taken action on the component.                                                                             |
 | `Error`    | Used when an invalid action occurs. Component may appear red or display helper, signaling an issue that needs resolution.                            |
 | `Disabled` | A non-interactive state where the component appears faded or grayed out. It indicates that the action is unavailable at the moment.                  |
-
-## Size
-
-Dimensions of the select are tied to the global `scale` tokens. This ensures that the components, especially forms, with similar size settings remain consistent across the interface. `scale` tokens also provides more granular control over dimensional settings.
-
-```css:scale.css showLineNumbers
---scale-height-<size>
---scale-padding-<size>
---scale-gap-<size>
---scale-radius-<size>
---scale-icon-size-<size>
---scale-text-size-<size>
---scale-text-height-<size>
-```
 
 ## Required and optional
 
@@ -105,7 +90,6 @@ Keep the message concise and clear, optionally show an icon to support the messa
 
 | **Property**        | **Values**      | **Default** |
 | ------------------- | --------------- | ----------- |
-| Error `Boolean`     | `true \| false` | `false`     |
-| Has icon `Boolean`  | `true \| false` | `true`      |
-| Icon `InstanceSwap` | `Icon`          | `info`      |
-| Label `Text`        | `string`        | `Helper`    |
+| Type `Variant`      | Hint \| Error   | Hint        |
+| Icon `Boolean`      | true \| false   | true        |
+| Label `Text`        | string          | Hint        |

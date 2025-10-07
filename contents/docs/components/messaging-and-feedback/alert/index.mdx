@@ -20,7 +20,7 @@ description: "Also known as: Notification, Message box, Banner"
       type: "file",
       name: "Figma",
       subtype: "figma",
-      href: "https://www.figma.com/design/hIlCiIrPzbsvhRds4Cx9yb/MDS-Alert",
+      href: "https://www.figma.com/community/file/1555928433440286658/mds-alert",
     },
     {
       type: "file",
@@ -45,19 +45,45 @@ description: "Also known as: Notification, Message box, Banner"
 
 ## Properties
 
-| **Property**              | **Values**      | **Default**       |
-| ------------------------- | --------------- | ----------------- |
-| Has start icon `Boolean`  | `true \| false` | `true`            |
-| Start icon `InstanceSwap` | `Any icon`      | `alert-02-filled` |
-| Title `Text`              | `string`        | `Alert title`     |
-| Has content `Boolean`     | `true \| false` | `true`            |
-| Content `Text`            | `string`        | `Alert content`   |
-| Has action `Boolean`      | `true \| false` | `true`            |
-| Has dismiss `Boolean`     | `true \| false` | `true`            |
+| **Property**              | **Values**                                                   | **Default**   |
+| ------------------------- | ------------------------------------------------------------ | ------------- |
+| Variant `Mode`            | Fill \| Soft \| Outline                                      | Fill          |
+| Context `Mode`            | Brand \| Neutral \| Positive \| Negative \| Caution \| Info  | Brand         |
+| Start item `Boolean`      | true \| false                                                | true          |
+| Title `Text`              | string                                                       | Alert         |
+| Action button `Boolean`   | true \| false                                                | false         |
+| Close button `Boolean`    | true \| false                                                | false         |
+| Content `Boolean`         | true \| false                                                | false         |
 
 ## When to use
 
 {<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M5 13l4 4L19 7" style={{ stroke: "var(--color-text-positive)" }} strokeWidth="2" /></svg>} When users need to be informed about important changes, warnings or confirmations in a clear and non-intrusive way. <br/>
-{<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M5 13l4 4L19 7" style={{ stroke: "var(--color-text-positive)" }} strokeWidth="2" /></svg>} When the message is relevant to the surrounding content and should be noticed without blocking user interaction. <br/><br/>
+{<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M5 13l4 4L19 7" style={{ stroke: "var(--color-text-positive)" }} strokeWidth="2" /></svg>} When the message is relevant to the surrounding content and should be noticed without blocking user interaction. <br/>
 {<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M6 6L18 18M6 18L18 6" style={{ stroke: "var(--color-text-negative)" }} strokeWidth="2" /></svg>} If the message requires immediate attention or blocks user progress, use dialog instead. <br/>
 {<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M6 6L18 18M6 18L18 6" style={{ stroke: "var(--color-text-negative)" }} strokeWidth="2" /></svg>} If the information is persistent and should remain visible at all times. <br/>
+
+## Variants
+
+Variants define the visual appearance of components and communicate the priority of the action or information they represent. Some common variants are provided out of the box (see the table below), but you can also create new variants to match your system's needs. 
+
+Variants are created and managed through variable modes in the design system tokens.
+
+| **Variant** | **When to use**                                                                                                                          |
+| ----------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| `Fill`      | Used as a primary component style to display highest priority. Visually, it has high contrast compared to its surroundings.              |
+| `Soft`      | Used as a complimentary style, uses less contrasting fill color.                                                                         |
+| `Outline`   | Outline components blend more with the surroundings, but are separated from the background with a border.                                |
+
+## Context
+
+Context modes extend the visual identity of components by applying semantic meaning through color. Each context type communicates a specific purpose or state, helping users understand the intent of their actions.
+
+Available context types:
+- **Brand:** Primary actions and key interactions or communications (default)
+- **Neutral:** Standard actions or communications without specific semantic meaning
+- **Positive:** Success states, confirmations and constructive actions and communications
+- **Negative:** Destructive actions or communications, errors and warnings that require caution
+- **Caution:** Warning states and actions or communications that need user attention
+- **Info:** Informational actions or communications.
+
+Context is applied through CSS classes (e.g., `moon-alert-positive`, `moon-alert-negative`) and automatically adapts the button's colors to match the semantic meaning across all variants (fill, soft, outline, ghost).

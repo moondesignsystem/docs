@@ -17,7 +17,7 @@ description: "Also known as: Toggle group, Segmented button"
       type: "file",
       name: "Figma",
       subtype: "figma",
-      href: "https://www.figma.com/design/Ua36CE10MEv7CBsYDgVbLe/MDS-Segmented-control",
+      href: "https://www.figma.com/community/file/1556989165522135175/mds-segmented-control",
     },
     {
       type: "file",
@@ -44,43 +44,23 @@ description: "Also known as: Toggle group, Segmented button"
 
 | **Property**              | **Values**                              | **Default** |
 | ------------------------- | --------------------------------------- | ----------- |
-| Size `Variant`            | `Sm \| Md`                              | `Md`        |
-| Selected `Boolean`        | `true \| false`                         | `false`     |
-| State `Variant`           | `Default \| Hover \| Focus \| Disabled` | `Default`   |
-| Has start item `Boolean`  | `true \| false`                         | `true`      |
-| Start item `InstanceSwap` | `Any icon`                              | `heart`     |
-| Has label `Boolean`       | `true \| false`                         | `true`      |
-| Label `Text`              | `string`                                | `Label`     |
-| Has end item `Boolean`    | `true \| false`                         | `true`      |
-| End item `InstanceSwap`   | `Any icon`                              | `heart`     |
+| Size `Variant`            | Sm \| Md \| Lg                          | Md          |
+| Selected `Boolean`        | Default \| Active                       | Default     |
+| State `Variant`           | Default \| Hover \| Focus \| Disabled   | Default     |
+| Start item `Boolean`      | true \| false                           | true        |
+| Label `Text`              | string                                  | Label       |
+| End item `Boolean`        | true \| false                           | true        |
 
 ## When to use
 
 {<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M5 13l4 4L19 7" style={{ stroke: "var(--color-text-positive)" }} strokeWidth="2" /></svg>} When selected option instantly changes the view of content. <br/>
 {<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M5 13l4 4L19 7" style={{ stroke: "var(--color-text-positive)" }} strokeWidth="2" /></svg>} When switching between different display formats. <br/>
-{<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M5 13l4 4L19 7" style={{ stroke: "var(--color-text-positive)" }} strokeWidth="2" /></svg>} When user needs to switch between the options without leaving the page. <br/><br/>
+{<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M5 13l4 4L19 7" style={{ stroke: "var(--color-text-positive)" }} strokeWidth="2" /></svg>} When user needs to switch between the options without leaving the page. <br/>
 {<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M6 6L18 18M6 18L18 6" style={{ stroke: "var(--color-text-negative)" }} strokeWidth="2" /></svg>} When user needs to navigate between content, use tabs instead. <br/>
 {<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M6 6L18 18M6 18L18 6" style={{ stroke: "var(--color-text-negative)" }} strokeWidth="2" /></svg>} When user needs to filter through the content, use chips instead. <br/>
 {<svg width="20" height="20" viewBox="0 0 24 24" fill="none" style={{ display: 'inline', verticalAlign: 'middle' }}><path d="M6 6L18 18M6 18L18 6" style={{ stroke: "var(--color-text-negative)" }} strokeWidth="2" /></svg>} If there are more than four segments, consider using tabs. <br/>
 
-## Size
-
-Dimensions of the segmented control are tied to the global `scale` tokens. This ensures that the components, especially forms, with similar size settings remain consistent across the interface. `scale` tokens also provides more granular control over dimensional settings.
-
-```css:scale.css showLineNumbers
---scale-height-<size>
---scale-width-<size>
---scale-padding-<size>
---scale-gap-<size>
---scale-radius-<size>
---scale-icon-size-<size>
---scale-text-size-<size>
---scale-text-height-<size>
-```
-
-## Behaviour
-
-### States
+## States
 
 Segmented control (and all other forms and selection controls) express states. States indicate current condition of the component to someone interacting with it.
 Using states ensure clear user feedback, highlighting possible actions or barriers. We have included most common states:
