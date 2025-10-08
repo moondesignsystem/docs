@@ -12,7 +12,9 @@ export function Footer() {
           </p>
         </div>
 
-        <div className="gap-4 items-center hidden md:flex"></div>
+        <div className="gap-4 items-center hidden md:flex">
+          <FooterButtons />
+        </div>
       </div>
     </footer>
   );
@@ -22,12 +24,18 @@ export function FooterButtons() {
   return (
     <>
       <Link
+        href="https://www.linkedin.com/company/moon-io/"
+        target="_blank"
+        className={buttonVariants({ variant: "outline", size: "sm" })}
+      >
+        LinkedIn
+      </Link>
+      <Link
         href="https://www.figma.com/@moon_design"
         target="_blank"
         className={buttonVariants({ variant: "outline", size: "sm" })}
       >
-        <Github className="h-[0.8rem] w-4 mr-2 text-primary fill-current" />
-        Github
+        Figma
       </Link>
     </>
   );
