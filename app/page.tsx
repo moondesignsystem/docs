@@ -4,8 +4,31 @@ import Link from "next/link";
 import StarryBackground from "@/components/StarryBackground";
 import { useRive } from "@rive-app/react-canvas";
 import { Icon } from "@heathmont/moon-react-assets";
+import { useEffect } from "react";
+import { useTheme } from "next-themes";
 
 export default function HomePageClient() {
+  const { setTheme, theme } = useTheme();
+  
+  // Force dark mode on the home page
+  useEffect(() => {
+    const originalColorScheme = document.documentElement.style.colorScheme;
+    const originalTheme = theme;
+    
+    // Force dark mode
+    document.documentElement.style.colorScheme = 'dark';
+    document.documentElement.classList.add('dark-theme');
+    document.documentElement.classList.remove('light-theme');
+    setTheme('dark');
+    
+    return () => {
+      // Restore original state when leaving the page
+      document.documentElement.style.colorScheme = originalColorScheme;
+      if (originalTheme) {
+        setTheme(originalTheme);
+      }
+    };
+  }, [setTheme, theme]);
   const { RiveComponent } = useRive({
     src: "/moon.riv",
     stateMachines: "Rest",
@@ -14,7 +37,7 @@ export default function HomePageClient() {
 
   return (
     <>
-      <div className="relative w-full">
+      <div className="relative w-full dark">
         <StarryBackground
           starCount={1000}
           backgroundColor="#020617"
