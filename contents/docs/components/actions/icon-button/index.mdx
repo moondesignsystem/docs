@@ -6,18 +6,18 @@ description: "Also known as: Action button, Toolbar button"
 ## Preview
 
 <div className="w-full bg-primary h-[320px] flex items-center justify-center border border-primary gap-4">
-    <div className="moon-icon-button">
-        <Icon name="heart" />
-    </div>
-    <div className="moon-icon-button moon-icon-button-soft">
-        <Icon name="heart" />
-    </div>
-    <div className="moon-icon-button moon-icon-button-outline">
-        <Icon name="heart" />
-    </div>
-    <div className="moon-icon-button moon-icon-button-ghost">
-        <Icon name="heart" />
-    </div>
+  <div className="moon-icon-button">
+    <Icon name="heart" />
+  </div>
+  <div className="moon-icon-button moon-icon-button-soft">
+    <Icon name="heart" />
+  </div>
+  <div className="moon-icon-button moon-icon-button-outline">
+    <Icon name="heart" />
+  </div>
+  <div className="moon-icon-button moon-icon-button-ghost">
+    <Icon name="heart" />
+  </div>
 </div>
 
 ## Resources
@@ -34,32 +34,32 @@ description: "Also known as: Action button, Toolbar button"
       type: "file",
       name: "CSS",
       subtype: "css",
-      href: "https://ui.moon.io/?path=/docs/actions-icon-button--docs",
+      href: "https://ui.moondesignsystem.com/?path=/docs/actions-icon-button--docs",
     },
     {
       type: "file",
       name: "React",
       subtype: "react",
-      href: "https://react.moon.io/?path=/docs/actions-icon-button--docs",
+      href: "https://react.moondesignsystem.com/?path=/docs/actions-icon-button--docs",
     },
     {
       type: "file",
       name: "LiveView",
       subtype: "elixir",
-      href: "https://liveview.moon.io/actions/icon_button",
+      href: "https://liveview.moondesignsystem.com/actions/icon_button",
     },
   ]}
 />
 
 ## Properties
 
-| **Property**              | **Values**                                                       | **Default**   |
-| ------------------------- | ---------------------------------------------------------------- | ------------- |
-| Variant `Mode`            | Fill \| Soft \| Outline \| Ghost                                 | Fill          |
-| Context `Mode`            | Brand \| Neutral \| Positive \| Negative \| Caution \| Info      | Brand         |
-| Size `Variant`            | Xs \| Sm \| Md \| Lg \| Xl                                       | Md            |
-| State `Variant`           | Default \| Hover \| Focus \| Disabled                            | Default       |
-| Rounded `Boolean`         | true \| false                                                    | false         |
+| **Property**      | **Values**                                                  | **Default** |
+| ----------------- | ----------------------------------------------------------- | ----------- |
+| Variant `Mode`    | Fill \| Soft \| Outline \| Ghost                            | Fill        |
+| Context `Mode`    | Brand \| Neutral \| Positive \| Negative \| Caution \| Info | Brand       |
+| Size `Variant`    | Xs \| Sm \| Md \| Lg \| Xl                                  | Md          |
+| State `Variant`   | Default \| Hover \| Focus \| Disabled                       | Default     |
+| Rounded `Boolean` | true \| false                                               | false       |
 
 ## Best practises
 
@@ -78,22 +78,23 @@ description: "Also known as: Action button, Toolbar button"
 
 ## Variants
 
-Variants define the visual appearance of components and communicate the priority of the action or information they represent. Some common variants are provided out of the box (see the table below), but you can also create new variants to match your system's needs. 
+Variants define the visual appearance of components and communicate the priority of the action or information they represent. Some common variants are provided out of the box (see the table below), but you can also create new variants to match your system's needs.
 
 Variants are created and managed through variable modes in the design system tokens.
 
-| **Variant** | **When to use**                                                                                                                          |
-| ----------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| `Fill`      | Used as a primary component style to display highest priority. Visually, it has high contrast compared to its surroundings.              |
-| `Soft`      | Used as a complimentary style, uses less contrasting fill color.                                                                         |
-| `Outline`   | Outline components blend more with the surroundings, but are separated from the background with a border.                                |
-| `Ghost`     | Used for the lowest priority of components, only text label is visible.                                                                  |
+| **Variant** | **When to use**                                                                                                             |
+| ----------- | --------------------------------------------------------------------------------------------------------------------------- |
+| `Fill`      | Used as a primary component style to display highest priority. Visually, it has high contrast compared to its surroundings. |
+| `Soft`      | Used as a complimentary style, uses less contrasting fill color.                                                            |
+| `Outline`   | Outline components blend more with the surroundings, but are separated from the background with a border.                   |
+| `Ghost`     | Used for the lowest priority of components, only text label is visible.                                                     |
 
 ## Context
 
 Context modes extend the visual identity of components by applying semantic meaning through color. Each context type communicates a specific purpose or state, helping users understand the intent of their actions.
 
 Available context types:
+
 - **Brand:** Primary actions and key interactions or communications (default)
 - **Neutral:** Standard actions or communications without specific semantic meaning
 - **Positive:** Success states, confirmations and constructive actions and communications

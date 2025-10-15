@@ -5,12 +5,9 @@ description: "Also known as: Status dot, Counter"
 
 ## Preview
 
-<div className="w-full bg-primary h-[320px] flex items-center justify-center border border-primary gap-4 not-prose">    
-    <div className="moon-badge">
-    </div>
-    <div className="moon-badge">
-      2
-    </div>
+<div className="w-full bg-primary h-[320px] flex items-center justify-center border border-primary gap-4 not-prose">
+  <div className="moon-badge"></div>
+  <div className="moon-badge">2</div>
 </div>
 
 ## Resources
@@ -27,31 +24,31 @@ description: "Also known as: Status dot, Counter"
       type: "file",
       name: "CSS",
       subtype: "css",
-      href: "https://ui.moon.io/?path=/docs/indicators-status-badge--docs",
+      href: "https://ui.moondesignsystem.com/?path=/docs/indicators-status-badge--docs",
     },
     {
       type: "file",
       name: "React",
       subtype: "react",
-      href: "https://react.moon.io/?path=/docs/indicators-status-badge--docs",
+      href: "https://react.moondesignsystem.com/?path=/docs/indicators-status-badge--docs",
     },
     {
       type: "file",
       name: "LiveView",
       subtype: "elixir",
-      href: "https://liveview.moon.io/indicators_&_status/badge",
+      href: "https://liveview.moondesignsystem.com/indicators_&_status/badge",
     },
   ]}
 />
 
 ## Properties
 
-| **Property**              | **Values**                                                       | **Default**   |
-| ------------------------- | ---------------------------------------------------------------- | ------------- |
-| Variant `Mode`            | Fill \| Soft \| Outline                                          | Fill          |
-| Context `Mode`            | Brand \| Neutral \| Positive \| Negative \| Caution \| Info      | Brand         |
-| Type `Variant`            | Dot \| Numeric                                                   | Dot           |
-| Label `Text`              | string                                                           | 2             |
+| **Property**   | **Values**                                                  | **Default** |
+| -------------- | ----------------------------------------------------------- | ----------- |
+| Variant `Mode` | Fill \| Soft \| Outline                                     | Fill        |
+| Context `Mode` | Brand \| Neutral \| Positive \| Negative \| Caution \| Info | Brand       |
+| Type `Variant` | Dot \| Numeric                                              | Dot         |
+| Label `Text`   | string                                                      | 2           |
 
 ## Best practises
 
@@ -111,21 +108,22 @@ Badges can be positioned absolutely to overlay assets or sit in line with other 
 
 ## Variants
 
-Variants define the visual appearance of components and communicate the priority of the action or information they represent. Some common variants are provided out of the box (see the table below), but you can also create new variants to match your system's needs. 
+Variants define the visual appearance of components and communicate the priority of the action or information they represent. Some common variants are provided out of the box (see the table below), but you can also create new variants to match your system's needs.
 
 Variants are created and managed through variable modes in the design system tokens.
 
-| **Variant** | **When to use**                                                                                                                          |
-| ----------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| `Fill`      | Used as a primary component style to display highest priority. Visually, it has high contrast compared to its surroundings.              |
-| `Soft`      | Used as a complimentary style, uses less contrasting fill color.                                                                         |
-| `Outline`   | Outline components blend more with the surroundings, but are separated from the background with a border.                                |
+| **Variant** | **When to use**                                                                                                             |
+| ----------- | --------------------------------------------------------------------------------------------------------------------------- |
+| `Fill`      | Used as a primary component style to display highest priority. Visually, it has high contrast compared to its surroundings. |
+| `Soft`      | Used as a complimentary style, uses less contrasting fill color.                                                            |
+| `Outline`   | Outline components blend more with the surroundings, but are separated from the background with a border.                   |
 
 ## Context
 
 Context modes extend the visual identity of components by applying semantic meaning through color. Each context type communicates a specific purpose or state, helping users understand the intent of their actions.
 
 Available context types:
+
 - **Brand:** Primary actions and key interactions or communications (default)
 - **Neutral:** Standard actions or communications without specific semantic meaning
 - **Positive:** Success states, confirmations and constructive actions and communications
@@ -134,7 +132,6 @@ Available context types:
 - **Info:** Informational actions or communications.
 
 Context is applied through CSS classes (e.g., `moon-badge-positive`, `moon-badge-negative`) and automatically adapts the button's colors to match the semantic meaning across all variants (fill, soft, outline, ghost).
-
 
 <svg
   width="480"
