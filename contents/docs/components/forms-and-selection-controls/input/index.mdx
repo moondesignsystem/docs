@@ -6,7 +6,10 @@ description: "Also known as: Text field, Textbox, Form"
 ## Preview
 
 <div className="w-full bg-primary h-[320px] flex items-center justify-center border border-primary gap-4">
-    <div className="moon-form-group w-auto"><label>Label</label><input type="text" className="moon-input w-[320px]" /></div>
+  <div className="moon-form-group w-auto">
+    <label>Label</label>
+    <input type="text" className="moon-input w-[320px]" />
+  </div>
 </div>
 
 ## Resources
@@ -23,35 +26,35 @@ description: "Also known as: Text field, Textbox, Form"
       type: "file",
       name: "CSS",
       subtype: "css",
-      href: "https://ui.moon.io/?path=/docs/forms-selection-controls-input--docs",
+      href: "https://ui.moondesignsystem.com/?path=/docs/forms-selection-controls-input--docs",
     },
     {
       type: "file",
       name: "React",
       subtype: "react",
-      href: "https://react.moon.io/?path=/docs/forms-selection-controls-input--docs",
+      href: "https://react.moondesignsystem.com/?path=/docs/forms-selection-controls-input--docs",
     },
     {
       type: "file",
       name: "LiveView",
       subtype: "elixir",
-      href: "https://liveview.moon.io/forms_&_selection_controls/input",
+      href: "https://liveview.moondesignsystem.com/forms_&_selection_controls/input",
     },
   ]}
 />
 
 ## Properties
 
-| **Property**              | **Values**                                                 | **Default** |
-| ------------------------- | ---------------------------------------------------------- | ----------- |
-| Variant `Mode`            | Fill \| Outline                                            | Fill        |
-| Size `Variant`            | Sm \| Md \| Lg \| Xl                                       | Md          |
-| State `Variant`           | Default \| Hover \| Focus \| Error \| Disabled             | Default     |
-| Label `Text`              | string                                                     | Label       |
-| Start item `Boolean`      | true \| false                                              | false       |
-| Value `Text`              | string                                                     | Value       |
-| End item `Boolean`        | true \| false                                              | false       |
-| Helper `Boolean`          | true \| false                                              | false       |
+| **Property**         | **Values**                                     | **Default** |
+| -------------------- | ---------------------------------------------- | ----------- |
+| Variant `Mode`       | Fill \| Outline                                | Fill        |
+| Size `Variant`       | Sm \| Md \| Lg \| Xl                           | Md          |
+| State `Variant`      | Default \| Hover \| Focus \| Error \| Disabled | Default     |
+| Label `Text`         | string                                         | Label       |
+| Start item `Boolean` | true \| false                                  | false       |
+| Value `Text`         | string                                         | Value       |
+| End item `Boolean`   | true \| false                                  | false       |
+| Helper `Boolean`     | true \| false                                  | false       |
 
 ## When to use
 
@@ -93,8 +96,8 @@ Initially, label for `Xl` size behaves similar to a placeholder, but as the user
 Helper is a nested component and can optionally be shown below the input container. Use helper text if providing additional context about the form item (error message or hint).
 Keep the message concise and clear, optionally show an icon to support the message.
 
-| **Property**        | **Values**      | **Default** |
-| ------------------- | --------------- | ----------- |
-| Type `Variant`      | Hint \| Error   | Hint        |
-| Icon `Boolean`      | true \| false   | true        |
-| Label `Text`        | string          | Hint        |
+| **Property**   | **Values**    | **Default** |
+| -------------- | ------------- | ----------- |
+| Type `Variant` | Hint \| Error | Hint        |
+| Icon `Boolean` | true \| false | true        |
+| Label `Text`   | string        | Hint        |

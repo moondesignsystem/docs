@@ -5,12 +5,12 @@ description: Quickstart your project with our LiveView library
 
 ## Step 1: Add a dependency
 
-Add a private moon_live package to mix.exs file:
+Add a private moon_live_view package to mix.exs file:
 
 ```elixir
 defp deps do
   [
-    {:moon_live, "~> 4.0.0-beta.1", organization: "coingaming"},
+    {:moon_live_view, "~> 1.0.0"},
   ]
 end
 ```
@@ -26,7 +26,7 @@ config :tailwind,
 
 ## Step 3: Install dependencies
 
-Ensure you are authenticated on hex under the coingaming organization. Install dependencies:
+Install dependencies:
 
 ```bash
 mix deps.get
@@ -43,8 +43,8 @@ plug Plug.Static,
   gzip: true
 
 plug Plug.Static,
-  at: "/moon_live/",
-  from: :moon_live,
+  at: "/moon_live_view/",
+  from: :moon_live_view,
   gzip: true
 ```
 
@@ -65,7 +65,7 @@ end
 Add moonHooks to app.js file to enable MoonLive components' functionality:
 
 ```javascript
-import moonHooks from "../../deps/moon_live/assets/js/hooks/";
+import moonHooks from "../../deps/moon_live_view/assets/js/hooks/";
 
 let liveSocket = new LiveSocket("/live", Socket, {
   hooks: {
@@ -86,9 +86,9 @@ Add moonBasePreset to tailwind.config.js file to extend the default Tailwind con
 
 @import "tailwindcss";
 
-@import "../../deps/moon_live/assets/css/moon-core.css";
-@import "../../deps/moon_live/assets/css/moon-components.css";
-@import "../../deps/moon_live/assets/css/moon-extra-components.css";
+@import "../../deps/moon_live_view/assets/css/moon-core.css";
+@import "../../deps/moon_live_view/assets/css/moon-components.css";
+@import "../../deps/moon_live_view/assets/css/moon-extra-components.css";
 ```
 
 ## Step 8: Update root HTML file
@@ -111,5 +111,5 @@ mix phx.server
 
 ## Resources
 
-- Liveview components, https://liveview.moon.io/
-- Liveview hex package, https://hex.pm/packages/coingaming/moon_live
+- Liveview components, https://liveview.moondesignsystem.com/
+- Liveview hex package, https://hex.pm/packages/moondesignsystem/liveview

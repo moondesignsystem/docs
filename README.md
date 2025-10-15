@@ -16,7 +16,7 @@ For builders looking to contribute to the documentation, follow these steps to r
 ### 1. Clone and Install Dependencies:
 
 ```bash
-git clone https://github.com/coingaming/moon-docs.git
+git clone https://github.com/moondesignsystem/docs.git
 cd moon-docs
 yarn install
 ```
