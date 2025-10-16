@@ -8,12 +8,11 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "moon-ui": "npx @heathmont/moon-ui --add-components"
+    "moon-ui": "npx @moondesignsystem/ui --add-components"
   },
   "dependencies": {
     "@docsearch/react": "^3.9.0",
-    "@heathmont/moon-react": "^1.4.1",
-    "@heathmont/moon-react-assets": "^1.2.0",
+    "@moondesignsystem/react": "^2.5.18",
     "@hugeicons/core-free-icons": "^1.0.17",
     "@hugeicons/react": "^1.1.1",
     "@radix-ui/react-accordion": "^1.2.12",

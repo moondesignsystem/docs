@@ -22,7 +22,6 @@ import Outlet from "@/components/markdown/outlet";
 import Pre from "@/components/markdown/pre";
 import Quickstart from "@/components/markdown/quickstart";
 import { Stepper, StepperItem } from "@/components/markdown/stepper";
-import { Icon } from "@heathmont/moon-react-assets";
 import { BottomSheetDemo } from "@/components/markdown/bottom-sheet-demo";
 import { DialogDemo } from "@/components/markdown/dialog-demo";
 import { DrawerDemo } from "@/components/markdown/drawer-demo";
@@ -56,7 +55,6 @@ const components = {
   CSSVariablesDisplay,
   Quickstart,
   FooterWrapper,
-  Icon,
   BottomSheetDemo,
   DialogDemo,
   DrawerDemo,

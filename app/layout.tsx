@@ -8,7 +8,6 @@ import "@/styles/moon-core.css";
 import "@/styles/core.css";
 import "@/styles/globals.css";
 
-
 const GTAG = "G-31RDD16D55";
 
 const sansFont = DM_Sans({
@@ -30,7 +29,7 @@ export const metadata: Metadata = {
     default: "Moon Design System",
     template: "%s | Moon Design System",
   },
-  metadataBase: new URL("https://beta.moon.io"),
+  metadataBase: new URL("https://moondesignsystem.com"),
   description:
     "Moon is a complete design system built to help product teams across the world build better digital experiences.",
   icons: {
@@ -40,7 +39,7 @@ export const metadata: Metadata = {
     title: "Moon Design System",
     description:
       "Moon is an open-source design system built for fast, scalable digital experiences.",
-    url: "https://beta.moon.io/",
+    url: "https://moondesignsystem.com/",
     siteName: "Moon Design System",
     images: [
       {
