@@ -3,24 +3,23 @@
 import Link from "next/link";
 import StarryBackground from "@/components/StarryBackground";
 import { useRive } from "@rive-app/react-canvas";
-import { Icon } from "@heathmont/moon-react-assets";
 import { useEffect } from "react";
 import { useTheme } from "next-themes";
 
 export default function HomePageClient() {
   const { setTheme, theme } = useTheme();
-  
+
   // Force dark mode on the home page
   useEffect(() => {
     const originalColorScheme = document.documentElement.style.colorScheme;
     const originalTheme = theme;
-    
+
     // Force dark mode
-    document.documentElement.style.colorScheme = 'dark';
-    document.documentElement.classList.add('dark-theme');
-    document.documentElement.classList.remove('light-theme');
-    setTheme('dark');
-    
+    document.documentElement.style.colorScheme = "dark";
+    document.documentElement.classList.add("dark-theme");
+    document.documentElement.classList.remove("light-theme");
+    setTheme("dark");
+
     return () => {
       // Restore original state when leaving the page
       document.documentElement.style.colorScheme = originalColorScheme;
