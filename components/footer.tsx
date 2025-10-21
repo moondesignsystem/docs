@@ -24,7 +24,7 @@ export function FooterButtons() {
   return (
     <>
       <Link
-        href="https://www.linkedin.com/company/moon-io/"
+        href="https://www.linkedin.com/company/moondesignsystem/"
         target="_blank"
         className={buttonVariants({ variant: "outline", size: "sm" })}
       >
