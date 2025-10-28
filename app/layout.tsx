@@ -8,7 +8,7 @@ import "@/styles/moon-core.css";
 import "@/styles/core.css";
 import "@/styles/globals.css";
 
-const GTAG = "G-31RDD16D55";
+const GTAG = "G-VQMMMH68C3";
 
 const sansFont = DM_Sans({
   subsets: ["latin"],
