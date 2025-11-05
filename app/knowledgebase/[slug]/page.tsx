@@ -63,14 +63,14 @@ export default async function KnowledgebasePage(props: PageProps) {
           <Authors authors={res.frontmatter.authors} />
         </div>
       </div>
-      <div className="!w-full">
+      <div className="w-full [&_img]:rounded-8">
         <div className="w-full mb-7">
           <Image
             src={res.frontmatter.cover}
             alt="cover"
             width={700}
             height={400}
-            className="w-full h-auto rounded-400 border object-cover"
+            className="w-full h-auto rounded-8 border object-cover"
           />
         </div>
         <Typography>{res.content}</Typography>

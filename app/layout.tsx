@@ -91,7 +91,9 @@ export default function RootLayout({
             system: "system",
           }}
         >
-          <Navbar />
+          <div suppressHydrationWarning>
+            <Navbar />
+          </div>
           <main className="sm:container mx-auto w-[90vw] h-auto scroll-smooth">
             {children}
           </main>

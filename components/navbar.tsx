@@ -2,6 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import { ModeToggle } from "@/components/theme-toggle";
+import { ClientOnly } from "@/components/client-only";
 import { GithubIcon } from "lucide-react";
 import Link from "next/link";
 import { buttonVariants } from "./ui/button";
@@ -34,7 +35,7 @@ const algolia_props = {
 
 export function Navbar() {
   const pathname = usePathname();
-  
+
   return (
     <nav className="w-full border-nav-b h-16 sticky top-0 z-50 bg-background backdrop-blur-xl">
       <div className="sm:container relative mx-auto w-[95vw] h-full flex items-center justify-between md:gap-2">
@@ -55,7 +56,11 @@ export function Navbar() {
           {/* <AlgoliaSearch {...algolia_props} /> */}
           <div className="flex items-center justify-between sm:gap-2">
             <div className="flex ml-4 sm:ml-0">
-              {pathname !== "/" && <ModeToggle />}
+              {pathname !== "/" && (
+                <ClientOnly>
+                  <ModeToggle />
+                </ClientOnly>
+              )}
             </div>
           </div>
         </div>
