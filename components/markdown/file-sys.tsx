@@ -106,31 +106,25 @@ function File({
   return (
     <div
       className={cn(
-        "flex items-center gap-1.5 w-full hover:bg-hover px-3 py-1 rounded-200 relative",
+        "flex items-center gap-1.5 w-full hover:bg-hover px-3 py-1 rounded-4 relative",
         highlight && "dark:text-blue-400 text-blue-500"
       )}
     >
-      {renderIcon()}
-      <div className="sm:text-[15px] text-[13.5px] flex items-center">
-        {href && !noLink ? (
-          <a
-            href={href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="no-underline"
-          >
-            {name}
-          </a>
-        ) : (
-          name
-        )}
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="no-underline sm:text-[15px] text-[13.5px] flex gap-2 items-center"
+      >
+        {renderIcon()}
+        {name}
         {tag && (
-          <span className="bg-secondary rounded-md px-1.5 py-0.5 mx-2 text-xs text-secondary !font-normal">
+          <span className="bg-secondary rounded-md px-1.5 py-0.5 mx-2 text-xs text-secondary">
             {tag}
           </span>
         )}
         <Indicator type={indicator} />
-      </div>
+      </a>
     </div>
   );
 }
@@ -154,7 +148,7 @@ function Folder({
     <div>
       <div
         className={cn(
-          "cursor-pointer flex items-center gap-1.5 w-full hover:bg-hover px-3 py-1 rounded-200",
+          "cursor-pointer flex items-center gap-1.5 w-full hover:bg-hover px-3 py-1 rounded-4",
           highlight && "dark:text-blue-400 text-blue-500"
         )}
         onClick={() => setIsOpen(!isOpen)}
@@ -202,7 +196,7 @@ export default function FileSys({
   }, [sorted, children]);
 
   return (
-    <div className="bg-primary rounded-400 p-4 px-3 border border-primary flex flex-col font-code max-w-full overflow-x-auto gap-4">
+    <div className="bg-primary rounded-8 p-4 px-3 border border-primary flex flex-col font-code max-w-full overflow-x-auto gap-4">
       {items.map((item) =>
         isFile(item) ? (
           <File {...item} key={item.name} />

@@ -45,7 +45,7 @@ function BlogCard({
   return (
     <Link
       href={`/blog/${slug}`}
-      className="flex flex-col gap-2 items-start border border-primary rounded-400 py-5 px-3 min-h-[400px]"
+      className="flex flex-col gap-2 items-start border border-primary rounded-8 py-5 px-3 min-h-[400px]"
     >
       <h3 className="text-md font-semibold -mt-1 pr-7">{title}</h3>
       <div className="w-full">
@@ -55,7 +55,7 @@ function BlogCard({
           width={400}
           height={150}
           quality={80}
-          className="w-full rounded-400 object-cover h-[180px] border"
+          className="w-full rounded-8 object-cover h-[180px] border"
         />
       </div>
       <p className="text-sm text-muted-foreground">{description}</p>

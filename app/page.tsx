@@ -3,14 +3,21 @@
 import Link from "next/link";
 import StarryBackground from "@/components/StarryBackground";
 import { useRive } from "@rive-app/react-canvas";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
 
 export default function HomePageClient() {
   const { setTheme, theme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   // Force dark mode on the home page
   useEffect(() => {
+    if (!mounted) return;
+
     const originalColorScheme = document.documentElement.style.colorScheme;
     const originalTheme = theme;
 
@@ -27,16 +34,21 @@ export default function HomePageClient() {
         setTheme(originalTheme);
       }
     };
-  }, [setTheme, theme]);
+  }, [setTheme, theme, mounted]);
   const { RiveComponent } = useRive({
     src: "/moon.riv",
     stateMachines: "Rest",
     autoplay: true,
   });
 
+  // Prevent hydration mismatch by not rendering until mounted
+  if (!mounted) {
+    return null;
+  }
+
   return (
     <>
-      <div className="relative w-full dark">
+      <div className="relative w-full dark" suppressHydrationWarning>
         <StarryBackground
           starCount={1000}
           backgroundColor="#020617"

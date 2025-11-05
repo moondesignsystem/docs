@@ -1,8 +1,10 @@
 "use client";
 
 import { ROUTES } from "@/lib/routes-config";
-import SubLink from "./sublink";
 import { usePathname } from "next/navigation";
+import SubLink from "./sublink";
+import Link from "next/link";
+import Image from "next/image";
 
 export default function DocsMenu({ isSheet = false }) {
   const pathname = usePathname();
@@ -10,6 +12,17 @@ export default function DocsMenu({ isSheet = false }) {
 
   return (
     <div className="flex flex-col gap-8 mt-5 pr-2 pb-6 sm:text-base text-[14.5px]">
+      <div className="flex gap-2">
+        <Link
+          href="https://www.linkedin.com/company/moondesignsystem/"
+          target="_blank"
+        >
+          <Image src="/linkedin.png" alt="LinkedIn" width={32} height={32} />
+        </Link>
+        <Link href="https://discord.gg/MbkfpCU5" target="_blank">
+          <Image src="/discord.png" alt="Discord" width={32} height={32} />
+        </Link>
+      </div>
       {ROUTES.map((item, index) => {
         const modifiedItems = {
           ...item,

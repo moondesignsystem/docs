@@ -14,7 +14,7 @@ export default function Quickstart({ items }: { items: QuickstartItem[] }) {
         <Link
           key={item.href}
           href={item.href}
-          className="sm:py-32 px-24 w-full flex flex-col no-underline bg-tertiary hover:bg-hover rounded-400 text-center md:text-4xl font-bold"
+          className="sm:py-32 px-24 w-full flex flex-col no-underline bg-tertiary hover:bg-hover rounded-8 text-center md:text-4xl font-bold"
         >
           {item.title}
         </Link>
