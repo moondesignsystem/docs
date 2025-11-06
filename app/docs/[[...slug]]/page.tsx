@@ -30,7 +30,7 @@ export default async function DocsPage(props: PageProps) {
             <p className="-mt-4 text-muted-foreground sm:text-[16.5px] text-[14.5px]">
               {res.frontmatter.description}
             </p>
-            <div>{res.content}</div>
+            <div className="text-ellipsis overflow-hidden">{res.content}</div>
             <Pagination pathname={pathName} />
           </Typography>
         </div>
