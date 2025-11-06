@@ -64,7 +64,7 @@ const SheetContent = React.forwardRef<
       {...props}
     >
       {children}
-      <SheetPrimitive.Close className="absolute right-4 top-7 moon-icon-button moon-icon-button-ghost moon-icon-button-neutral moon-icon-button-sm">
+      <SheetPrimitive.Close className="absolute right-4 moon-icon-button moon-icon-button-ghost moon-icon-button-neutral">
         <svg
           width="20"
           height="20"
