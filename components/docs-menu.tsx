@@ -22,6 +22,14 @@ export default function DocsMenu({ isSheet = false }) {
         <Link href="https://discord.gg/MbkfpCU5" target="_blank">
           <Image src="/discord.png" alt="Discord" width={32} height={32} />
         </Link>
+        <Link href="https://buymeacoffee.com/moondesignsystem" target="_blank">
+          <Image
+            src="/buymeacoffee.png"
+            alt="Buy Me a Coffee"
+            width={32}
+            height={32}
+          />
+        </Link>
       </div>
       {ROUTES.map((item, index) => {
         const modifiedItems = {
